@@ -4,19 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ellen is Missing: Part 2</title>
+    <link rel='stylesheet' href="index.css">
 </head>
 <body>
-    <!--Place title/event of node here-->
-    <h2 id="nodeName">StartBlank</h2>
-    <!--Place description and more detailed event here-->
-    <p id="nodeScript">StartBlank Script</p>
-    <!--Place image of event here-->
-    <img src="unexpectedEncounter.png" style="width:600px;">
-    <br></br>
-    <!--Choice selection over here-->
-    <button id="but1">Choice 1</button>
-    <button id="but2">Choice 2</button>
-    <button id="but3">Choice 3</button>
+    <!--Show title and node code-->
+    <div class="top">
+        <h1 id="title">Intresting Title Name</h1>
+        <p id="nodeCode">Node: 1</p>
+    </div>
+
+    <!--Show events/end/image of the node-->
+    <div class="mid">
+        <section class="descBox">
+            <!--Transition text towards next node-->
+            <section class="description 1">
+                <p>Description box 1</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quidem neque minus nulla, doloremque quod, enim laboriosam nemo commodi corrupti consectetur eius. Sequi pariatur quidem tempore eos eum neque! Quasi?</p>
+            </section>
+            <!--Events/Ending of the node-->
+            <section class="description 2">
+                <p>Description box 2</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea suscipit saepe nisi tempora deserunt quod, recusandae animi soluta quos ut blanditiis libero impedit temporibus porro laboriosam nostrum error? Vitae, a!</p>
+            </section>
+            <!--Image for the node-->
+            <section class="image">
+                <img id='nodeImage' src="unexpectedEncounter.png">
+            </section>
+        </section>
+    </div>
+
+    <!--Options/Battle-->
+    <div class="bot">
+        <button id="next">Ask the Proxy for help!</button>    
+    </div>
+
     <!--Link javascript file here-->
     <script src="zzz.js"></script>
 </body>
