@@ -42,10 +42,10 @@ rina.onclick = function() {
 }
 
 let nodeIndicator = document.getElementById('nodeCode');
-let titleOne = document.getElementById('desTitle1');
+let titleOne = document.getElementById('descTitle1');
 let titleTwo = document.getElementById('descTitle2');
 let textOne = document.getElementById('descText1');
-let textTwo = document.getElementById('decText2');
+let textTwo = document.getElementById('descText2');
 let nodeImage = document.getElementById('nodeImage');
 let button1 = document.getElementById('button');
 
@@ -54,6 +54,9 @@ button1.onclick = function (){
     scroll(0,0);
     console.log('hey');
     nodeIndicator.innerHTML = 'Node: 2';
-    button1 = button2a;
+    titleOne.innerHTML = 'Inside the Video Store';
+    titleTwo.innerHTML = 'Entering the Hollow';
+    textOne.innerHTML = 'hey';
+    textTwo.innerHTML = 'hey';
     nodeImage.src = 'nodeImages/Node2.jpg';
 }
