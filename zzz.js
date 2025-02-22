@@ -48,15 +48,43 @@ let textOne = document.getElementById('descText1');
 let textTwo = document.getElementById('descText2');
 let nodeImage = document.getElementById('nodeImage');
 let button1 = document.getElementById('button');
-
+let buttonDesc = document.getElementById('butDesc');
 
 button1.onclick = function (){
     scroll(0,0);
     console.log('hey');
     nodeIndicator.innerHTML = 'Node: 2';
+    
     titleOne.innerHTML = 'Inside the Video Store';
     titleTwo.innerHTML = 'Entering the Hollow';
-    textOne.innerHTML = 'hey';
-    textTwo.innerHTML = 'hey';
+    
+    textOne.innerHTML = '*Door Bell Rings*<br>Wise: Welcome to the Random Play! Oh! Its you Lycaon how may I help?<br>Lycaon: Ellen is lost in a Hollow I need your help.<br>Wise: Oh is that so? I\'ll alert Belle. Here\'s Eous. Take him and we can help.<br>Lycaon: Thank you for your help. I promise to compensate you.<br>Wise: It\'s fine, no need to pay me. I\'m doing this as a friend. Now go and get to the Hollow.';
+    textOne.innerHTML += '<br><br>Eous: A Bangboo which the Proxy can communicate others in the Hollow. The Proxy can also do some handy things like locate people using Data Piles.'
+    
+    textTwo.innerHTML = 'Victoria Housekeeping and little Eous entered the Hollow. Eous begins to locate Data Piles to which they can find Ellen in the Hollow. As they continue throuhgout the Hollow, they suddenly encounter Ethereals!';
+    textTwo.innerHTML += '<br><br>Ethereals: Ethereals are monsters formed from high ether activity. When exploring the Hollow make sure to stay far from high ether activity, or else you\'ll meet many foes.'
+    
     nodeImage.src = 'nodeImages/Node2.jpg';
+    
+    //button1.remove();
+
+    let button2 = document.createElement('button');
+    button2.id = 'button';
+    button2.innerHTML = 'TIME TO BATTLE';
+    let but1 = document.getElementsByClassName('but1');
+    document.body.replaceChild(button2,button1);
+    
+    //button1.innerHTML = 'TIME TO BATTLE!';
+
+
+    buttonDesc.innerHTML = 'A turn based battle<br>between ethereals!<br>Remember: Stay Alive.';
+    
+    
 }
+
+
+/*
+button2.onclick = function (){
+    console.log('heyo!')
+}
+*/
