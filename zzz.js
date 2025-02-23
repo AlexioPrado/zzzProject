@@ -9,6 +9,7 @@
 //let rem = document.getElementById('but1') //makes variable
 //rem.remove() //removes it
 
+//setTimeout(function, milliseconds)
 
 //Character Selection CODE
 
@@ -92,8 +93,6 @@ button1.onclick = function (){
     document.getElementById('outerBox1').appendChild(buttonDesc2);
 }
 
-    
-
 let button2 = document.createElement('button');
 button2.id = 'button';
 button2.innerHTML = 'TIME TO BATTLE';
@@ -113,14 +112,13 @@ button2.onclick = function (){
 
     textOne.innerHTML = 'Alpeca:<br>A quite humanoid Ethereal figure which deals 2 dmg every swing of its sharp arm-like blade.<br>';
     textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg to every party member.<br><br>';
-    textOne.innerHTML += '<img src=\'nodeImages/Node3a.jpg\' id=\'etherImage\'> <img src=\'nodeImages/Node3b.jpg\' id=\'etherImage\'>';
+    textOne.innerHTML += '<img src=\'battleImages/alpeca.jpg\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.jpg\' id=\'etherImage\'>';
 
     textTwo.innerText = '';
     textTwo.innerHTML += '1. You and the enemy take turns each to deal dmg.<br>';
     textTwo.innerHTML += '2. Changing characters are considered a turn. Selecting a character at the start of the game does not count as your turn.<br>';
     textTwo.innerHTML += '3. When a character\'s Health reaches 0 or lower, they have fallen and can\'t be used for the whole story.<br>'
 
-    nodeImage.style = 'border: 0px;';
-    nodeImage.src = '';
+    nodeImage.style = 'display: none;';
 }
 

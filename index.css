@@ -161,14 +161,116 @@ body {
 }
 
 #etherImage {
-    max-width: 300px;
-    max-height: 200px;
+    max-width: 250px;
+    max-height: 250px;
     border-radius: 10px;
-    border: 3px solid white;
+    border: 5px solid white;
 }
 
 #etherText {
     width: 100px;
     text-wrap: wrap;
     color:black;
+}
+
+.battleUI {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.battleBox {
+    display: flex;
+    width: 820px;
+    border: 10px solid rgb(220, 220, 220);
+    border-radius: 10px;
+    padding: 10px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background: rgb(52, 46, 46);
+}
+
+.battle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    background-color: rgb(83, 83, 83);
+}
+
+.battleImage {
+    display: flex;
+    border: 5px solid rgb(29, 29, 29);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    color: rgb(220, 220, 220);
+    background-color: rgb(36, 36, 36);
+}
+
+#battleCharacter, #battleEnemy {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+.info {
+    display: flex;
+    border: 5px solid rgb(29, 29, 29);
+    border-radius: 5px;
+    justify-content: center;
+    margin: 10px;
+    color: rgb(220, 220, 220);
+    background-color: rgb(36, 36, 36);
+}
+
+#enemyInfo, #characterInfo {
+    width: 226.62px;
+}
+
+#versus {
+    margin: 0px 30px 0px 30px;
+    color: white;
+}
+
+.battleChoice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    background-color: rgb(29, 29, 29);
+    
+}
+
+.battleButton {
+    border: 3px solid rgb(119, 127, 135);
+    border-radius: 5px;
+    font-family: zzzfont;
+    margin: 5px 10px 5px 10px;
+}
+
+#battleAttack {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+#switch1, #switch2, #switch3 {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 14px; 
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+.choiceBox {
+    display: flex;
+    flex-direction: column;
+    color: white;
 }
