@@ -218,44 +218,48 @@ body {
     border-radius: 5px;
 }
 
-/*
-.info {
-    display: flex;
-    flex-direction: row;   
-    justify-content: center;
-    text-align: left;
-    row-gap: 10px;
-}
-
-#enemyInfo, #characterInfo {
-    width: 230px;
-    color: rgb(220, 220, 220);
-    margin: 0px;
-    font-size: 15px;
-}
-#enemyInfo {
-    margin-left:30px;
-}
-*/
-
-.info {
-    display: grid;
-
-}
-
 #versus {
     margin: 0px 30px 0px 30px;
     color: white;
 }
 
+.infoBox {
+    display: flex;
+    flex-direction: row;
+    width: 500px;  
+    justify-content: center;
+    color: rgb(220, 220, 220);
+}
+
+.characterInfo {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 20px 40px;
+    margin-right: 30px;
+}
+
+.enemyInfo {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 130px 100px;
+    grid-template-rows: 20px 40px 40px;
+    align-items: center;
+    margin-left: 30px;
+}
 
 .battleHistory {
     display: flex;
     flex-direction: column;
     width: 510px;
-    border: 10px solid red;
+    border: 8px solid rgb(29, 29, 29);
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: rgb(220, 220, 220);
+    background-color: rgb(39, 39, 39);
+    
 }
 
 .battleChoice {
