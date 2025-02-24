@@ -90,7 +90,7 @@ let thanatosNotorius = {'Heath': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice
     3. Passives
     4. Attribute
 */
-let corinBattle = {'Health': 0, 'Skill': 3, 'Passive': false, 'Attribute': 'Physical'};
+let corinBattle = {'Health': 10, 'Skill': 3, 'Passive': false, 'Attribute': 'Physical'};
 let lycaonBattle = {'Health': 15, 'Skill': 2, 'Passive': 2, 'Attribute': 'Ice'};
 let rinaBattle = {'Health': 12, 'Skill': 1, 'Passive': false, 'Attribute': 'Eletric'};
 
@@ -199,10 +199,10 @@ button2.onclick = function (){
 }
 
 function battle(enemy1,enemy2) {
-    let activeCharacter;
+    let activeCharacter = selectCharacter();
     let activeEnemy = enemy1;
 
-    selectCharacter();
+    ;
 
     //Description Box Changes: Titles and Adds battle rules
     titleOne.innerHTML = 'Battle Info'
@@ -218,6 +218,8 @@ function battle(enemy1,enemy2) {
 }
 
 function selectCharacter(){
+    let choice;
+
     buttonBox.style = 'display: none;';
     battleUI.style = 'display: flex;';
     characterSelection.style = 'display: flex;';
@@ -233,15 +235,16 @@ function selectCharacter(){
     }
 
     corinButton.onclick = function (){
-        activeCharacter = corinBattle;
+        choice = corinBattle;
         console.log('hey!');
+        return choice
     }
     lycaonButton.onclick = function (){
-        activeCharacter = lycaonBattle;
+        choice = lycaonBattle;
         console.log('hey!');
     }
     rinaButton.onclick = function (){
-        activeCharacter = rinaBattle;
+        choice = rinaBattle;
         console.log('hey!');
     }
 
