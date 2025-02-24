@@ -117,7 +117,8 @@ button2.onclick = function (){
     textTwo.innerText = '';
     textTwo.innerHTML += '1. You and the enemy take turns each to deal dmg.<br>';
     textTwo.innerHTML += '2. Changing characters are considered a turn. Selecting a character at the start of the game does not count as your turn.<br>';
-    textTwo.innerHTML += '3. When a character\'s Health reaches 0 or lower, they have fallen and can\'t be used for the whole story.<br>'
+    textTwo.innerHTML += '3. When a character\'s Health reaches 0 or lower, they have fallen and can\'t be used for the whole story.<br>';
+    textTwo.innerHTML += '4. Enemies have element weakness and resistance. If your character\'s element what the enemy is resistant to, dmg dealt is decreased by 1.<br>If the character\'s elemnt is what the enemy is weak to, dmg dealt is increased by 1.'
 
     nodeImage.style = 'display: none;';
 }
