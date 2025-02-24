@@ -174,7 +174,7 @@ body {
 }
 
 .battleUI {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -185,13 +185,35 @@ body {
     border: 10px solid rgb(220, 220, 220);
     border-radius: 10px;
     padding: 10px;
-    /*align-self: center;
-    justify-content: center;*/
+    align-self: center;
+    justify-content: center;
     background: rgb(52, 46, 46);
 }
 
+.characterSelection {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#selectionTitle {
+    color: rgb(220, 220, 220);
+}
+
+.characterButton {
+    font-family: zzzfont;
+    color: rgb(220, 220, 220);
+    font-size: 16px;
+    border: 5px solid rgb(36, 36, 36);
+    background-color: rgb(119, 127, 135);
+    padding: 5px 10px 5px 10px;
+}
+
+/*Change display of battle and battle choice to none/flex*/
+
 .battle {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -263,7 +285,7 @@ body {
 }
 
 .battleChoice {
-    display: flex;
+    display: none;
     justify-content: center;
     width: 27%;
     background-color: rgb(39, 39, 39);

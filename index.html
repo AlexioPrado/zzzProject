@@ -46,9 +46,17 @@
     
     <br>
 
-    <div class="battleUI">
+    <div class="battleUI" id="battleUI">
         <section class="battleBox">
-            <section class="battle">
+            <section class="characterSelection" id="characterSelection">
+                <p id="selectionTitle">Select Active Charcter before moving foreward</p>
+                <section class="charButton">
+                    <button class='characterButton' id="charSelect1">Corin</button>
+                    <button class='characterButton' id="charSelect2">Lycaon</button>
+                    <button class='characterButton' id="charSelect3">Rina</button>
+                </section>
+            </section>
+            <section class="battle" id="battle">
                 <section class="battleImage">
                     <img id="battleCharacter" src="battleImages/characterBattle/corinBattle.JPG">
                     <p id="versus">VS</p>
@@ -57,13 +65,13 @@
                 <section class="infoBox">
                     <div class="characterInfo">
                         <div id="infoText">Health:</div>
-                        <div id="health">Blank</div>
+                        <div id="health1">Blank</div>
                         <div id="infoText">Element:</div>
-                        <div id="element">Blank</div>
+                        <div id="attribute">Blank</div>
                     </div>
                     <div class="enemyInfo">
                         <div id="infoText">Health:</div>
-                        <div id="health">Blank</div>
+                        <div id="health2">Blank</div>
                         <div id="infoText">Element Resistance:</div>
                         <div id="resistance">Blank</div>
                         <div id="infoText">Element Weakness:</div>
@@ -74,7 +82,7 @@
                     <p id="battleHisBox">> Select the Active Character to begin:<br>> Selected character: _______</p>
                 </section>
             </section>
-            <section class="battleChoice">
+            <section class="battleChoice" id="battleChoice">
                 <section class="choiceBox">
                     <button class ='battleButton' id="battleAttack">ATTACK</button>
                     <p id="switchTitle">Switch Character</p>
@@ -89,7 +97,7 @@
     <br>
 
     <!--Options-->
-    <div class="bot">
+    <div class="bot" id="buttonBox">
         <section class="botBox">
             <section class="descision">
                 <h2 id="question" style="border-bottom: 3px solid rgb(223, 223, 223);">What's Our Next Step?</h2>
