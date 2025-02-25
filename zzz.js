@@ -37,7 +37,7 @@ lycaon.onclick = function() {
     charName.style = 'font-size: 30px; margin: 10px; border-bottom: 3px solid white;';
     charName.textContent = 'Von Lycaon';
     charDesc.innerHTML = 'As the leader of Victoria\'s Houskeeping, he strives to protect his team and quickly assess situations when in need.';
-    charDesc.innerHTML += '<br><br>Element: Ice<br>Health: 15<br>Skill: Deals 2 dmg<br>Passive: When dealing dmg or is switched to be the active character, the enemy is stunned.<br>Stunned Effect: Enemy cannot deal dmg for 2 turns<br>';
+    charDesc.innerHTML += '<br><br>Element: Ice<br>Health: 15<br>Skill: Deals 2 dmg<br>Passive: When dealing dmg or is switched to be the active character, the enemy is stunned. Lycaon can only stun again once the enemy has dealt at least one attack after the previous Stunned Effect.<br>Stunned Effect: Enemy cannot deal dmg for 2 turns<br>';
 }
 rina.onclick = function() {
     charName.style = 'font-size: 30px; margin: 10px; border-bottom: 3px solid white;'
@@ -90,9 +90,9 @@ let thanatosNotorius = {'Heath': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice
     3. Passives
     4. Attribute
 */
-let corinBattle = {'Name': 'Corin', 'Health': 10, 'Skill': 2, 'Passive': false, 'Attribute': 'Physical', 'url': 'battleImages/characterBattle/corinBattle.JPG'};
-let lycaonBattle = {'Name': 'Lycaon', 'Health': 15, 'Skill': 2, 'Passive': 2, 'Attribute': 'Ice', 'url': 'battleImages/characterBattle/lycaonBattle.JPG'};
-let rinaBattle = {'Name': 'Rina', 'Health': 12, 'Skill': 1, 'Passive': false, 'Attribute': 'Electric', 'url': 'battleImages/characterBattle/rinaBattle.JPG'};
+let corinBattle = {'Name': 'Corin', 'Health': 11, 'Skill': 2, 'Attribute': 'Physical', 'url': 'battleImages/characterBattle/corinBattle.JPG', 'MaxHP' : 12};
+let lycaonBattle = {'Name': 'Lycaon', 'Health': 18, 'Skill': 2, 'Attribute': 'Ice', 'url': 'battleImages/characterBattle/lycaonBattle.JPG', 'MaxHP' : 18};
+let rinaBattle = {'Name': 'Rina', 'Health': 14, 'Skill': 1, 'Passive': 2, 'Attribute': 'Electric', 'url': 'battleImages/characterBattle/rinaBattle.JPG', 'MaxHP' : 14};
 
 /* Create Button Variables for all buttons used in Battles
     1. Select Character Buttons
@@ -199,7 +199,7 @@ button2.onclick = function (){
     textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg to every party member.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/alpeca.jpg\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.jpg\' id=\'etherImage\'>';
 
-    selectCharacter(alpeca, blastCrawler);
+    selectCharacter(dullahan, blastCrawler);
 
 }
 
@@ -243,19 +243,19 @@ function selectCharacter(enemy1,enemy2){
     corinButton.onclick = function (){
         choice = corinBattle;
         console.log('Selected active character: Corin');
-        battleRecord.innerHTML += `> Selected Character: Corin<br>`;
+        battleRecordFunc(`> Selected Character: Corin<br>`)
         battleInfo(enemy1, enemy2, choice);
     }
     lycaonButton.onclick = function (){
         choice = lycaonBattle;
         console.log('Selected active character: Lycaon');
-        battleRecord.innerHTML += `> Selected Character: lycaon<br>`;
+        battleRecordFunc(`> Selected Character: Lycaon<br>`)
         battleInfo(enemy1, enemy2, choice);
     }
     rinaButton.onclick = function (){
         choice = rinaBattle;
         console.log('Selected active character: Rina');
-        battleRecord.innerHTML += `> Selected Character: rina<br>`;
+        battleRecordFunc(`> Selected Character: Rina<br>`)
         battleInfo(enemy1, enemy2, choice)
     }
 }
@@ -285,7 +285,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         let characterDmg = activeCharacter['Skill'];
 
         if (activeCharacter['Health'] <= 0){
-            battleRecord.innerHTML += '- Error: Fallen character cannot attack. Change active character. <br>'
+            battleRecordFunc('- Error: Fallen character cannot attack. Change active character. <br>')
             return;
         }
 
@@ -303,8 +303,9 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         if (activeEnemy['Health']-characterDmg <= 0){
             activeEnemy['Health'] -= characterDmg;
             enemyHealth.innerHTML = activeEnemy['Health'];
-            battleRecord.innerHTML += '> ' + activeCharacter['Name'] + ' dealt ' + characterDmg + ' damage and killed the ethereal!<br>'
-            battleRecord.innerHTML += '- The next Enemy has approached!<br>';
+            battleRecordFunc('> ' + activeCharacter['Name'] + ' dealt ' + characterDmg + ' damage and killed the ethereal!<br>');
+            battleRecordFunc('- The next Enemy has approached!<br>', battleRecord);
+
             stunBefore = false;
 
             deadEnemy.push(activeEnemy);
@@ -323,7 +324,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             activeEnemy['Health'] -= characterDmg;
             enemyHealth.innerHTML = activeEnemy['Health'];
 
-            battleRecord.innerHTML += '> ' + activeCharacter['Name'] + ' dealt ' + characterDmg + ' damage to the enemy.<br>'
+            battleRecordFunc('> ' + activeCharacter['Name'] + ' dealt ' + characterDmg + ' damage to the enemy.<br>');
 
             moveCounter += 1;
 
@@ -332,37 +333,55 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             enemyAttack();
         }
     }
+    // CHANGE FORMAT LIKE CORINS TO THE OTHERSSSSSSSSS
     corinSwitch.onclick = function() {
-        console.log('Switched to Corin');
-        activeCharacter = corinBattle;
-        battleRecord.innerHTML += '- Switched Character: Corin<br>'
-        switchCharacter(activeCharacter);
-        enemyAttack();
+        if (activeCharacter['Name'] === 'Corin'){
+            battleRecordFunc('- Active Character is already Corin.<br>')
+        } else {
+            console.log('Switched to Corin');
+            activeCharacter = corinBattle;
+            battleRecordFunc('- Switched Character: Corin<br>');
+            switchCharacter(activeCharacter);
+            enemyAttack();
+        }
     }
     lycaonSwitch.onclick = function() {
-        console.log('Switched to Lycaon');
-        activeCharacter = lycaonBattle;
-        battleRecord.innerHTML += '- Switched Character: Lycaon<br>'
-        switchCharacter(activeCharacter);
-        enemyAttack();
+        if (activeCharacter['Name'] === 'Lycaon'){
+            battleRecordFunc('- Active Character is already Lycaon.<br>');
+
+        } else {
+            console.log('Switched to Lycaon');
+            activeCharacter = lycaonBattle;
+            battleRecordFunc('- Switched Character: Lycaon<br>');
+            switchCharacter(activeCharacter);
+            enemyAttack();  
+        }
     }
     rinaSwitch.onclick = function() {
-        console.log('Switched to Rina');
-        activeCharacter = rinaBattle;
-        battleRecord.innerHTML += '- Switched Character: Rina<br>'
-        switchCharacter(activeCharacter);
-        enemyAttack();
+        if (activeCharacter['Name'] === 'Rina'){
+            battleRecordFunc('- Active Character is already Rina.<br>');
+        } else {
+            console.log('Switched to Rina');
+            activeCharacter = rinaBattle;
+            battleRecordFunc('- Switched Character: Rina<br>');
+            heal();
+            switchCharacter(activeCharacter);
+            enemyAttack();
+        }
     }
 
+    let doubleMoveDone = false;
 
     function enemyAttack() {
         let doubleMove;
-
-        if (activeCharacter['Name'] === 'Corin') {
+        
+        if (activeCharacter['Name'] === 'Corin' && !doubleMoveDone) {
             doubleMove = true;
+            doubleMoveDone = true;
         }
         else {
             doubleMove = false;
+            doubleMoveDone = false;
         }
 
         let enemyDmg = activeEnemy['Skill'];
@@ -375,40 +394,51 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         if (activeCharacter['Name'] === 'Lycaon' && stunCounter === 0 && stunBefore === false){
             stunCounter = 2;
             console.log(stunCounter)
-            battleRecord.innerHTML += '> Lycaon Stunned the Enemy! They can\'t attack for 2 turns.<br>'
+            battleRecordFunc('> Lycaon Stunned the Enemy! They can\'t attack for 2 turns.<br>');
             stunBefore = true;
         } 
 
         if (doubleMove === true){
-            battleRecord.innerHTML += '> Corin activate her passive. She has one more turn.<br>'
+            battleRecordFunc('> Corin activate her passive. She has one more turn.<br>');
             doubleMove = false;
         }
         else if (stunCounter > 0){
-            battleRecord.innerHTML += '+ The enemy is stunned, they failed to attack.<br>'
+            battleRecordFunc('+ The enemy is stunned, they failed to attack.<br>');
         }
         else if (activeEnemy['PrepareSkill'] === 1 && prepareSkill === false){
-            battleRecord.innerHTML += '+ Enemy is preparing to attack!<br>'
+            battleRecordFunc('+ Enemy is preparing to attack!<br>');
             prepareSkill = true;
         }
         else {
             if (activeCharacter['Health']-enemyDmg <= 0){
                 activeCharacter['Health'] -= enemyDmg;
                 characterHealth.innerHTML = activeCharacter['Health'];
-                battleRecord.innerHTML += '+ The enemy dealt ' + enemyDmg + ' damage! ' + activeCharacter['Name'] + ' has fallen!<br>';
-                battleRecord.innerHTML += '- Select a new active Character<br>';
+                battleRecordFunc('+ The enemy dealt ' + enemyDmg + ' damage! ' + activeCharacter['Name'] + ' has fallen!<br>');
+                battleRecordFunc('- Select a new active Character<br>');
                 console.log(activeCharacter['Health']);
                 fallenCharacter(activeCharacter);
             }
             else{
                 activeCharacter['Health'] -= enemyDmg;
                 characterHealth.innerHTML = activeCharacter['Health'];
-                battleRecord.innerHTML += '+ The enemy dealt ' + enemyDmg + ' damage to ' + activeCharacter['Name'] + '.<br>';
+                battleRecordFunc('+ The enemy dealt ' + enemyDmg + ' damage to ' + activeCharacter['Name'] + '.<br>');
             }
 
             stunBefore = false;
             prepareSkill = false;
         }
     }
+    function heal() {
+        corinBattle['Health'] += rinaBattle['Passive'];
+        lycaonBattle['Health'] += rinaBattle['Passive'];
+        rinaBattle['Health'] += rinaBattle['Passive'];
+        
+        if(corinBattle['Health'] > corinBattle['MaxHP']){
+            corinBattle['Health'] = corinBattle ['MaxHP'];
+            console.log(corinBattle)
+        }
+    }
+    
 }
 
 function switchEnemy(newEnemy){
@@ -446,7 +476,12 @@ function fallenCharacter(character){
     }
 }
 
-
+function battleRecordFunc(addText) {
+    let placeholder = battleRecord.innerHTML;
+    battleRecord.innerText = '';
+    battleRecord.innerHTML += addText;
+    battleRecord.innerHTML += placeholder;
+}
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
