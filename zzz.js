@@ -37,7 +37,7 @@ lycaon.onclick = function() {
     charName.style = 'font-size: 30px; margin: 10px; border-bottom: 3px solid white;';
     charName.textContent = 'Von Lycaon';
     charDesc.innerHTML = 'As the leader of Victoria\'s Houskeeping, he strives to protect his team and quickly assess situations when in need.';
-    charDesc.innerHTML += '<br><br>Element: Ice<br>Health: 15<br>Skill: Deals 2 dmg<br>Passive: When dealing dmg, enemy is stunned.<br>Stunned Effect: Enemy cannot deal dmg for 2 turns<br>';
+    charDesc.innerHTML += '<br><br>Element: Ice<br>Health: 15<br>Skill: Deals 2 dmg<br>Passive: When dealing dmg or is switched to be the active character, the enemy is stunned.<br>Stunned Effect: Enemy cannot deal dmg for 2 turns<br>';
 }
 rina.onclick = function() {
     charName.style = 'font-size: 30px; margin: 10px; border-bottom: 3px solid white;'
@@ -74,7 +74,7 @@ let alpeca = {'Health': 8 , 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', '
 let alraune = {'Health': 12, 'Skill': 2, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'none', 'url': 'battleImages/alraune.JPG'};
 let armoredHati = {'Health': 15, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'Ice', 'url': 'battleImages/armoredHati.JPG'};
 let assualter = {'Health': 10, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'none', 'url': 'battleImages/assualter.JPG'};
-let blastCrawler = {'Health': 11, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'none', 'url': 'battleImages/blastcrawler.JPG'};
+let blastCrawler = {'Health': 4, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'none', 'url': 'battleImages/blastcrawler.JPG'};
 let bulkyEnforcer = {'Health': 15, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/bulkyEnforcer.JPG'};
 let dullahan = {'Health': 20, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/dullahan.JPG'};
 let fawn = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/fawn.JPG'};
@@ -90,9 +90,9 @@ let thanatosNotorius = {'Heath': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice
     3. Passives
     4. Attribute
 */
-let corinBattle = {'Name': 'Corin', 'Health': 10, 'Skill': 3, 'Passive': false, 'Attribute': 'Physical', 'url': 'battleImages/characterBattle/corinBattle.JPG'};
+let corinBattle = {'Name': 'Corin', 'Health': 10, 'Skill': 2, 'Passive': false, 'Attribute': 'Physical', 'url': 'battleImages/characterBattle/corinBattle.JPG'};
 let lycaonBattle = {'Name': 'Lycaon', 'Health': 15, 'Skill': 2, 'Passive': 2, 'Attribute': 'Ice', 'url': 'battleImages/characterBattle/lycaonBattle.JPG'};
-let rinaBattle = {'Name': 'Rina', 'Health': 12, 'Skill': 1, 'Passive': false, 'Attribute': 'Eletric', 'url': 'battleImages/characterBattle/rinaBattle.JPG'};
+let rinaBattle = {'Name': 'Rina', 'Health': 12, 'Skill': 1, 'Passive': false, 'Attribute': 'Electric', 'url': 'battleImages/characterBattle/rinaBattle.JPG'};
 
 /* Create Button Variables for all buttons used in Battles
     1. Select Character Buttons
@@ -178,6 +178,8 @@ button1.onclick = function (){
     document.getElementById('outerBox1').appendChild(buttonDesc2);
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 let button2 = document.createElement('button');
 button2.id = 'button';
 button2.innerHTML = 'TIME TO BATTLE';
@@ -201,6 +203,8 @@ button2.onclick = function (){
 
 }
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 function selectCharacter(enemy1,enemy2){
     let choice;
 
@@ -217,21 +221,21 @@ function selectCharacter(enemy1,enemy2){
     textTwo.innerText = '';
     textTwo.innerHTML += '1. You and the enemy take turns each to deal dmg.<br>';
     textTwo.innerHTML += '2. Changing characters are considered a turn. Selecting a character at the start of the game does not count as your turn.<br>';
-    textTwo.innerHTML += '3. When a character\'s health reaches 0 or lower, they have fallen and can\'t be used for the whole story.<br>';
-    textTwo.innerHTML += '4. When an enemy\'s health reachs 0 or lower. they perish and the next wave of enemies comes. Each battle has two waves.<br>';
-    textTwo.innerHTML += '5. Enemies have attribute weakness and resistance. Character\'s with the same attribute the enemy is weak to, damage dealt is increased by 1. If the character has the same attribute at the enemy\'s resistance, damge dealt decreased by 1.<br>'
-    textTwo.innerHTML += '6. A battle will always start with your turn.'
+    textTwo.innerHTML += '3. When a character\'s health reaches 0 or lower, they have fallen and can\'t be used for the whole story. The player must choose another active character to continue the battle.<br>';
+    textTwo.innerHTML += '4. When an enemy\'s health reachs 0 or lower, they perish and the next wave of enemies comes. Each battle has two waves.<br>';
+    textTwo.innerHTML += '5. Enemies have attribute weakness and resistance. Character\'s with the same attribute, the enemy is weak to, has damage dealt increased by 1. If the character has the same attribute as the enemy\'s resistance, damage dealt decreased by 1.<br>'
+    textTwo.innerHTML += '6. A battle will always start with your turn.<br>'
 
 
     if (corinBattle['Health'] === 0)  {
         corinButton.remove()
         corinSwitch.remove()
     }
-    else if (lycaonBattle['Health'] === 0)  {
+    if (lycaonBattle['Health'] === 0)  {
         lycaonButton.remove()
         lycaonSwitch.remove()
     }
-    else if (rinaBattle['Health'] === 0)  {
+    if (rinaBattle['Health'] === 0)  {
         rinaButton.remove()
         rinaSwitch.remove()
     }
@@ -254,9 +258,9 @@ function selectCharacter(enemy1,enemy2){
         battleRecord.innerHTML += `> Selected Character: rina<br>`;
         battleInfo(enemy1, enemy2, choice)
     }
-    
-    
 }
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function battleInfo(enemy1,enemy2,activeCharacter) {
     let activeEnemy = enemy1;
@@ -266,16 +270,9 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
     let stunBefore = false;
     let Heal = false;
     let prepareSkill = false;
+    let moveCounter = 0;
 
-    let moveCounter;
-    if (activeCharacter['Name'] === 'Corin'){
-        moveCounter = 2;
-    }
-    else {
-        moveCounter = 1;
-    }
-
-    counter.innerText = 'Moves Left: ' + moveCounter;
+    counter.innerText = 'Move Counter: ' + moveCounter;
 
     characterSelection.style = 'display: none;';
     battleBox.style = 'display: flex;';
@@ -286,9 +283,13 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         
     attackButton.onclick = function () {
         let characterDmg = activeCharacter['Skill'];
-        let enemyDmg = activeEnemy['Skill'];
 
-        if (activeCharacter['Name'] !== 'Rina'){
+        if (activeCharacter['Health'] <= 0){
+            battleRecord.innerHTML += '- Error: Fallen character cannot attack. Change active character. <br>'
+            return;
+        }
+
+        if (activeCharacter['Name'] !== 'Rina' && rinaBattle['Health'] > 0){
             characterDmg += 1;
         }
 
@@ -300,8 +301,11 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         }
 
         if (activeEnemy['Health']-characterDmg <= 0){
+            activeEnemy['Health'] -= characterDmg;
+            enemyHealth.innerHTML = activeEnemy['Health'];
             battleRecord.innerHTML += '> ' + activeCharacter['Name'] + ' dealt ' + characterDmg + ' damage and killed the ethereal!<br>'
-            battleRecord.innerHTML += '> The next Enemy has approached!<br>';
+            battleRecord.innerHTML += '- The next Enemy has approached!<br>';
+            stunBefore = false;
 
             deadEnemy.push(activeEnemy);
             console.log(deadEnemy);
@@ -311,7 +315,6 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
                 console.log('Battle Ends')
             } else{
                 activeEnemy = enemy2;
-
                 switchEnemy(enemy2);
             }
             
@@ -322,43 +325,90 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
 
             battleRecord.innerHTML += '> ' + activeCharacter['Name'] + ' dealt ' + characterDmg + ' damage to the enemy.<br>'
 
-            moveCounter -= 1
-            counter.innerText = 'Moves Left: ' + moveCounter;
+            moveCounter += 1;
 
-            if(stunCounter > 0){
-                stunCounter -= 1
-                console.log(stunCounter)
-            }
+            counter.innerText = 'Move Counter: ' + moveCounter;
 
-            if (activeCharacter['Name'] === 'Lycaon' && stunCounter === 0 && stunBefore === false){
-                stunCounter = 2;
-                console.log(stunCounter)
-                battleRecord.innerHTML += '> Lycaon Stunned the Enemy! They can\'t attack for 2 turns.<br>'
-                stunBefore = true;
-            } 
-
-            
-            if (stunCounter > 0){
-                battleRecord.innerHTML += '> Enemy is stunned, they failed to attack.<br>'
-            }
-            else if (activeEnemy['PrepareSkill'] === 1 && prepareSkill === false){
-                battleRecord.innerHTML += '> Enemy is preparing to attack!<br>'
-                prepareSkill = true;
-            }
-            else {
-                activeCharacter['Health'] -= enemyDmg;
-                characterHealth.innerHTML = activeCharacter['Health'];
-                battleRecord.innerHTML += '> The enemy dealt ' + enemyDmg + ' damge to ' + activeCharacter['Name'] + '.<br>';
-                stunBefore = false;
-                prepareSkill = false;
-            }
+            enemyAttack();
         }
     }
-    //corinSwitch.onclick = 
-    //lycaonSwitch.onclick = 
-    //rinaSwitch.onclick = 
+    corinSwitch.onclick = function() {
+        console.log('Switched to Corin');
+        activeCharacter = corinBattle;
+        battleRecord.innerHTML += '- Switched Character: Corin<br>'
+        switchCharacter(activeCharacter);
+        enemyAttack();
+    }
+    lycaonSwitch.onclick = function() {
+        console.log('Switched to Lycaon');
+        activeCharacter = lycaonBattle;
+        battleRecord.innerHTML += '- Switched Character: Lycaon<br>'
+        switchCharacter(activeCharacter);
+        enemyAttack();
+    }
+    rinaSwitch.onclick = function() {
+        console.log('Switched to Rina');
+        activeCharacter = rinaBattle;
+        battleRecord.innerHTML += '- Switched Character: Rina<br>'
+        switchCharacter(activeCharacter);
+        enemyAttack();
+    }
 
-    
+
+    function enemyAttack() {
+        let doubleMove;
+
+        if (activeCharacter['Name'] === 'Corin') {
+            doubleMove = true;
+        }
+        else {
+            doubleMove = false;
+        }
+
+        let enemyDmg = activeEnemy['Skill'];
+
+        if(stunCounter > 0){
+            stunCounter -= 1
+            console.log(stunCounter)
+        }
+
+        if (activeCharacter['Name'] === 'Lycaon' && stunCounter === 0 && stunBefore === false){
+            stunCounter = 2;
+            console.log(stunCounter)
+            battleRecord.innerHTML += '> Lycaon Stunned the Enemy! They can\'t attack for 2 turns.<br>'
+            stunBefore = true;
+        } 
+
+        if (doubleMove === true){
+            battleRecord.innerHTML += '> Corin activate her passive. She has one more turn.<br>'
+            doubleMove = false;
+        }
+        else if (stunCounter > 0){
+            battleRecord.innerHTML += '+ The enemy is stunned, they failed to attack.<br>'
+        }
+        else if (activeEnemy['PrepareSkill'] === 1 && prepareSkill === false){
+            battleRecord.innerHTML += '+ Enemy is preparing to attack!<br>'
+            prepareSkill = true;
+        }
+        else {
+            if (activeCharacter['Health']-enemyDmg <= 0){
+                activeCharacter['Health'] -= enemyDmg;
+                characterHealth.innerHTML = activeCharacter['Health'];
+                battleRecord.innerHTML += '+ The enemy dealt ' + enemyDmg + ' damage! ' + activeCharacter['Name'] + ' has fallen!<br>';
+                battleRecord.innerHTML += '- Select a new active Character<br>';
+                console.log(activeCharacter['Health']);
+                fallenCharacter(activeCharacter);
+            }
+            else{
+                activeCharacter['Health'] -= enemyDmg;
+                characterHealth.innerHTML = activeCharacter['Health'];
+                battleRecord.innerHTML += '+ The enemy dealt ' + enemyDmg + ' damage to ' + activeCharacter['Name'] + '.<br>';
+            }
+
+            stunBefore = false;
+            prepareSkill = false;
+        }
+    }
 }
 
 function switchEnemy(newEnemy){
@@ -368,12 +418,38 @@ function switchEnemy(newEnemy){
     enemyWeak.innerHTML = newEnemy['Weak'];
 }
 
-function switchCharacter (newCharacter) {
+function switchCharacter(newCharacter) {
     characterImg.src = newCharacter['url'];
     characterHealth.innerHTML = newCharacter['Health'];
     characterAttribute.innerHTML = newCharacter['Attribute'];
 }
 
-function battleEnding() {
+function fallenCharacter(character){
+    let fallen = []
+    fallen.push(character);
+    console.log(fallen);
+    if (fallen.length === 3){
+        battleEnding()
+    } else {
+        if (character['Name'] === 'Corin'){
+            corinSwitch.remove()
+            corinButton.remove()
+        }
+        else if (character['Name'] === 'Lycaon'){
+            lycaonSwitch.remove()
+            lycaonBattle.remove()
+        }
+        else if (character['Name'] === 'Rina'){
+            rinaSwitch.remove()
+            rinaButton.remove()
+        }
+    }
+}
 
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function battleEnding() {
+    console.log('dead ending.')
 }
