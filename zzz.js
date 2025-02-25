@@ -90,7 +90,7 @@ let thanatosNotorius = {'Heath': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice
     3. Passives
     4. Attribute
 */
-let corinBattle = {'Name': 'Corin', 'Health': 11, 'Skill': 2, 'Attribute': 'Physical', 'url': 'battleImages/characterBattle/corinBattle.JPG', 'MaxHP' : 12};
+let corinBattle = {'Name': 'Corin', 'Health': 12, 'Skill': 3, 'Attribute': 'Physical', 'url': 'battleImages/characterBattle/corinBattle.JPG', 'MaxHP' : 12};
 let lycaonBattle = {'Name': 'Lycaon', 'Health': 18, 'Skill': 2, 'Attribute': 'Ice', 'url': 'battleImages/characterBattle/lycaonBattle.JPG', 'MaxHP' : 18};
 let rinaBattle = {'Name': 'Rina', 'Health': 14, 'Skill': 1, 'Passive': 2, 'Attribute': 'Electric', 'url': 'battleImages/characterBattle/rinaBattle.JPG', 'MaxHP' : 14};
 
@@ -199,8 +199,54 @@ button2.onclick = function (){
     textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg to every party member.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/alpeca.jpg\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.jpg\' id=\'etherImage\'>';
 
-    selectCharacter(dullahan, blastCrawler);
+    selectCharacter(alpeca, blastCrawler);
 
+    nodeImage.src = 'battleImages/extraImages/Battle1.png';
+
+    button2.remove()
+    buttonDesc2.remove()
+
+    document.getElementById('outerBox1').appendChild(button3);
+    document.getElementById('outerBox1').appendChild(buttonDesc3);
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button3 = document.createElement('button');
+button3.id = 'button';
+button3.innerHTML = 'Continue in the Hollow';
+
+let buttonDesc3 = document.createElement('p')
+buttonDesc3.id = 'butDesc';
+buttonDesc3.innerHTML = 'Continue with the Proxy and head<br>to the first Data Pile.';
+
+//Node 3 Function
+button3.onclick = function (){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 3 Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 3'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'Data Piles';
+    titleTwo.innerHTML = 'Data Pile 1: Data Collection Completed';
+    
+    //change text 1
+    textOne.innerText = ''; 
+    textOne.innerHTML += 'Data Piles are beacons located inside the Hollow, scattered across the area. Data piles can collect data in its surrondings. This data includes biothermal signatures. If you collect enough data piles, you can locate people or ethereals. You can locate Ellen!';
+    //change text 2
+    textTwo.innerHTML = 'Lycaon\'s company and the Proxy arrived to the first data pile of 3. While the proxy collects the data, Lycaon checked the surrondings for ethereals while Corin and Rina look for clues of Ellen.<br>';
+    textTwo.innerHTML += '<br>Proxy: Okay guys! I\'ve collected the data and there are three paths we could go from here.<br>'
+    textTwo.innerHTML += '<br>Left -> High Ether Activity<br>Straight -> Low Ether Activity<br>Right -> No activity, however a very dangerous terrain of debris<br>'
+    textTwo.innerHTML += '<br>Meanwhile...<br>Ellen: Gahhh! I don\'t think I can handle the Ethereals any longer. I have to hurry!'
+    //change Image
+    nodeImage.src = 'nodeImages/zzz_combat.jpg';
+
+    //Remove the button and button description
+    button3.remove();
+    buttonDesc3.remove();
+    // Add the new button and button description for next node
+    
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -312,8 +358,9 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             console.log(deadEnemy);
 
             if (deadEnemy.length === 2){
-                //END BATTLE
-                console.log('Battle Ends')
+                battleRecord.innerText = '';
+                console.log('Battle Ended')
+                endBattle();
             } else{
                 activeEnemy = enemy2;
                 switchEnemy(enemy2);
@@ -333,7 +380,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             enemyAttack();
         }
     }
-    // CHANGE FORMAT LIKE CORINS TO THE OTHERSSSSSSSSS
+
     corinSwitch.onclick = function() {
         if (activeCharacter['Name'] === 'Corin'){
             battleRecordFunc('- Active Character is already Corin.<br>')
@@ -428,6 +475,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             prepareSkill = false;
         }
     }
+
     function heal() {
         corinBattle['Health'] += rinaBattle['Passive'];
         lycaonBattle['Health'] += rinaBattle['Passive'];
@@ -435,10 +483,25 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         
         if(corinBattle['Health'] > corinBattle['MaxHP']){
             corinBattle['Health'] = corinBattle ['MaxHP'];
-            console.log(corinBattle)
         }
+        if(lycaonBattle['Health'] > lycaonBattle['MaxHP']){
+            lycaonBattle['Health'] = lycaonBattle['MaxHP'];
+        }
+        if(rinaBattle['Health'] > rinaBattle['MaxHP']){
+            rinaBattle['Health'] = rinaBattle ['MaxHP'];
+        }
+
+        console.log('Party was healed.')
     }
+
     
+}
+
+function endBattle() {
+    battleUI.style = 'display: none;';
+    buttonBox.style = 'display: flex;';
+    nodeImage.style = 'display: flex;';
+    window.alert('Wipeout! You finished the battle.');
 }
 
 function switchEnemy(newEnemy){
@@ -482,6 +545,8 @@ function battleRecordFunc(addText) {
     battleRecord.innerHTML += addText;
     battleRecord.innerHTML += placeholder;
 }
+
+
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
