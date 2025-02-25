@@ -70,19 +70,19 @@ let nodeImage = document.getElementById('nodeImage');
     4. Weakness
     5. Resistance
 */
-let alpeca = {'Health': 8 , 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none'};
-let alraune = {'Health': 12, 'Skill': 2, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'none'};
-let armoredHati = {'Health': 15, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'Ice'};
-let assualter = {'Health': 10, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'none'};
-let blastCrawler = {'Health': 4, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'none'};
-let bulkyEnforcer = {'Health': 15, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Ice', 'Res': 'Electric'};
-let dullahan = {'Health': 20, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice'};
-let fawn = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none'};
-let fawnEnergized = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'Electric'};
-let mandrake = {'Health': 15, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Electric'};
-let shatterBug = {'Health': 8, 'Skill': 1, 'PrepareSkill': 0, 'Weak': 'none', 'Res': 'Physical'};
-let thanatos = {'Health': 25, 'Skill': 5, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice'};
-let thanatosNotorius = {'Heath': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Physical'};
+let alpeca = {'Health': 8 , 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/alpeca.JPG'};
+let alraune = {'Health': 12, 'Skill': 2, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'none', 'url': 'battleImages/alraune.JPG'};
+let armoredHati = {'Health': 15, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'Ice', 'url': 'battleImages/armoredHati.JPG'};
+let assualter = {'Health': 10, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'none', 'url': 'battleImages/assualter.JPG'};
+let blastCrawler = {'Health': 11, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'none', 'url': 'battleImages/blastcrawler.JPG'};
+let bulkyEnforcer = {'Health': 15, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/bulkyEnforcer.JPG'};
+let dullahan = {'Health': 20, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/dullahan.JPG'};
+let fawn = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/fawn.JPG'};
+let fawnEnergized = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'Electric', 'url': 'battleImages/fawnEnergized.JPG'};
+let mandrake = {'Health': 15, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/mandrake.JPG'};
+let shatterBug = {'Health': 8, 'Skill': 1, 'PrepareSkill': 0, 'Weak': 'none', 'Res': 'Physical', 'url': 'battleImages/shatterbug.JPG'};
+let thanatos = {'Health': 25, 'Skill': 5, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/thanatos.JPG'};
+let thanatosNotorius = {'Heath': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Physical', 'url': 'battleImages/thanatosNotorious.JPG'};
 
 /*Create Character Variables for Battles
     1. Health
@@ -90,9 +90,9 @@ let thanatosNotorius = {'Heath': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice
     3. Passives
     4. Attribute
 */
-let corinBattle = {'Health': 10, 'Skill': 3, 'Passive': false, 'Attribute': 'Physical'};
-let lycaonBattle = {'Health': 15, 'Skill': 2, 'Passive': 2, 'Attribute': 'Ice'};
-let rinaBattle = {'Health': 12, 'Skill': 1, 'Passive': false, 'Attribute': 'Eletric'};
+let corinBattle = {'Name': 'Corin', 'Health': 10, 'Skill': 3, 'Passive': false, 'Attribute': 'Physical', 'url': 'battleImages/characterBattle/corinBattle.JPG'};
+let lycaonBattle = {'Name': 'Lycaon', 'Health': 15, 'Skill': 2, 'Passive': 2, 'Attribute': 'Ice', 'url': 'battleImages/characterBattle/lycaonBattle.JPG'};
+let rinaBattle = {'Name': 'Rina', 'Health': 12, 'Skill': 1, 'Passive': false, 'Attribute': 'Eletric', 'url': 'battleImages/characterBattle/rinaBattle.JPG'};
 
 /* Create Button Variables for all buttons used in Battles
     1. Select Character Buttons
@@ -122,6 +122,7 @@ let attackButton = document.getElementById('battleAttack');
     10. CharacterSelection: Appears before battles begin
     11. Battle: Appears during battle
     12. BattleChoice: Appears during battle
+    13. Move Counter
 */
 let characterHealth = document.getElementById('health1');
 let enemyHealth = document.getElementById('health2');
@@ -131,6 +132,7 @@ let enemyWeak = document.getElementById('weakness');
 let battleRecord = document.getElementById('battleHisBox');
 let characterImg = document.getElementById('battleCharacter');
 let enemyImg = document.getElementById('battleEnemy');
+let counter = document.getElementById('moveCounter')
 
 let buttonBox = document.getElementById('buttonBox');
 let battleUI = document.getElementById('battleUI');
@@ -159,7 +161,8 @@ button1.onclick = function (){
     titleTwo.innerHTML = 'Entering the Hollow';
     
     //change text 1
-    textOne.innerHTML = '*Door Bell Rings*<br>Wise: Welcome to the Random Play! Oh! Its you Lycaon how may I help?<br>Lycaon: Ellen is lost in a Hollow I need your help.<br>Wise: Oh is that so? I\'ll alert Belle. Here\'s Eous. Take him and we can help.<br>Lycaon: Thank you for your help. I promise to compensate you.<br>Wise: It\'s fine, no need to pay me. I\'m doing this as a friend. Now go and get to the Hollow.';
+    textOne.innerText = ''; 
+    textOne.innerHTML += '*Door Bell Rings*<br>Wise: Welcome to the Random Play! Oh! Its you Lycaon how may I help?<br>Lycaon: Ellen is lost in a Hollow I need your help.<br>Wise: Oh is that so? I\'ll alert Belle. Here\'s Eous. Take him and we can help.<br>Lycaon: Thank you for your help. I promise to compensate you.<br>Wise: It\'s fine, no need to pay me. I\'m doing this as a friend. Now go and get to the Hollow.';
     textOne.innerHTML += '<br><br>Eous: A Bangboo which the Proxy can communicate others in the Hollow. The Proxy can also do some handy things like locate people using Data Piles.'
     //change text 2
     textTwo.innerHTML = 'Victoria Housekeeping and little Eous entered the Hollow. Eous begins to locate Data Piles to which they can find Ellen in the Hollow. As they continue throuhgout the Hollow, they suddenly encounter Ethereals!';
@@ -194,15 +197,19 @@ button2.onclick = function (){
     textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg to every party member.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/alpeca.jpg\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.jpg\' id=\'etherImage\'>';
 
-    battle(alpeca, blastCrawler);
+    selectCharacter(alpeca, blastCrawler);
 
 }
 
-function battle(enemy1,enemy2) {
-    let activeCharacter = selectCharacter();
-    let activeEnemy = enemy1;
+function selectCharacter(enemy1,enemy2){
+    let choice;
 
-    ;
+    buttonBox.style = 'display: none;';
+    battleUI.style = 'display: flex;';
+    characterSelection.style = 'display: flex;';
+
+    //Description Box: Removes image for now....
+    nodeImage.style = 'display: none;';
 
     //Description Box Changes: Titles and Adds battle rules
     titleOne.innerHTML = 'Battle Info'
@@ -210,47 +217,162 @@ function battle(enemy1,enemy2) {
     textTwo.innerText = '';
     textTwo.innerHTML += '1. You and the enemy take turns each to deal dmg.<br>';
     textTwo.innerHTML += '2. Changing characters are considered a turn. Selecting a character at the start of the game does not count as your turn.<br>';
-    textTwo.innerHTML += '3. When a character\'s Health reaches 0 or lower, they have fallen and can\'t be used for the whole story.<br>';
-    textTwo.innerHTML += '4. Enemies have attribute weakness and resistance. Character\'s with the same attribute the enemy is weak to, damage dealt is increased by 1. If the character has the same attribute at the enemy\'s resistance, damge dealt decreased by 1.'
-    //Description Box: Removes image for now....
-    nodeImage.style = 'display: none;';
+    textTwo.innerHTML += '3. When a character\'s health reaches 0 or lower, they have fallen and can\'t be used for the whole story.<br>';
+    textTwo.innerHTML += '4. When an enemy\'s health reachs 0 or lower. they perish and the next wave of enemies comes. Each battle has two waves.<br>';
+    textTwo.innerHTML += '5. Enemies have attribute weakness and resistance. Character\'s with the same attribute the enemy is weak to, damage dealt is increased by 1. If the character has the same attribute at the enemy\'s resistance, damge dealt decreased by 1.<br>'
+    textTwo.innerHTML += '6. A battle will always start with your turn.'
 
-}
-
-function selectCharacter(){
-    let choice;
-
-    buttonBox.style = 'display: none;';
-    battleUI.style = 'display: flex;';
-    characterSelection.style = 'display: flex;';
 
     if (corinBattle['Health'] === 0)  {
         corinButton.remove()
+        corinSwitch.remove()
     }
     else if (lycaonBattle['Health'] === 0)  {
         lycaonButton.remove()
+        lycaonSwitch.remove()
     }
     else if (rinaBattle['Health'] === 0)  {
         rinaButton.remove()
+        rinaSwitch.remove()
     }
 
     corinButton.onclick = function (){
         choice = corinBattle;
-        console.log('hey!');
-        return choice
+        console.log('Selected active character: Corin');
+        battleRecord.innerHTML += `> Selected Character: Corin<br>`;
+        battleInfo(enemy1, enemy2, choice);
     }
     lycaonButton.onclick = function (){
         choice = lycaonBattle;
-        console.log('hey!');
+        console.log('Selected active character: Lycaon');
+        battleRecord.innerHTML += `> Selected Character: lycaon<br>`;
+        battleInfo(enemy1, enemy2, choice);
     }
     rinaButton.onclick = function (){
         choice = rinaBattle;
-        console.log('hey!');
+        console.log('Selected active character: Rina');
+        battleRecord.innerHTML += `> Selected Character: rina<br>`;
+        battleInfo(enemy1, enemy2, choice)
     }
-
+    
+    
 }
 
+function battleInfo(enemy1,enemy2,activeCharacter) {
+    let activeEnemy = enemy1;
+    let deadEnemy = [];
 
+    let stunCounter = 0;
+    let stunBefore = false;
+    let Heal = false;
+    let prepareSkill = false;
+
+    let moveCounter;
+    if (activeCharacter['Name'] === 'Corin'){
+        moveCounter = 2;
+    }
+    else {
+        moveCounter = 1;
+    }
+
+    counter.innerText = 'Moves Left: ' + moveCounter;
+
+    characterSelection.style = 'display: none;';
+    battleBox.style = 'display: flex;';
+    battleChoice.style = 'display: flex;';
+
+    switchCharacter(activeCharacter);
+    switchEnemy(activeEnemy);    
+        
+    attackButton.onclick = function () {
+        let characterDmg = activeCharacter['Skill'];
+        let enemyDmg = activeEnemy['Skill'];
+
+        if (activeCharacter['Name'] !== 'Rina'){
+            characterDmg += 1;
+        }
+
+        if (activeCharacter['Attribute'] === activeEnemy['Res']){
+            characterDmg -= 1;
+        }
+        else if (activeCharacter['Attribute'] === activeEnemy['Weak']){
+            characterDmg += 1;
+        }
+
+        if (activeEnemy['Health']-characterDmg <= 0){
+            battleRecord.innerHTML += '> ' + activeCharacter['Name'] + ' dealt ' + characterDmg + ' damage and killed the ethereal!<br>'
+            battleRecord.innerHTML += '> The next Enemy has approached!<br>';
+
+            deadEnemy.push(activeEnemy);
+            console.log(deadEnemy);
+
+            if (deadEnemy.length === 2){
+                //END BATTLE
+                console.log('Battle Ends')
+            } else{
+                activeEnemy = enemy2;
+
+                switchEnemy(enemy2);
+            }
+            
+        }
+        else {
+            activeEnemy['Health'] -= characterDmg;
+            enemyHealth.innerHTML = activeEnemy['Health'];
+
+            battleRecord.innerHTML += '> ' + activeCharacter['Name'] + ' dealt ' + characterDmg + ' damage to the enemy.<br>'
+
+            moveCounter -= 1
+            counter.innerText = 'Moves Left: ' + moveCounter;
+
+            if(stunCounter > 0){
+                stunCounter -= 1
+                console.log(stunCounter)
+            }
+
+            if (activeCharacter['Name'] === 'Lycaon' && stunCounter === 0 && stunBefore === false){
+                stunCounter = 2;
+                console.log(stunCounter)
+                battleRecord.innerHTML += '> Lycaon Stunned the Enemy! They can\'t attack for 2 turns.<br>'
+                stunBefore = true;
+            } 
+
+            
+            if (stunCounter > 0){
+                battleRecord.innerHTML += '> Enemy is stunned, they failed to attack.<br>'
+            }
+            else if (activeEnemy['PrepareSkill'] === 1 && prepareSkill === false){
+                battleRecord.innerHTML += '> Enemy is preparing to attack!<br>'
+                prepareSkill = true;
+            }
+            else {
+                activeCharacter['Health'] -= enemyDmg;
+                characterHealth.innerHTML = activeCharacter['Health'];
+                battleRecord.innerHTML += '> The enemy dealt ' + enemyDmg + ' damge to ' + activeCharacter['Name'] + '.<br>';
+                stunBefore = false;
+                prepareSkill = false;
+            }
+        }
+    }
+    //corinSwitch.onclick = 
+    //lycaonSwitch.onclick = 
+    //rinaSwitch.onclick = 
+
+    
+}
+
+function switchEnemy(newEnemy){
+    enemyImg.src = newEnemy['url'];
+    enemyHealth.innerHTML = newEnemy['Health'];
+    enemyRes.innerHTML = newEnemy['Res'];
+    enemyWeak.innerHTML = newEnemy['Weak'];
+}
+
+function switchCharacter (newCharacter) {
+    characterImg.src = newCharacter['url'];
+    characterHealth.innerHTML = newCharacter['Health'];
+    characterAttribute.innerHTML = newCharacter['Attribute'];
+}
 
 function battleEnding() {
 
