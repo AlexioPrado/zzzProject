@@ -53,6 +53,8 @@ rina.onclick = function() {
     2. Description Title 1 & 2
     3. Description Text 1 & 2
     4. Description Image
+    5. Character Description boxes
+    6. Extra Buttons
 */
 let nodeIndicator = document.getElementById('nodeCode');
 let titleOne = document.getElementById('descTitle1');
@@ -60,6 +62,12 @@ let titleTwo = document.getElementById('descTitle2');
 let textOne = document.getElementById('descText1');
 let textTwo = document.getElementById('descText2');
 let nodeImage = document.getElementById('nodeImage');
+let char = document.getElementById('char');
+let charDescClass = document.getElementById('charDesc');
+
+/* Extra Buttons*/
+let buttonE2 = document.getElementById('outerBox2');
+let buttonE3 = document.getElementById('outerBox3')
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -78,7 +86,7 @@ let blastCrawler = {'Health': 4, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'none', 
 let bulkyEnforcer = {'Health': 15, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/bulkyEnforcer.JPG'};
 let dullahan = {'Health': 20, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/dullahan.JPG'};
 let fawn = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/fawn.JPG'};
-let fawnEnergized = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'Electric', 'url': 'battleImages/fawnEnergized.JPG'};
+let fawnEnergized = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'Physical', 'url': 'battleImages/fawnEnergized.JPG'};
 let mandrake = {'Health': 15, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/mandrake.JPG'};
 let shatterBug = {'Health': 8, 'Skill': 1, 'PrepareSkill': 0, 'Weak': 'none', 'Res': 'Physical', 'url': 'battleImages/shatterbug.JPG'};
 let thanatos = {'Health': 25, 'Skill': 5, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/thanatos.JPG'};
@@ -190,18 +198,16 @@ buttonDesc2.innerHTML = 'A turn based battle<br>between ethereals!<br>Remember: 
 
 //Node 2 Function
 button2.onclick = function (){
-    scroll(0,0);
-    console.log('Node 2 Done!');
+    scroll(0,0);//Scrolls to top of page
+    console.log('Node 2 Done!'); //Personal Check if function is called
 
-    nodeIndicator.innerHTML = 'Node: 3';
+    nodeIndicator.innerHTML = 'Node: 3'; //Change node number
 
     textOne.innerHTML = 'Alpeca:<br>A quite humanoid Ethereal figure which deals 2 dmg every swing of its sharp arm-like blade.<br>';
     textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg to every party member.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/alpeca.jpg\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.jpg\' id=\'etherImage\'>';
 
     selectCharacter(alpeca, blastCrawler);
-
-    nodeImage.src = 'battleImages/extraImages/Battle1.png';
 
     button2.remove()
     buttonDesc2.remove()
@@ -214,11 +220,11 @@ button2.onclick = function (){
 
 let button3 = document.createElement('button');
 button3.id = 'button';
-button3.innerHTML = 'Continue in the Hollow';
+button3.innerHTML = 'Continue in the hollow';
 
 let buttonDesc3 = document.createElement('p')
 buttonDesc3.id = 'butDesc';
-buttonDesc3.innerHTML = 'Continue with the Proxy and head<br>to the first Data Pile.';
+buttonDesc3.innerHTML = 'Continue with the Proxy and head to the first Data Pile.';
 
 //Node 3 Function
 button3.onclick = function (){
@@ -233,7 +239,8 @@ button3.onclick = function (){
     
     //change text 1
     textOne.innerText = ''; 
-    textOne.innerHTML += 'Data Piles are beacons located inside the Hollow, scattered across the area. Data piles can collect data in its surrondings. This data includes biothermal signatures. If you collect enough data piles, you can locate people or ethereals. You can locate Ellen!';
+    textOne.innerHTML += 'Data Piles are beacons located inside the Hollow, scattered across the area. Data piles can collect data in its surrondings. This data includes biothermal signatures. If you collect enough data piles, you can locate people or ethereals. You can locate Ellen!<br>';
+    textOne.innerHTML += '<br><img src=\'nodeImages/Node3.png\' id=\'nodeImage\'>'
     //change text 2
     textTwo.innerHTML = 'Lycaon\'s company and the Proxy arrived to the first data pile of 3. While the proxy collects the data, Lycaon checked the surrondings for ethereals while Corin and Rina look for clues of Ellen.<br>';
     textTwo.innerHTML += '<br>Proxy: Okay guys! I\'ve collected the data and there are three paths we could go from here.<br>'
@@ -246,8 +253,409 @@ button3.onclick = function (){
     button3.remove();
     buttonDesc3.remove();
     // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(button4a);
+    document.getElementById('outerBox2').appendChild(button4b);
+    document.getElementById('outerBox3').appendChild(button4c);
+    document.getElementById('outerBox1').appendChild(buttonDesc4a);
+    document.getElementById('outerBox2').appendChild(buttonDesc4b);
+    document.getElementById('outerBox3').appendChild(buttonDesc4c);
+    //Display new buttons for this node
+    buttonE2.style = 'display: flex;';
+    buttonE3.style = 'display: flex;';
     
 }
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button4a = document.createElement('button');
+button4a.id = 'button';
+button4a.innerHTML = 'Move Left';
+
+let buttonDesc4a = document.createElement('p')
+buttonDesc4a.id = 'butDesc';
+buttonDesc4a.innerHTML = 'High Ether Activity. Dangerous ethereals but great rewards.';
+
+let button4b = document.createElement('button');
+button4b.id = 'button';
+button4b.innerHTML = 'Move Straight';
+
+let buttonDesc4b = document.createElement('p')
+buttonDesc4b.id = 'butDesc';
+buttonDesc4b.innerHTML = 'Low Ether Activity. Not much ethereals and little reward.';
+
+let button4c = document.createElement('button');
+button4c.id = 'button';
+button4c.innerHTML = 'Move Right';
+
+let buttonDesc4c = document.createElement('p')
+buttonDesc4c.id = 'butDesc';
+buttonDesc4c.innerHTML = 'Dangerous terrain. An accident waiting to happen.';
+
+//Node 4c Function
+button4c.onclick = function (){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 4c Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 4c'; //Change node number
+    
+    //change title
+    titleOne.innerText = '';
+    titleTwo.innerHTML = 'Dangerous Debris Ahead!';
+    
+    //change text 1
+    textOne.innerText = ''; 
+    //change text 2
+    textTwo.innerHTML = 'Lycaon: Let\'s go right. We don\'t want to risk ourselves in fighting ethereals when we could pass them.<br>';
+    textTwo.innerHTML += 'Corin: Sir, wouldn\'t it be quicker to go through the ether activity than go around? We need to save Ellen quick!<br>';
+    textTwo.innerHTML += 'Lycaon: We can only save her if we are alive. We are here to find her, but we must stay safe as well. Now let\'s get a move on!'
+    //change Image
+    nodeImage.src = 'nodeImages/Node4c.jpg';
+
+    //Remove the button and button description
+    button4a.remove();
+    buttonDesc4a.remove();
+    button4b.remove();
+    buttonDesc4b.remove();
+    button4c.remove();
+    buttonDesc4c.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(button5c);
+    document.getElementById('outerBox1').appendChild(buttonDesc5c);
+    //Display new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
+
+//Node 4b Function
+button4b.onclick = function (){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 4b Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 4b'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'Resonium';
+    titleTwo.innerHTML = 'Ethereals Ahead!';
+    
+    //change text 1
+    textOne.innerText = 'Resonium are effects which can enhance the party. Especially in high ether activity, you can gain better resonium.'; 
+    //change text 2
+    textTwo.innerHTML = 'Lycaon: Let\'s go straight. We don\'t want to encounter stronger enemies this early. We need to be capable enought to find Ellen and still be there quick enough before she become and ethereal.<br>';
+    textTwo.innerHTML += 'Corin: That sounds good, but we still might meet some ethereals along the way.<br>';
+    textTwo.innerHTML += 'Rina: Don\'t worry Corin, they\'ll be easy to defeat. Trust us and trust yourself. We can defeat them.<br>';
+    textTwo.innerHTML += 'Corin: Oh oh, looks like there are some ahead of us. Guys!!!'
+    //change Image
+    nodeImage.src = 'nodeImages/Node4ab.jpg';
+
+    //Remove the button and button description
+    button4a.remove();
+    buttonDesc4a.remove();
+    button4b.remove();
+    buttonDesc4b.remove();
+    button4c.remove();
+    buttonDesc4c.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(button5b);
+    document.getElementById('outerBox1').appendChild(buttonDesc5b);
+    //Display new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
+
+//Node 4a Function
+button4a.onclick = function (){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 4a Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 4a'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'Resonium';
+    titleTwo.innerHTML = 'Ethereals Ahead!';
+    
+    //change text 1
+    textOne.innerText = 'Resonium are effects which can enhance the party. Especially in high ether activity, you can gain better resonium.'; 
+    //change text 2
+    textTwo.innerHTML = 'Lycaon: Let\'s go left. Ellen is kind of an Ether magnet. Maybe this high ether activity was caused by many ethereals following Ellen.<br>';
+    textTwo.innerHTML += 'Corin: I hope the Ethereals won\t go for us instead. *Gulp*<br>';
+    textTwo.innerHTML += 'Rina: Don\t worry sweetie, I\'m sure they won\'t come for- Oh and there they are. Oops I jinxed it.<br>'
+    textTwo.innerHTML += 'Lycaon: Everyone, get ready for battle!'
+    //change Image
+    nodeImage.src = 'nodeImages/Node4ab.jpg';
+
+    //Remove the button and button description
+    button4a.remove();
+    buttonDesc4a.remove();
+    button4b.remove();
+    buttonDesc4b.remove();
+    button4c.remove();
+    buttonDesc4c.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(button5a);
+    document.getElementById('outerBox1').appendChild(buttonDesc5a);
+    //Display new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button5a = document.createElement('button');
+button5a.id = 'button';
+button5a.innerHTML = 'TIME TO BATTLE';
+
+let buttonDesc5a = document.createElement('p')
+buttonDesc5a.id = 'butDesc';
+buttonDesc5a.innerHTML = 'This isn\'t your first rodeo. Just fight like you usually do. Remember. These Ethereals are dangerous.';
+
+let button5b = document.createElement('button');
+button5b.id = 'button';
+button5b.innerHTML = 'TIME TO BATTLE';
+
+let buttonDesc5b = document.createElement('p')
+buttonDesc5b.id = 'butDesc';
+buttonDesc5b.innerHTML = 'This isn\'t your first rodeo. Just fight like you usually do. Remember. These Ethereals are dangerous.';
+
+let button5c = document.createElement('button');
+button5c.id = 'button';
+button5c.innerHTML = 'Continue to the Debris';
+
+let buttonDesc5c = document.createElement('p')
+buttonDesc5c.id = 'butDesc';
+buttonDesc5c.innerHTML = 'It may be risky, but Lycaon believes this path will be safer for everyone.';
+
+
+
+//Node 5a Function
+button5a.onclick = function (){
+    scroll(0,0);//Scrolls to top of page
+    console.log('Node 5 Done!'); //Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 5a'; //Change node number
+
+    textOne.innerHTML = 'Alraune:<br>Resembling a flower, it attacks with a bubble of spores dealing 2 dmg.<br>';
+    textOne.innerHTML += 'Armored Hati:<br>A very tough-exteriored Ethereal and a heavy hitter. It deals 3 dmg.<br><br>';
+    textOne.innerHTML += '<img src=\'battleImages/alraune.jpg\' id=\'etherImage\'> <img src=\'battleImages/armoredHati.jpg\' id=\'etherImage\'>';
+
+    selectCharacter(alraune, armoredHati);
+
+    button5a.remove()
+    buttonDesc5a.remove()
+
+    document.getElementById('outerBox1').appendChild(button6aA);
+    document.getElementById('outerBox1').appendChild(buttonDesc6aA);
+    document.getElementById('outerBox2').appendChild(button6aB);
+    document.getElementById('outerBox2').appendChild(buttonDesc6aB);
+
+    buttonE2.style = 'display: flex;';
+}
+
+//Node 5b Function
+button5b.onclick = function (){
+    scroll(0,0);//Scrolls to top of page
+    console.log('Node 5 Done!'); //Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 5a'; //Change node number
+
+    textOne.innerHTML = 'Fawn:<br>An ethereal formed by a stoplight. It\'s use of a train-track-sign pole deals 2 dmg.<br>';
+    textOne.innerHTML += 'Fawn Energized:<br>An ethereal with the form just like a fawn but its ether make up is quite different, having different effects of attributes from the character. It deals 2 dmg as well.<br><br>';
+    textOne.innerHTML += '<img src=\'battleImages/fawn.jpg\' id=\'etherImage\'> <img src=\'battleImages/fawnEnergized.jpg\' id=\'etherImage\'>';
+
+    selectCharacter(fawn, fawnEnergized);
+
+    button5b.remove()
+    buttonDesc5b.remove()
+
+    document.getElementById('outerBox1').appendChild(button6b);
+    document.getElementById('outerBox1').appendChild(buttonDesc6b);
+
+    buttonE2.style = 'display: none;';
+}
+
+button5c.onclick = function() {
+    fallenEnding()
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button6aA = document.createElement('button');
+button6aA.id = 'button';
+button6aA.innerHTML = 'DMG Increase';
+
+let buttonDesc6aA = document.createElement('p')
+buttonDesc6aA.id = 'butDesc';
+buttonDesc6aA.innerHTML = 'Resonium: DMG increased by 2';
+
+let button6aB = document.createElement('button');
+button6aB.id = 'button';
+button6aB.innerHTML = 'Healing Increase';
+
+let buttonDesc6aB = document.createElement('p')
+buttonDesc6aB.id = 'butDesc';
+buttonDesc6aB.innerHTML = 'Resonium: Healing increased by 2';
+
+let button6b = document.createElement('button');
+button6b.id = 'button';
+button6b.innerHTML = 'HP Increase';
+
+let buttonDesc6b = document.createElement('p')
+buttonDesc6b.id = 'butDesc';
+buttonDesc6b.innerHTML = 'Resonium: Increase Max HP by 2';
+
+button6aA.onclick = function() {
+    corinBattle['Skill'] += 2;
+    lycaonBattle['Skill'] += 2;
+    rinaBattle['Skill'] += 2;
+
+    node6();
+}
+
+button6aB.onclick = function() {
+    rinaBattle['Passive'] += 2
+
+    node6();
+}
+
+button6b.onclick = function() {
+    corinBattle['MaxHP'] += 2;
+    lycaonBattle['MaxHP'] += 2;
+    rinaBattle['MaxHP'] += 2;
+
+    node6();
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function node6() {
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 6 Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 6'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'Continuing through the Hollow';
+    titleTwo.innerHTML = 'Data Pile 2: Data Collection Complete';
+    
+    //change text 1
+    textOne.innerText = 'Everyone succesfuly defeated the ethereals and gained a resonium. After their battle, they continue onward to the next data pile.';
+    //change text 2
+    textTwo.innerHTML = 'Proxy: Okay Guys I\'m almost done collecting the data! However, I can\'t locate the last data pile. We will have to look for it ourselves.<br>';
+    textTwo.innerHTML += 'Lycaon: Thank you Proxy. Everyone, if you could listen. After this, we need to find the last data pile and then we can finally locate Ellen.<br>';
+    textTwo.innerHTML += 'Corin: Ellen, just wait a little longer. We will be there as fast as we can!<br>';
+    textTwo.innerHTML += 'Rina: Don\'t you worry Corin, We will get her!';
+    //change Image
+    nodeImage.src = 'nodeImages/Node6.png';
+
+    //Remove the button and button description
+    button6aA.remove();
+    buttonDesc6aA.remove();
+    button6aB.remove();
+    buttonDesc6aB.remove();
+    button6b.remove();
+    buttonDesc6b.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(button7);
+    document.getElementById('outerBox1').appendChild(buttonDesc7);
+    //Display new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button7 = document.createElement('button');
+button7.id = 'button';
+button7.innerHTML = 'Continue in the hollow ';
+
+let buttonDesc7 = document.createElement('p')
+buttonDesc7.id = 'butDesc';
+buttonDesc7.innerHTML = 'Continue with the Proxy and head to the next Data Pile.';
+
+button7.onclick = function (){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 7 Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 7'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = '';
+    titleTwo.innerHTML = 'Distress in the Hollow';
+    
+    //change text 1
+    textOne.innerText = ''; 
+    //change text 2
+    textTwo.innerHTML = 'They continue on their journey to the final data pile. While Lycaon walked foreward to the next block, he over heard soft voices saying "HELP US! PLEASE HELP US! WE\'RE BEING ATTACKED BY ETHEREALS!".';
+    textTwo.innerHTML += ' The group looked at each other in confusion. However the party was split into what to do next.<br><br>';
+    textTwo.innerHTML += 'Lycaon: Our mission may be to find Ellen, but she would agree as well to investigate and help them first.<br>';
+    textTwo.innerHTML += 'Rina: Lycaon, you know how much time Ellen has left. She won\'t be alive if we help those people.<br>';
+    textTwo.innerHTML += 'Corin: Lycaon, I understand what your saying... But Corin is our friend. She needs our help!<br><br>';
+    textTwo.innerHTML += 'The party is indecisive. What should they do?';
+    //change Image
+    nodeImage.src = 'nodeImages/Node7.jpg';
+
+    //Remove the button and button description
+    button7.remove();
+    buttonDesc7.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(button8a);
+    document.getElementById('outerBox1').appendChild(buttonDesc8a);
+    document.getElementById('outerBox2').appendChild(button8b);
+    document.getElementById('outerBox2').appendChild(buttonDesc8b);
+    //Display new buttons for this node
+    buttonE2.style = 'display: flex;';
+    buttonE3.style = 'display: none;';
+}
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button8a = document.createElement('button');
+button8a.id = 'button';
+button8a.innerHTML = 'Don\'t Help';
+
+let buttonDesc8a = document.createElement('p')
+buttonDesc8a.id = 'butDesc';
+buttonDesc8a.innerHTML = 'Focus on the Mission and find the last data pile.';
+
+let button8b = document.createElement('button');
+button8b.id = 'button';
+button8b.innerHTML = 'Help';
+
+let buttonDesc8b = document.createElement('p')
+buttonDesc8b.id = 'butDesc';
+buttonDesc8b.innerHTML = 'Helping will result in a battle against the ethereals.';
+
+button8b.onclick = function (){
+    scroll(0,0);//Scrolls to top of page
+    console.log('Node 8 Done!'); //Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 8'; //Change node number
+
+    textOne.innerHTML = 'Mandrake:<br><br>';
+    textOne.innerHTML += 'Shatterbug:<br><br><br>';
+    textOne.innerHTML += '<img src=\'battleImages/mandrake.jpg\' id=\'etherImage\'> <img src=\'battleImages/shatterbug.jpg\' id=\'etherImage\'>';
+
+    selectCharacter(mandrake, shatterBug);
+
+    button8a.remove()
+    buttonDesc8a.remove()
+    button8b.remove()
+    buttonDesc8b.remove()
+
+    document.getElementById('outerBox1').appendChild(button9a);
+    document.getElementById('outerBox1').appendChild(buttonDesc9a);
+
+    buttonE2.style = 'display: none;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button9a = document.createElement('button');
+button9a.id = 'button';
+button9a.innerHTML = 'Talk to the people in need';
+
+let buttonDesc9a = document.createElement('p')
+buttonDesc9a.id = 'butDesc';
+buttonDesc9a.innerHTML = 'You defeated the ethereals and now have to talk to the people in need.';
+
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -314,7 +722,6 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
 
     let stunCounter = 0;
     let stunBefore = false;
-    let Heal = false;
     let prepareSkill = false;
     let moveCounter = 0;
 
@@ -360,7 +767,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             if (deadEnemy.length === 2){
                 battleRecord.innerText = '';
                 console.log('Battle Ended')
-                endBattle();
+                endBattle(activeCharacter);
             } else{
                 activeEnemy = enemy2;
                 switchEnemy(enemy2);
@@ -491,17 +898,22 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             rinaBattle['Health'] = rinaBattle ['MaxHP'];
         }
 
-        console.log('Party was healed.')
+        battleRecordFunc('> Rina healed the party by '+rinaBattle['Passive']+'HP<br>');
+        console.log('Party was healed.');
     }
 
     
 }
 
-function endBattle() {
+function endBattle(character) {
     battleUI.style = 'display: none;';
+    battleChoice.style = 'display: none;';
+    battleBox.style = 'display: none;';
+    characterSelection.style = 'display: none;';
     buttonBox.style = 'display: flex;';
     nodeImage.style = 'display: flex;';
     window.alert('Wipeout! You finished the battle.');
+    nodeImage.src = 'battleImages/extraImages/WP'+character['Name']+'.png';
 }
 
 function switchEnemy(newEnemy){
@@ -552,4 +964,27 @@ function battleRecordFunc(addText) {
 
 function battleEnding() {
     console.log('dead ending.')
+}
+
+function fallenEnding(){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node Fallen Debris Ending Done!');
+
+    nodeIndicator.innerHTML = 'Node: Fallen To Death Ending'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'The dangerous terrain was indeed dangerous terrain';
+    titleTwo.innerHTML = '';
+    
+    //change text 1
+    textOne.innerText = 'Everyone went into the broken infrastructure and went right on unstable ground. They tried to leave the premises but failed to escape. They fell from the 5th floor and they all perished. Ellen was nowhere to be found. By now, she became an ethereal. The Proxy, the only surviving member of the mission felt guilt for the rest of his life and he mourns their loss every year.'; 
+    //change text 2
+    textTwo.innerHTML = '';
+    //change Image
+    nodeImage.src = 'nodeImages/fallEnd.jpg';
+
+    //Hide everything
+    buttonBox.style = 'display: none;';
+    char.style = 'display: none;';
+    charDescClass.style = 'display: none;';
 }
