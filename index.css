@@ -170,7 +170,7 @@ body {
     
 }
 
-#nodeImage{
+#nodeImage, #endingPhoto{
     max-width: 650px;
     border-radius: 10px;
     border: 5px solid white;

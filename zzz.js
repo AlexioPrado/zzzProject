@@ -85,12 +85,12 @@ let assualter = {'Health': 10, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Electric'
 let blastCrawler = {'Health': 4, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'none', 'url': 'battleImages/blastcrawler.JPG'};
 let bulkyEnforcer = {'Health': 15, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/bulkyEnforcer.JPG'};
 let dullahan = {'Health': 20, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/dullahan.JPG'};
-let fawn = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/fawn.JPG'};
-let fawnEnergized = {'Health': 12, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'Physical', 'url': 'battleImages/fawnEnergized.JPG'};
+let fawn = {'Health': 12, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/fawn.JPG'};
+let fawnEnergized = {'Health': 12, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'Physical', 'url': 'battleImages/fawnEnergized.JPG'};
 let mandrake = {'Health': 15, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/mandrake.JPG'};
-let shatterBug = {'Health': 8, 'Skill': 1, 'PrepareSkill': 0, 'Weak': 'none', 'Res': 'Physical', 'url': 'battleImages/shatterbug.JPG'};
-let thanatos = {'Health': 25, 'Skill': 5, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/thanatos.JPG'};
-let thanatosNotorius = {'Heath': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Physical', 'url': 'battleImages/thanatosNotorious.JPG'};
+let shatterBug = {'Health': 10, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'Physical', 'url': 'battleImages/shatterbug.JPG'};
+let thanatos = {'Health': 25, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/thanatos.JPG'};
+let thanatosNotorius = {'Health': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Physical', 'url': 'battleImages/thanatosNotorious.JPG'};
 
 /*Create Character Variables for Battles
     1. Health
@@ -204,8 +204,8 @@ button2.onclick = function (){
     nodeIndicator.innerHTML = 'Node: 3'; //Change node number
 
     textOne.innerHTML = 'Alpeca:<br>A quite humanoid Ethereal figure which deals 2 dmg every swing of its sharp arm-like blade.<br>';
-    textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg to every party member.<br><br>';
-    textOne.innerHTML += '<img src=\'battleImages/alpeca.jpg\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.jpg\' id=\'etherImage\'>';
+    textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg.<br><br>';
+    textOne.innerHTML += '<img src=\'battleImages/alpeca.JPG\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.JPG\' id=\'etherImage\'>';
 
     selectCharacter(alpeca, blastCrawler);
 
@@ -435,7 +435,7 @@ button5a.onclick = function (){
 
     textOne.innerHTML = 'Alraune:<br>Resembling a flower, it attacks with a bubble of spores dealing 2 dmg.<br>';
     textOne.innerHTML += 'Armored Hati:<br>A very tough-exteriored Ethereal and a heavy hitter. It deals 3 dmg.<br><br>';
-    textOne.innerHTML += '<img src=\'battleImages/alraune.jpg\' id=\'etherImage\'> <img src=\'battleImages/armoredHati.jpg\' id=\'etherImage\'>';
+    textOne.innerHTML += '<img src=\'battleImages/alraune.JPG\' id=\'etherImage\'> <img src=\'battleImages/armoredHati.JPG\' id=\'etherImage\'>';
 
     selectCharacter(alraune, armoredHati);
 
@@ -457,9 +457,9 @@ button5b.onclick = function (){
 
     nodeIndicator.innerHTML = 'Node: 5a'; //Change node number
 
-    textOne.innerHTML = 'Fawn:<br>An ethereal formed by a stoplight. It\'s use of a train-track-sign pole deals 2 dmg.<br>';
-    textOne.innerHTML += 'Fawn Energized:<br>An ethereal with the form just like a fawn but its ether make up is quite different, having different effects of attributes from the character. It deals 2 dmg as well.<br><br>';
-    textOne.innerHTML += '<img src=\'battleImages/fawn.jpg\' id=\'etherImage\'> <img src=\'battleImages/fawnEnergized.jpg\' id=\'etherImage\'>';
+    textOne.innerHTML = 'Fawn:<br>An ethereal formed by a stoplight. It\'s use of a train-track-sign pole deals 3 dmg.<br>';
+    textOne.innerHTML += 'Fawn Energized:<br>An ethereal with the form just like a fawn but its ether make up is quite different, having different effects of attributes from the character. It deals 3 dmg as well.<br><br>';
+    textOne.innerHTML += '<img src=\'battleImages/fawn.JPG\' id=\'etherImage\'> <img src=\'battleImages/fawnEnergized.JPG\' id=\'etherImage\'>';
 
     selectCharacter(fawn, fawnEnergized);
 
@@ -591,7 +591,7 @@ button7.onclick = function (){
     textTwo.innerHTML += 'Corin: Lycaon, I understand what your saying... But Corin is our friend. She needs our help!<br><br>';
     textTwo.innerHTML += 'The party is indecisive. What should they do?';
     //change Image
-    nodeImage.src = 'nodeImages/Node7.jpg';
+    nodeImage.src = 'nodeImages/Node7.JPG';
 
     //Remove the button and button description
     button7.remove();
@@ -605,6 +605,7 @@ button7.onclick = function (){
     buttonE2.style = 'display: flex;';
     buttonE3.style = 'display: none;';
 }
+
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 let button8a = document.createElement('button');
@@ -629,9 +630,9 @@ button8b.onclick = function (){
 
     nodeIndicator.innerHTML = 'Node: 8'; //Change node number
 
-    textOne.innerHTML = 'Mandrake:<br><br>';
-    textOne.innerHTML += 'Shatterbug:<br><br><br>';
-    textOne.innerHTML += '<img src=\'battleImages/mandrake.jpg\' id=\'etherImage\'> <img src=\'battleImages/shatterbug.jpg\' id=\'etherImage\'>';
+    textOne.innerHTML = 'Mandrake:<br>An ugly looking ethereal Indeed. Unlike its looks, its attacks are plain and simple. It deals 4 dmg.<br>';
+    textOne.innerHTML += 'Shatterbug:<br>The stronger cousin of the blastcrawler. Be careful, it deals 4 dmg as well.<br><br>';
+    textOne.innerHTML += '<img src=\'battleImages/mandrake.JPG\' id=\'etherImage\'> <img src=\'battleImages/shatterbug.JPG\' id=\'etherImage\'>';
 
     selectCharacter(mandrake, shatterBug);
 
@@ -646,6 +647,66 @@ button8b.onclick = function (){
     buttonE2.style = 'display: none;';
 }
 
+button8a.onclick = function (){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 8a Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 8a'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = '';
+    titleTwo.innerHTML = '';
+    
+    //change text 1
+    textOne.innerText = ''; 
+    //change text 2
+    textTwo.innerHTML = '';
+    //change Image
+    nodeImage.src = 'nodeImages/Node7.JPG';
+
+    //Remove the button and button description
+    button8a.remove()
+    buttonDesc8a.remove()
+    button8b.remove()
+    buttonDesc8b.remove()
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(button9ba);
+    document.getElementById('outerBox1').appendChild(buttonDesc9ba);
+    document.getElementById('outerBox2').appendChild(button9bb);
+    document.getElementById('outerBox2').appendChild(buttonDesc9bb);
+    document.getElementById('outerBox3').appendChild(buttonb9bc);
+    document.getElementById('outerBox3').appendChild(buttonDesc9bc);
+    //Display new buttons for this node
+    buttonE2.style = 'display: flex;';
+    buttonE3.style = 'display: flex;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button9ba = document.createElement('button');
+button9ba.id = 'button';
+button9ba.innerHTML = 'Open Area';
+
+let buttonDesc9ba = document.createElement('p')
+buttonDesc9ba.id = 'butDesc';
+buttonDesc9ba.innerHTML = 'Open areas mean less debris to get caught on and easier to see your surrondings.';
+
+let button9bb = document.createElement('button');
+button9bb.id = 'button';
+button9bb.innerHTML = 'Broken Down Building';
+
+let buttonDesc9bb = document.createElement('p')
+buttonDesc9bb.id = 'butDesc';
+buttonDesc9bb.innerHTML = 'A bit risky to go onto this building. However it can show the surronding area much better';
+
+let button9bc = document.createElement('button');
+button9bc.id = 'button';
+button9bc.innerHTML = 'Alleyway';
+
+let buttonDesc9bc = document.createElement('p')
+buttonDesc9bc.id = 'butDesc';
+buttonDesc9bc.innerHTML = 'What\'s at the end of this alleyway? Ethereals? Ellen? Who knows, be ready for anything!';
+
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 let button9a = document.createElement('button');
@@ -656,6 +717,245 @@ let buttonDesc9a = document.createElement('p')
 buttonDesc9a.id = 'butDesc';
 buttonDesc9a.innerHTML = 'You defeated the ethereals and now have to talk to the people in need.';
 
+button9a.onclick = function() {
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 9a Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 9a'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = '"Saviours"';
+    titleTwo.innerHTML = 'On To The Final Data Pile';
+    
+    //change text 1
+    textOne.innerText = 'Stranger 1: Oh Thank You kind souls! We\'ve been saved!';
+    textOne.innerHTML += '<br>Stranger 2: Thank you for saving us from those ethereals!<br>';
+    textOne.innerHTML += '<br>Lycaon looks at the strangers up and down.<br>';
+    textOne.innerHTML += '<br><i>"This hollow is closed for all unauthorized personal. Though I can\'t complain. We are also unauthorized personel..."<i> Lycaon thinks to himself<br>';
+    textOne.innerHTML += '<br>Lycaon: I\'m glad you all are safe. However I would like to know why <i>you both<i>, or should I say THUGS, are here...<br>';
+    textOne.innerHTML += 'Stranger 1: Gosh, h-he saw us right through... Okay how bout this, we\'ll tell you everything we know. Just let us go, please!<br>';
+    textOne.innerHTML += 'Lycaon: Fine. Tell us, if any, have you seen a data pile?<br>';
+    textOne.innerHTML += 'Stranger 2: Oh! U-uh I saw one while coming here!! It\'s just passed that block over there!<br>';
+    textOne.innerHTML += 'Lycaon: Excellent. Now I\'ll give you 1 min to run as fast as you can, or else I WILL, apprehend you. Go.<br>';
+    //change text 2
+    textTwo.innerHTML = 'The thugs scrambled on the ground and ran away. Lycaon had no issue of them leaving, because they ran to the direction of high ether activity. Lycaon pointed to where the thugs instructed and they began to walk.';
+    //change Image
+    nodeImage.src = 'nodeImages/Node9a.png';
+
+    //Remove the button and button description
+    button9a.remove();
+    buttonDesc9a.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(button10);
+    document.getElementById('outerBox1').appendChild(buttonDesc10);
+    //Displaying new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let button10 = document.createElement('button');
+button10.id = 'button';
+button10.innerHTML = 'Continue to the Final Data Pile';
+
+let buttonDesc10 = document.createElement('p')
+buttonDesc10.id = 'butDesc';
+buttonDesc10.innerHTML = 'Your Journey is almost to its end. Find Ellen.';
+
+button10.onclick = function() {
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node 10 Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 10'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'Data Pile 2: Data Collection Complete';
+    titleTwo.innerHTML = '';
+    
+    //change text 1
+    textOne.innerText = 'The 3rd and final data pile to use. Eous stands beside the beacon and begins collecting data. Victoria\'s Housekeeping stay close by, checking for dangerous ethereals. ';
+    textOne.innerHTML += 'Corin is so excited to see Ellen back, but is scared that she will fail to rescue and leave the Hollow. Lycaon is worried the most. He is responsible for protecting his companions and he failed this time. He wouldn\'t want this to happen again ever. Rina, sure she is worried but she doesn\'t seem intrested in this mission. However, Rina does care for her as much as Corin and Lycaon. It\'s just not easy for her to express her emotions well.<br>';
+    textOne.innerHTML += '<br>Eous: Mhphh. Guys!!! I finished. Her biothermal signature is just 2 blocks East! We are so close!!!<br>';
+    textOne.innerHTML += 'Lycaon: Everyone! Get ready! We are leaving now!<br>';
+    textOne.innerHTML += 'Rina & Corin: Yes Sir!'
+    //change text 2
+    textTwo.innerHTML = '';
+    //change Image
+    nodeImage.src = 'nodeImages/Node10.png';
+
+    //Remove the button and button description
+    button10.remove();
+    buttonDesc10.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(buttonEllen);
+    document.getElementById('outerBox1').appendChild(buttonDescEllen);
+    //Displaying new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let buttonEllen = document.createElement('button');
+buttonEllen.id = 'button';
+buttonEllen.innerHTML = 'Find Ellen';
+
+let buttonDescEllen = document.createElement('p')
+buttonDescEllen.id = 'butDesc';
+buttonDescEllen.innerHTML = 'what are you waiting for? Save Ellen!!!';
+
+buttonEllen.onclick = function() {
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node Ellen Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: Ellen.'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'Ellen';
+    titleTwo.innerHTML = '';
+    
+    //change text 1
+    textOne.innerText = 'The party run towards Ellen\'s location as quickly as they can. The location of Ellen is found in a clear field, prone to many ethereals. They climb up to a building that is right at the outskirt of this clear field. They stopped at the top of the building at gaze down to teh field. All stand quietly as they scan the field for their friend.<br><br>She\'s not here.<br>';
+    textOne.innerHTML += 'The party falls silent. They look over the area again and again, but no Ellen in sight. What\'s only present is the slowly forming rifts that is continuing to produce several ethereals.<br><br>';
+    textOne.innerHTML += 'Lycaon: You said she was here. Proxy<br>';
+    textOne.innerHTML += 'Eous: Uh I don\'t understand! Her biothermal signature is right infront of us!<br>';
+    textOne.innerHTML += 'Lycaon: Well she isn\'t here!!! THE DATA MUST BE WRONG! WEHRE IS SHE!?<br>';
+    //change text 2 
+    textTwo.innerHTML = 'As Lycaon shouted, a figure jumped forth from below the building up to the top floor.<br><br>It\'s Ellen!!';
+    textTwo.innerHTML += '<br><br>Ellen: Well I\'m here alright! Come on! These ethereals aren\'t gonna dissapear on there on yknow! I was commisioned to kill ethereals here, but I\'m guessing you know that already.<br>';
+    textTwo.innerHTML += 'Lycaon: Ellen.... Ellen you shouldn\'t be fighting at your state. Let us deal with the ethereals.<br>';
+    textTwo.innerHTML += 'Ellen: You know I won\'t let you stop me from fighting. Cmon, Rina and Corin is already preparing to battle. We are just waiting for you Lycaon.<br>';
+    textTwo.innerHTML += 'Lycaon: I- Okay. Proxy, stay behind. I\'m sorry for my outburst. We will deal with the ethereals.<br>';
+    textTwo.innerHTML += 'Eous: Yes Sir!<br>';
+    textTwo.innerHTML += 'Corin: Victoria\'s Housekeeping is now back together!! Let\'s go Ellen!<br>';
+    textTwo.innerHTML += 'Ellen: Ready when you are!<br><br>';
+    textTwo.innerHTML += 'Ellen is now back with Lycaon, Corin, and Rina. Now its time for the final battle of this saga.';
+    //change Image
+    nodeImage.src = 'nodeImages/NodeEllen.jpg';
+
+    //Remove the button and button description
+    buttonEllen.remove();
+    buttonDescEllen.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(buttonFinalBattle);
+    document.getElementById('outerBox1').appendChild(buttonDescFinalBattle);
+    //Displaying new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let buttonFinalBattle = document.createElement('button');
+buttonFinalBattle.id = 'button';
+buttonFinalBattle.innerHTML = 'Battle the Ethereals';
+
+let buttonDescFinalBattle = document.createElement('p')
+buttonDescFinalBattle.id = 'butDesc';
+buttonDescFinalBattle.innerHTML = 'It\'s time to battle, now with Ellen. Cmon, the mission is almost done!';
+
+buttonFinalBattle.onclick = function (){
+    scroll(0,0);//Scrolls to top of page
+    console.log('Node Final Battle Done!'); //Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: Final Battle'; //Change node number
+
+    textOne.innerHTML = 'Thanatos:<br>An ethereal that is not a laughing matter. It\'s attacks from its bow deals 6 dmg. Tread carefully.<br>';
+    textOne.innerHTML += 'Thanatos Notorious:<br>It\'s Thanatos but notorious. It deals 7 dmg.<br><br>';
+    textOne.innerHTML += '<img src=\'battleImages/thanatos.JPG\' id=\'etherImage\'> <img src=\'battleImages/thanatosNotorious.JPG\' id=\'etherImage\'>';
+
+    selectCharacter(thanatos, thanatosNotorius);
+
+    buttonFinalBattle.remove()
+    buttonDescFinalBattle.remove()
+
+
+    document.getElementById('outerBox1').appendChild(buttonLeave);
+    document.getElementById('outerBox1').appendChild(buttonDescLeave);
+
+    buttonE2.style = 'display: none;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let buttonLeave = document.createElement('button');
+buttonLeave.id = 'button';
+buttonLeave.innerHTML = 'Leave the Hollow';
+
+let buttonDescLeave = document.createElement('p')
+buttonDescLeave.id = 'butDesc';
+buttonDescLeave.innerHTML = 'You defeated the last of the ethereals! Go quick, leave the Hollow before more arrive!';
+
+buttonLeave.onclick = function() {
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node Leaving Hollow Done!');//Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: Leaving Hollow'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'Outside the Hollow';
+    titleTwo.innerHTML = '';
+    
+    //change text 1
+    textOne.innerText = 'With the help of Ellen, the party was able to defeat all the ethereals. They quickly ran outside the Hollow with the help of the Proxy.<br><br>';
+    textOne.innerHTML += 'Lycaon: Gasp, hah haa.... Are you all right? Ellen, any ethereal corruption on your body?<br>';
+    textOne.innerHTML += 'Ellen: You know I have tough skin, they won\'t dare scratch me! Ha!<br>';
+    textOne.innerHTML += 'Rina: It\'s such a relief you are well Ellen. We miss you very much.<br>';
+    textOne.innerHTML += 'Ellen: Is that Rina being emotional? That\'s a first. Just kidding! Thank you Rina for worrying about me.';
+    textOne.innerHTML += 'Corin: I worried about you the most Ellen! I was so worried!<br><br>';
+    textOne.innerHTML += 'Corin runs towards Ellen and give her the strongest hugs ever.<br><br>';
+    textOne.innerHTML += 'Ellen: okay okay Corin get off me! You are breaking my ribs!<br>';
+    textOne.innerHTML += 'Corin: Haha, sorry I\'m just happy your here Ellen.<br>';
+    textOne.innerHTML += 'Ellen: Im happy too Corin. Sir, so were to next?<br>';
+    textOne.innerHTML += 'Lycaon: Well, if need be, let\'s go to the Hospital and get some treatment. Other than that, let\'s eat out with the Proxies tonight!<br>';
+    textOne.innerHTML += 'Corin & Ellen & Rina: Yay!!!!!'
+    //change text 2
+    textTwo.innerHTML = '';
+    //change Image
+    nodeImage.src = 'nodeImages/LeavingHollow.gif';
+
+    //Remove the button and button description
+    buttonLeave.remove();
+    buttonDescLeave.remove();
+    // Add the new button and button description for next node
+    document.getElementById('outerBox1').appendChild(buttonFinish);
+    document.getElementById('outerBox1').appendChild(buttonDescFinish);
+    //Displaying new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let buttonFinish = document.createElement('button');
+buttonFinish.id = 'button';
+buttonFinish.innerHTML = 'Mission Shark: Completed';
+
+let buttonDescFinish = document.createElement('p')
+buttonDescFinish.id = 'butDesc';
+buttonDescFinish.innerHTML = 'Leave the premises of the Hollow';
+
+buttonFinish.onclick = function() {
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node Mission Shark: Completed Done!');//Personal Check if function is called
+    
+    let endingDecider = fallenCharacter('give');
+    
+    if (endingDecider){
+        hospitalEnding()
+    }
+    else {
+        dinnerEnding()
+    }
+
+    buttonFinish.remove();
+    buttonDescFinish.remove();
+
+    //Displaying new buttons for this node
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -929,8 +1229,18 @@ function switchCharacter(newCharacter) {
     characterAttribute.innerHTML = newCharacter['Attribute'];
 }
 
+let fallen = [];
+
 function fallenCharacter(character){
-    let fallen = []
+    if (character === 'give'){
+        if (fallen.length > 0){
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
     fallen.push(character);
     console.log(fallen);
     if (fallen.length === 3){
@@ -982,6 +1292,65 @@ function fallenEnding(){
     textTwo.innerHTML = '';
     //change Image
     nodeImage.src = 'nodeImages/fallEnd.jpg';
+
+    //Hide everything
+    buttonBox.style = 'display: none;';
+    char.style = 'display: none;';
+    charDescClass.style = 'display: none;';
+}
+
+function dinnerEnding(){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node Dinner w/ Proxy Ending Done!');
+
+    nodeIndicator.innerHTML = 'Node: Dinner with the Proxy Ending'; //Change node number
+
+    //change title
+    titleOne.innerHTML = 'DINNER';
+    titleTwo.innerHTML = 'Epilogue';
+    
+    //change text 1
+    textOne.innerText = 'Victoria Housekeeping return to the Random Play Store to pick up the Proxies. They entered the company vehicle and go to Lumina Square for dinner. It was an amazing dinner with friends. A nice way to end the day.<br><br>Mission Shark: Save Ellen - Completed'; 
+    textOne.innerHTML += '<br><br><img src=\'nodeImages/DinnerEnding.jpg\' id=\'endingPhoto\'>'
+    //change text 2
+    textTwo.innerHTML = 'Corin: Oh! Ellen! Remember when you went into the Brant Street Hollow by yourself? And then we had to save you? Hahaha that was so fun!<br>';
+    textTwo.innerHTML += 'Ellen: Oh shut it Corin! I was in danger!<br>';
+    textTwo.innerHTML += 'Lycaon: Well I wonder, why go by yourself? We always do commision together?<br>';
+    textTwo.innerHTML += 'Ellen: Uhhhh well. I was going to ask yall to help but uhh... I was distracted by a butterfly and walked into the Hollow.<br>';
+    textTwo.innerHTML += 'Rina: Why didn\'t you just leave then?<br>';
+    textTwo.innerHTML += 'Ellen: Ugh! obviously the Hollow shifted right when I entered and the entrance closed! Ugh, just give me the drink....';
+    textTwo.innerHTML += 'Corin: HAHAHA you got my drink!!! Becareful Ellen, its very spicy!!!';
+    //change Image
+    nodeImage.src = 'nodeImages/DinnerEnding2.png';
+
+    //Hide everything
+    buttonBox.style = 'display: none;';
+    char.style = 'display: none;';
+    charDescClass.style = 'display: none;';
+}
+
+function hospitalEnding(){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node Hospital Done!');
+
+    nodeIndicator.innerHTML = 'Node: Hospital Ending'; //Change node number
+
+    //change title
+    titleOne.innerHTML = 'In the Hospital';
+    titleTwo.innerHTML = '';
+    
+    //change text 1
+    textOne.innerText = 'Ellen: So how is it that I stayed in the Hollow longer than all of yall and still had less injuries than yall?<br>';
+    textOne.innerHTML += 'Lycaon: It\'s because you aren\'t a playable character, you can die!<br>';
+    textOne.innerHTML += 'Ellen: Huh? Uh well anyway, lets get a snack when you all are done. Cmon, I\'ll be waiting outside. Toodeloo!';
+    textOne.innerHTML += '<br><br><img src=\'nodeImages/HospitalEnding2.png\' id=\'endingPhoto\'>'
+    //change text 2
+    textTwo.innerHTML = 'Though they planned to eat dinner with the proxies, their treatment in the hospital forced them to delay the dinner tommorrow. However, they got a little laugh in their situation in the hospital. It was a hard and grueling mission for them and its kind for Ellen to at like its a normal day, or else anyone of them will burst in tears.';
+    textTwo.innerHTML += 'After they were released from the hospital, they went out to eat some sandwiches.<br><br>';
+    textTwo.innerHTML += 'Ellen: Hey guys, can we watch Astra Yao\'s concert tommorow instead dinner with the proxies? I heard they are Astra Yao fans as well so we can invite them.<br>';
+    textTwo.innerHTML += 'Lycaon: How considerate of you Ellen. Sure, we can do that instead of dinner.'
+    //change Image
+    nodeImage.src = 'nodeImages/hospitalEnding.jpg';
 
     //Hide everything
     buttonBox.style = 'display: none;';
