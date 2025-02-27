@@ -172,11 +172,11 @@ button1.onclick = function (){
     
     //change text 1
     textOne.innerText = ''; 
-    textOne.innerHTML += '*Door Bell Rings*<br>Wise: Welcome to the Random Play! Oh! Its you Lycaon how may I help?<br>Lycaon: Ellen is lost in a Hollow I need your help.<br>Wise: Oh is that so? I\'ll alert Belle. Here\'s Eous. Take him and we can help.<br>Lycaon: Thank you for your help. I promise to compensate you.<br>Wise: It\'s fine, no need to pay me. I\'m doing this as a friend. Now go and get to the Hollow.';
+    textOne.innerHTML += '*Door Bell Rings*<br>Wise: Welcome to the Random Play Store! Oh! Its you Lycaon how may I help?<br>Lycaon: Ellen is lost in a Hollow and I need your help.<br>Wise: Oh is that so? I\'ll alert Belle. Here\'s Eous. Take him and we can help.<br>Lycaon: Thank you for your help. I promise to compensate you.<br>Wise: It\'s fine, no need to pay me. I\'m doing this as a friend. Now go and get to the Hollow.';
     textOne.innerHTML += '<br><br>Eous: A Bangboo which the Proxy can communicate others in the Hollow. The Proxy can also do some handy things like locate people using Data Piles.';
     //change text 2
     textTwo.innerHTML = 'Victoria Housekeeping and little Eous entered the Hollow. Eous begins to locate Data Piles to which they can find Ellen in the Hollow. As they continue throuhgout the Hollow, they suddenly encounter Ethereals!';
-    textTwo.innerHTML += '<br><br>Ethereals: Ethereals are monsters formed from high ether activity. When exploring the Hollow make sure to stay far from high ether activity, or else you\'ll meet many foes.'
+    textTwo.innerHTML += '<br><br>Ethereals: Ethereals are monsters formed from high ether activity. When exploring the Hollow, make sure to stay far from high ether activity, or else you\'ll meet many foes.'
     //change Image
     nodeImage.src = 'nodeImages/Node2.jpg';
 
@@ -206,8 +206,8 @@ button2.onclick = function (){
 
     nodeIndicator.innerHTML = 'Node: 3'; //Change node number
 
-    textOne.innerHTML = 'Alpeca:<br>A quite humanoid Ethereal figure which deals 2 dmg every swing of its sharp arm-like blade.<br>';
-    textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg.<br><br>';
+    textOne.innerHTML = 'Alpeca:<br>A quite humanoid ethereal figure which deals 2 dmg every swing of its sharp arm-like blade.<br>';
+    textOne.innerHTML += 'Blastcrawler:<br>An ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/alpeca.JPG\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.JPG\' id=\'etherImage\'>';
     
     selectCharacter(alpeca, blastCrawler); // Call selection Function
@@ -244,10 +244,10 @@ button3.onclick = function (){
     
     //change text 1
     textOne.innerText = ''; 
-    textOne.innerHTML += 'Data Piles are beacons located inside the Hollow, scattered across the area. Data piles can collect data in its surrondings. This data includes biothermal signatures. If you collect enough data piles, you can locate people or ethereals. You can locate Ellen!<br>';
+    textOne.innerHTML += 'Data Piles are beacons located inside the Hollow, scattered across the area. Data Piles can collect data in its surrondings. This data includes biothermal signatures. If you collect enough Data Piles, you can locate people or ethereals. You can locate Ellen!<br>';
     textOne.innerHTML += '<br><img src=\'nodeImages/Node3.png\' id=\'nodeImage\'>';
     //change text 2
-    textTwo.innerHTML = 'Lycaon\'s company and the Proxy arrived to the first data pile of 3. While the proxy collects the data, Lycaon checked the surrondings for ethereals while Corin and Rina look for clues of Ellen.<br>';
+    textTwo.innerHTML = 'Lycaon\'s company and the Proxy arrived to the first data pile. While the proxy collects the data, Lycaon checked the surrondings for ethereals while Corin and Rina look for clues of Ellen.<br>';
     textTwo.innerHTML += '<br>Proxy: Okay guys! I\'ve collected the data and there are three paths we could go from here.<br>';
     textTwo.innerHTML += '<br>Left -> High Ether Activity<br>Straight -> Low Ether Activity<br>Right -> No activity, however a very dangerous terrain of debris<br>';
     textTwo.innerHTML += '<br>Meanwhile...<br>Ellen: Gahhh! I don\'t think I can handle the Ethereals any longer. I have to hurry!';
@@ -346,7 +346,7 @@ button4b.onclick = function (){
     //change text 1
     textOne.innerText = 'Resonium are effects which can enhance the party. Especially in high ether activity, you can gain better resonium.'; 
     //change text 2
-    textTwo.innerHTML = 'Lycaon: Let\'s go straight. We don\'t want to encounter stronger enemies this early. We need to be capable enought to find Ellen and still be there quick enough before she become and ethereal.<br>';
+    textTwo.innerHTML = 'Lycaon: Let\'s go straight. We don\'t want to encounter stronger enemies this early. We need to be capable enough to find Ellen and still be there quick enough before she becomes an ethereal.<br>';
     textTwo.innerHTML += 'Corin: That sounds good, but we still might meet some ethereals along the way.<br>';
     textTwo.innerHTML += 'Rina: Don\'t worry Corin, they\'ll be easy to defeat. Trust us and trust yourself. We can defeat them.<br>';
     textTwo.innerHTML += 'Corin: Oh oh, looks like there are some ahead of us. Guys!!!'
@@ -383,7 +383,7 @@ button4a.onclick = function (){
     textOne.innerText = 'Resonium are effects which can enhance the party. Especially in high ether activity, you can gain better resonium.'; 
     //change text 2
     textTwo.innerHTML = 'Lycaon: Let\'s go left. Ellen is kind of an Ether magnet. Maybe this high ether activity was caused by many ethereals following Ellen.<br>';
-    textTwo.innerHTML += 'Corin: I hope the Ethereals won\t go for us instead. *Gulp*<br>';
+    textTwo.innerHTML += 'Corin: I hope the Ethereals won\'t go for us instead. *Gulp*<br>';
     textTwo.innerHTML += 'Rina: Don\t worry sweetie, I\'m sure they won\'t come for- Oh and there they are. Oops I jinxed it.<br>';
     textTwo.innerHTML += 'Lycaon: Everyone, get ready for battle!';
     //change Image
@@ -438,8 +438,8 @@ button5a.onclick = function (){
 
     nodeIndicator.innerHTML = 'Node: 5a'; //Change node number
 
-    textOne.innerHTML = 'Alraune:<br>Resembling a flower, it attacks with a bubble of spores dealing 2 dmg.<br>';
-    textOne.innerHTML += 'Armored Hati:<br>A very tough-exteriored Ethereal and a heavy hitter. It deals 3 dmg.<br><br>';
+    textOne.innerHTML = 'Alraune:<br>Resembling a flower, it attacks with a bubble of spores dealing 3 dmg.<br>';
+    textOne.innerHTML += 'Armored Hati:<br>A very tough-exteriored Ethereal and a heavy hitter. It deals 4 dmg.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/alraune.JPG\' id=\'etherImage\'> <img src=\'battleImages/armoredHati.JPG\' id=\'etherImage\'>';
 
     selectCharacter(alraune, armoredHati); // Call Selection Function
@@ -463,8 +463,8 @@ button5b.onclick = function (){
 
     nodeIndicator.innerHTML = 'Node: 5a'; //Change node number
 
-    textOne.innerHTML = 'Fawn:<br>An ethereal formed by a stoplight. It\'s use of a train-track-sign pole deals 3 dmg.<br>';
-    textOne.innerHTML += 'Fawn Energized:<br>An ethereal with the form just like a fawn but its ether make up is quite different, having different effects of attributes from the character. It deals 3 dmg as well.<br><br>';
+    textOne.innerHTML = 'Fawn:<br>An ethereal formed by a stoplight. It\'s use of a train tracks sign deals 3 dmg.<br>';
+    textOne.innerHTML += 'Fawn Energized:<br>An ethereal with the form just like a fawn but its ether make-up is quite different, having different effects of attributes from the character. It deals 3 dmg as well.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/fawn.JPG\' id=\'etherImage\'> <img src=\'battleImages/fawnEnergized.JPG\' id=\'etherImage\'>';
 
     selectCharacter(fawn, fawnEnergized); // Call Selection Function
@@ -558,7 +558,7 @@ function node6() {
     textTwo.innerHTML = 'Proxy: Okay Guys I\'m almost done collecting the data! However, I can\'t locate the last data pile. We will have to look for it ourselves.<br>';
     textTwo.innerHTML += 'Lycaon: Thank you Proxy. Everyone, if you could listen. After this, we need to find the last data pile and then we can finally locate Ellen.<br>';
     textTwo.innerHTML += 'Corin: Ellen, just wait a little longer. We will be there as fast as we can!<br>';
-    textTwo.innerHTML += 'Rina: Don\'t you worry Corin, We will get her!';
+    textTwo.innerHTML += 'Rina: Don\'t you worry Corin, we will get her!';
     //change Image
     nodeImage.src = 'nodeImages/Node6.png';
 
@@ -586,7 +586,7 @@ button7.innerHTML = 'Continue in the hollow ';
 
 let buttonDesc7 = document.createElement('p');
 buttonDesc7.id = 'butDesc';
-buttonDesc7.innerHTML = 'Continue with the Proxy and head to the next Data Pile.';
+buttonDesc7.innerHTML = 'Continue with the Proxy and look for the next Data Pile.';
 
 //Node 7 Function 
 button7.onclick = function (){
@@ -604,9 +604,9 @@ button7.onclick = function (){
     //change text 2
     textTwo.innerHTML = 'They continue on their journey to the final data pile. While Lycaon walked foreward to the next block, he over heard soft voices saying "HELP US! PLEASE HELP US! WE\'RE BEING ATTACKED BY ETHEREALS!".';
     textTwo.innerHTML += ' The group looked at each other in confusion. However the party was split into what to do next.<br><br>';
-    textTwo.innerHTML += 'Lycaon: Our mission may be to find Ellen, but she would agree as well to investigate and help them first.<br>';
-    textTwo.innerHTML += 'Rina: Lycaon, you know how much time Ellen has left. She won\'t be alive if we help those people.<br>';
-    textTwo.innerHTML += 'Corin: Lycaon, I understand what your saying... But Corin is our friend. She needs our help!<br><br>';
+    textTwo.innerHTML += 'Rina: Our mission may be to find Ellen, but she would agree as well to investigate and help them first.<br>';
+    textTwo.innerHTML += 'Lycaon: Rina, you know how much time Ellen has left. She won\'t be alive if we help those people.<br>';
+    textTwo.innerHTML += 'Corin: Lycaon, I understand what your saying... But Ellen is capable to fight on her own. I know that. Let\'s help the strangers!<br><br>';
     textTwo.innerHTML += 'The party is indecisive. What should they do?';
     //change Image
     nodeImage.src = 'nodeImages/Node7.JPG';
@@ -680,13 +680,13 @@ button8a.onclick = function (){
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = 'Lycaon: We are not helping them. End of discussion. What\'s important is Ellen. That\'s it. Our mission is to save her, not strangers who most likely brought this issue onto themselves.<br>';
-    textOne.innerHTML += 'Corin: Ugh, you\'re so mean Mr. Lycaon! Hmph. Let\'s just go!';
+    textOne.innerText = 'Lycaon: We are not helping them. End of discussion. What\'s important is Ellen. That\'s it. Our mission is to save her, not strangers who most likely brought this issue onto themselves.';
+    textOne.innerHTML += '<br>Corin: Ugh, you\'re so mean Mr. Lycaon! Hmph. Let\'s just go!';
     //change text 2
     textTwo.innerHTML = 'Lycaon sighs in defeat and could understood why Corin is so upset. She wants to help, but we have a goal and that\'s helping Ellen. Rina looks at Lycaon and shakes her head in dissaproval. It upsetted Lycaon and his ears drooped down. For the next 10 mins, no one spoke at all, only the occasional directional instructions by the Proxy.<br><br>';
     textTwo.innerHTML += 'Lycaon: Hey Corin, Rina. I apologize. I should\'ve listen to both of you and tried to help those strangers. I just got very upset that we would want to rescue them before Ellen. It didn\'t feel right to me. Ellen is family. However, you both are right. Anyone needing help in a Hollow deserves help.<br>';
-    textTwo.innerHTML += 'Rina; Lycaon, it\'s okay. We all too want to save Ellen. You are right. Everyone in a hollow deserves help. We can\'t change what we have already done. So let\'s continue onto the thrid data pile. Maybe when leaving the hollow, we wull see them.<br><br>';
-    textTwo.innerHTML += 'Lycaon nods his head and they all continue on the path. They walk for another 10 mins before they reached a for in the road.';
+    textTwo.innerHTML += 'Rina: Lycaon, it\'s okay. We all too want to save Ellen. You are right. Everyone in a hollow deserves help. We can\'t change what we have already done. So let\'s continue onto the third data pile. Maybe when leaving the hollow, we will see them.<br><br>';
+    textTwo.innerHTML += 'Lycaon nods his head and they all continue on the path. They walk for another 10 mins before they reached a fork in the road.';
     //change Image
     nodeImage.src = 'nodeImages/Node7.JPG';
 
@@ -787,11 +787,11 @@ button9a.onclick = function() {
     titleTwo.innerHTML = 'On To The Final Data Pile';
     
     //change text 1
-    textOne.innerText = 'Stranger 1: Oh Thank You kind souls! We\'ve been saved!';
+    textOne.innerText = 'Stranger 1: Oh thank you kind souls! We\'ve been saved!';
     textOne.innerHTML += '<br>Stranger 2: Thank you for saving us from those ethereals!<br>';
     textOne.innerHTML += '<br>Lycaon looks at the strangers up and down.<br>';
-    textOne.innerHTML += '<br><i>"This hollow is closed for all unauthorized personal. Though I can\'t complain. We are also unauthorized personel..."<i> Lycaon thinks to himself<br>';
-    textOne.innerHTML += '<br>Lycaon: I\'m glad you all are safe. However I would like to know why <i>you both<i>, or should I say THUGS, are here...<br>';
+    textOne.innerHTML += '<br><i>"This hollow is closed for all unauthorized personal. Though I can\'t complain. We are also unauthorized personel..."</i> Lycaon thinks to himself<br>';
+    textOne.innerHTML += '<br>Lycaon: I\'m glad you all are safe. However I would like to know why <i>you both</i>, or should I say THUGS, are here...<br>';
     textOne.innerHTML += 'Stranger 1: Gosh, h-he saw us right through... Okay how bout this, we\'ll tell you everything we know. Just let us go, please!<br>';
     textOne.innerHTML += 'Lycaon: Fine. Tell us, if any, have you seen a data pile?<br>';
     textOne.innerHTML += 'Stranger 2: Oh! U-uh I saw one while coming here!! It\'s just passed that block over there!<br>';
@@ -834,7 +834,7 @@ button10.onclick = function() {
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = 'The 3rd and final data pile to use. Eous stands beside the beacon and begins collecting data. Victoria\'s Housekeeping stay close by, checking for dangerous ethereals. ';
+    textOne.innerText = 'The 3rd and final data pile to use. Eous stands beside the beacon and begins collecting data. Victoria Housekeeping stay close by, checking for dangerous ethereals. ';
     textOne.innerHTML += 'Corin is so excited to see Ellen back, but is scared that she will fail to rescue and leave the Hollow. Lycaon is worried the most. He is responsible for protecting his companions and he failed this time. He wouldn\'t want this to happen again ever. Rina, well she worries just like a mother worries about her kids. Which is a lot.<br>';
     textOne.innerHTML += '<br>Eous: Mhphh. Guys!!! I finished. Her biothermal signature is just 2 blocks East! We are so close!!!<br>';
     textOne.innerHTML += 'Lycaon: Everyone! Get ready! We are leaving now!<br>';
@@ -878,19 +878,19 @@ buttonEllen.onclick = function() {
     
     //change text 1
     textOne.innerText = '';
-    textOne.innerHTML += 'The party run towards Ellen\'s location as quickly as they can. The location of Ellen is found in a clear field, prone to many ethereals. They climb up to a building that is right at the outskirt of this clear field. They stopped at the top of the building at gaze down to teh field. All stand quietly as they scan the field for their friend.<br><br>She\'s not here.<br>';
+    textOne.innerHTML += 'The party run towards Ellen\'s location as quickly as they can. The location of Ellen is found in a clear field, prone to many ethereals. They climb up to a building that is right at the outskirt of this clear field. They stopped at the top of the building and gazed down to the field. All stood quietly as they scan the field for their friend.<br><br>She\'s not here.<br>';
     textOne.innerHTML += 'The party falls silent. They look over the area again and again, but no Ellen in sight. What\'s only present is the slowly forming rifts that is continuing to produce several ethereals.<br><br>';
     textOne.innerHTML += 'Lycaon: You said she was here. Proxy<br>';
     textOne.innerHTML += 'Eous: Uh I don\'t understand! Her biothermal signature is right infront of us!<br>';
     textOne.innerHTML += 'Lycaon: Well she isn\'t here!!! THE DATA MUST BE WRONG! WEHRE IS SHE!?<br>';
     //change text 2 
     textTwo.innerHTML = 'As Lycaon shouted, a figure jumped forth from below the building up to the top floor.<br><br>It\'s Ellen!!';
-    textTwo.innerHTML += '<br><br>Ellen: Well I\'m here alright! Come on! These ethereals aren\'t gonna dissapear on there on yknow! I was commisioned to kill ethereals here, but I\'m guessing you know that already.<br>';
+    textTwo.innerHTML += '<br><br>Ellen: Well I\'m here alright! Come on! These ethereals aren\'t gonna dissapear on their on yknow! I was commisioned to kill ethereals here, but I\'m guessing you know that already.<br>';
     textTwo.innerHTML += 'Lycaon: Ellen.... Ellen you shouldn\'t be fighting at your state. Let us deal with the ethereals.<br>';
-    textTwo.innerHTML += 'Ellen: You know I won\'t let you stop me from fighting. Cmon, Rina and Corin is already preparing to battle. We are just waiting for you Lycaon.<br>';
+    textTwo.innerHTML += 'Ellen: You know I won\'t let you stop me from fighting. Cmon, Rina and Corin are already preparing to battle. We are just waiting for you Lycaon.<br>';
     textTwo.innerHTML += 'Lycaon: I- Okay. Proxy, stay behind. I\'m sorry for my outburst. We will deal with the ethereals.<br>';
     textTwo.innerHTML += 'Eous: Yes Sir!<br>';
-    textTwo.innerHTML += 'Corin: Victoria\'s Housekeeping is now back together!! Let\'s go Ellen!<br>';
+    textTwo.innerHTML += 'Corin: Victoria Housekeeping is now back together!! Let\'s go Ellen!<br>';
     textTwo.innerHTML += 'Ellen: Ready when you are!<br><br>';
     textTwo.innerHTML += 'Ellen is now back with Lycaon, Corin, and Rina. Now its time for the final battle of this saga.';
     //change Image
@@ -925,7 +925,7 @@ buttonFinalBattle.onclick = function (){
     nodeIndicator.innerHTML = 'Node: Final Battle'; //Change node number
 
     textOne.innerHTML = 'Thanatos:<br>An ethereal that is not a laughing matter. It\'s attacks from its bow deals 6 dmg. Tread carefully.<br>';
-    textOne.innerHTML += 'Thanatos Notorious:<br>It\'s Thanatos but notorious. It deals 7 dmg.<br><br>';
+    textOne.innerHTML += 'Notorious Thanatos:<br>It\'s Thanatos but notorious. It deals 7 dmg.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/thanatos.JPG\' id=\'etherImage\'> <img src=\'battleImages/thanatosNotorious.JPG\' id=\'etherImage\'>';
 
     selectCharacter(thanatos, thanatosNotorius); //Call selection function
@@ -962,17 +962,18 @@ buttonLeave.onclick = function() {
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = 'With the help of Ellen, the party was able to defeat all the ethereals. They quickly ran outside the Hollow with the help of the Proxy.<br><br>';
+    textOne.innerText = '';
+    textOne.innerHTML = 'With the help of Ellen, the party was able to defeat all the ethereals. They quickly ran outside the Hollow with the help of the Proxy.<br><br>';
     textOne.innerHTML += 'Lycaon: Gasp, hah haa.... Are you all right? Ellen, any ethereal corruption on your body?<br>';
     textOne.innerHTML += 'Ellen: You know I have tough skin, they won\'t dare scratch me! Ha!<br>';
     textOne.innerHTML += 'Rina: It\'s such a relief you are well Ellen. We miss you very much.<br>';
-    textOne.innerHTML += 'Ellen: Is that Rina being emotional? That\'s a first. Just kidding! Thank you Rina for worrying about me.';
+    textOne.innerHTML += 'Ellen: Is that Rina being emotional? That\'s a first. Just kidding! Thank you Rina for worrying about me.<br>';
     textOne.innerHTML += 'Corin: I worried about you the most Ellen! I was so worried!<br><br>';
-    textOne.innerHTML += 'Corin runs towards Ellen and give her the strongest hugs ever.<br><br>';
+    textOne.innerHTML += 'Corin runs towards Ellen and gives her the strongest hugs ever.<br><br>';
     textOne.innerHTML += 'Ellen: okay okay Corin get off me! You are breaking my ribs!<br>';
-    textOne.innerHTML += 'Corin: Haha, sorry I\'m just happy your here Ellen.<br>';
+    textOne.innerHTML += 'Corin: Haha, sorry I\'m just happy you\'re here Ellen.<br>';
     textOne.innerHTML += 'Ellen: Im happy too Corin. Sir, so were to next?<br>';
-    textOne.innerHTML += 'Lycaon: Well, if need be, let\'s go to the Hospital and get some treatment. Other than that, let\'s eat out with the Proxies tonight!<br>';
+    textOne.innerHTML += 'Lycaon: Well, if need be, let\'s go to the hospital and get some treatment. Other than that, let\'s eat out with the Proxies tonight!<br>';
     textOne.innerHTML += 'Corin & Ellen & Rina: Yay!!!!!';
     //change text 2
     textTwo.innerHTML = '';
@@ -1545,7 +1546,7 @@ function fallenEnding(){
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = 'Everyone went into the broken infrastructure and went right on unstable ground. They tried to leave the premises but failed to escape. They fell from the 5th floor and they all perished. Ellen was nowhere to be found. By now, she became an ethereal. The Proxy, the only surviving member of the mission felt guilt for the rest of his life and he mourns their loss every year.<br><br>Mission Shark: Save Ellen - Failed'; 
+    textOne.innerHTML = 'Everyone went into the broken infrastructure and went right on unstable ground. They tried to leave the premises but failed to escape. They fell from the 5th floor and they all perished. Ellen was nowhere to be found. By now, she became an ethereal. The Proxy, the only surviving member of the mission felt guilt for the rest of his life and he mourns their loss every year.<br><br>Mission Shark: Save Ellen - Failed'; 
     //change text 2
     textTwo.innerHTML = '';
     //change Image
@@ -1568,8 +1569,8 @@ function ambushedEnding(){
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = 'Lycaon and everyone decided to go through the open area. This way, everyone can see their surrondings and possibily Ellen. As they continued closer to the center of the area, the surrondings began to change from trashed and broken buildings to rumble then finally a clear plain.';
-    textOne.innerHTML += 'Everyone was puzzled on the drastic change of environment. They then formed a defense formation to make sure no danerous figure can attack them. However, their attempt to protect them was futile and a huge ethereal flew down to them. The party was frozen in shock. ';
+    textOne.innerText = 'Everyone decided to go through the open area. This way, everyone can see their surrondings and possibily Ellen. As they continued closer to the center of the area, the surrondings began to change from trashed and broken buildings, to ruble, then finally a clear plain. ';
+    textOne.innerHTML += 'Everyone was puzzled on the drastic change of environment. They then formed a defense formation to make sure no dangerous figure can attack them. However, their attempt to protect themselves was futile and a huge ethereal flew down to them. The party was frozen in shock. ';
     //change text 2
     textTwo.innerHTML = 'The party failed to escape and they all perished by the hands of the ethereal. Eous was destroyed in the process and the Proxy never saw them again. Ellen was never found.<br><br>Mission Shark: Save Ellen - Failed';
     //change Image
@@ -1592,16 +1593,17 @@ function dinnerEnding(){
     titleTwo.innerHTML = 'Epilogue';
     
     //change text 1
-    textOne.innerText = 'Victoria Housekeeping return to the Random Play Store to pick up the Proxies. They entered the company vehicle and go to Lumina Square for dinner. It was an amazing dinner with friends. A nice way to end the day.<br><br>Mission Shark: Save Ellen - Completed'; 
+    textOne.innerText = '';
+    textOne.innerHTML += 'Victoria Housekeeping returned to the Random Play Store to pick up the Proxies. They entered the company vehicle and went to Lumina Square for dinner. It was an amazing dinner with friends. A nice way to end the day.<br><br>Mission Shark: Save Ellen - Completed'; 
     textOne.innerHTML += '<br><br><img src=\'nodeImages/DinnerEnding.jpg\' id=\'endingPhoto\'>';
     //change text 2
     textTwo.innerHTML = 'Corin: Oh! Ellen! Remember when you went into the Brant Street Hollow by yourself? And then we had to save you? Hahaha that was so fun!<br>';
     textTwo.innerHTML += 'Ellen: Oh shut it Corin! I was in danger!<br>';
-    textTwo.innerHTML += 'Lycaon: Well I wonder, why go by yourself? We always do commision together?<br>';
+    textTwo.innerHTML += 'Lycaon: Well I wonder, why go by yourself? We always do commisions together?<br>';
     textTwo.innerHTML += 'Ellen: Uhhhh well. I was going to ask yall to help but uhh... I was distracted by a butterfly and walked into the Hollow.<br>';
     textTwo.innerHTML += 'Rina: Why didn\'t you just leave then?<br>';
-    textTwo.innerHTML += 'Ellen: Ugh! obviously the Hollow shifted right when I entered and the entrance closed! Ugh, just give me the drink....';
-    textTwo.innerHTML += 'Corin: HAHAHA you got my drink!!! Becareful Ellen, its very spicy!!!';
+    textTwo.innerHTML += 'Ellen: Ugh! obviously the Hollow shifted right when I entered and the entrance closed! Ugh, just give me the drink....<br>';
+    textTwo.innerHTML += 'Corin: HAHAHA you got my drink!!! Be careful Ellen, its very spicy!!!';
     //change Image
     nodeImage.src = 'nodeImages/DinnerEnding2.png';
 
@@ -1624,13 +1626,13 @@ function hospitalEnding(){
     //change text 1
     textOne.innerText = '';
     textOne.innerHTML += 'Ellen: So how is it that I stayed in the Hollow longer than all of you and still had less injuries than yall?<br>';
-    textOne.innerHTML += 'Lycaon: It\'s because you aren\'t a playable character, you can die!<br>';
+    textOne.innerHTML += 'Lycaon: It\'s because you aren\'t a playable character, you can\'t die!<br>';
     textOne.innerHTML += 'Ellen: Huh? Uh well anyway, lets get a snack when you all are done. Cmon, I\'ll be waiting outside. Toodeloo!';
     textOne.innerHTML += '<br><br><img src=\'nodeImages/HospitalEnding2.png\' id=\'endingPhoto\'>';
     //change text 2
-    textTwo.innerHTML = 'Though they planned to eat dinner with the proxies, their treatment in the hospital forced them to delay the dinner tommorrow. However, they got a little laugh in their situation in the hospital. It was a hard and grueling mission for them and its kind for Ellen to at like its a normal day, or else anyone of them will burst in tears.';
+    textTwo.innerHTML = 'Though they planned to eat dinner with the proxies, their treatment in the hospital forced them to delay the dinner tommorrow. However, they got a little laugh in their situation in the hospital. It was a hard and grueling mission for them and its kind for Ellen to act like it\'s a normal day, or else anyone of them will burst in tears.';
     textTwo.innerHTML += 'After they were released from the hospital, they went out to eat some sandwiches.<br><br>';
-    textTwo.innerHTML += 'Ellen: Hey guys, can we watch Astra Yao\'s concert tommorow instead dinner with the proxies? I heard they are Astra Yao fans as well so we can invite them.<br>';
+    textTwo.innerHTML += 'Ellen: Hey guys, can we watch Astra Yao\'s concert tommorow instead of dinner with the proxies? I heard they are huge Astra Yao fans as well, so we can invite them.<br>';
     textTwo.innerHTML += 'Lycaon: How considerate of you Ellen. Sure, we can do that instead of dinner.';
     //change Image
     nodeImage.src = 'nodeImages/hospitalEnding.jpg';
