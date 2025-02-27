@@ -1652,7 +1652,7 @@ function hospitalEnding(){
     textTwo.innerHTML += 'Ellen: Hey guys, can we watch Astra Yao\'s concert tommorow instead of dinner with the proxies? I heard they are huge Astra Yao fans as well, so we can invite them.<br>';
     textTwo.innerHTML += 'Lycaon: How considerate of you Ellen. Sure, we can do that instead of dinner.';
     //change Image
-    nodeImage.src = 'nodeImages/hospitalEnding.jpg';
+    nodeImage.src = 'nodeImages/HospitalEnding.jpg';
     
     document.getElementById('image').appendChild(newImage);
 
