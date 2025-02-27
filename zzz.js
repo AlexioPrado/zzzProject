@@ -152,6 +152,23 @@ let battleChoice = document.getElementById('battleChoice');
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Implementing keyboard input
+//Hide all of this first
+document.getElementById('mid').style = 'display: none;';
+document.getElementById('nodeCode').innerHTML = 'Press SpaceBar to Start';
+buttonBox.style = 'display: none;';
+document.getElementById('character').style = 'display: none;';
+//when spacebar pressed, make them appear
+document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {
+        document.getElementById('mid').style = 'display: flex;';
+        document.getElementById('nodeCode').innerHTML = 'Node: 1';
+        buttonBox.style = 'display: flex;';
+        document.getElementById('character').style = 'display: flex;';
+    }
+  })
+
+
 /*
     1. Create Button Variable for Node 1
     2. Create Button Description Variable
