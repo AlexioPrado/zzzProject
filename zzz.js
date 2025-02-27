@@ -816,7 +816,7 @@ button9a.onclick = function() {
     //change text 2
     textTwo.innerHTML = 'The thugs scrambled on the ground and ran away. Lycaon had no issue of them leaving, because they ran to the direction of high ether activity. Lycaon pointed to where the thugs instructed and they began to walk.';
     //change Image
-    nodeImage.src = 'nodeImages/Node9a.png';
+    nodeImage.src = 'nodeImages/Node9a.PNG';
 
     //Remove the button and button description
     button9a.remove();
