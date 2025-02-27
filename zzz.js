@@ -1,32 +1,32 @@
 
-//Making new buttons
-//let newButton = document.createElement('button')
-//newButton.id = 'but4' //create id
-//newButton.innerHTML = 'Choice 4' //text inside
-//document.body.appendChild(newButton) //add it into html
 
-// Removing buttons
-//let rem = document.getElementById('but1') //makes variable
-//rem.remove() //removes it
-
-//setTimeout(function, milliseconds)
+// Mission Shark: Save Ellen Joe
+// Javascript File
+// 2/26/25
+// Marcus Prado
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Character Selection CODE
-//Character Images
+/*Character Selection
+    Over the next few code lines, it creates the character description box
+    at the bottom of the web page and reacts to user input.
+*/
+
+//Character Image
 let corin = document.getElementById('charImage1');
 let lycaon = document.getElementById('charImage2');
 let rina = document.getElementById('charImage3');
-// CHaracter Description Text
+// Character Description Text
+// Creat variable of text boxes to be changed later
 const charName = document.getElementById('placeholder');
 const charDesc = document.getElementById('charText');
 charDesc.style = 'max-width: 500px; font-size: 16px;';
 
 //Functions to display descriptions of characters when Image clicked
 // 1.Changes style of placeholder text
-// 2.Adds the Name
+// 2.Add the Name of the character
 // 3.Add their battle descriptions: Health, skill, and passive
+// 4.Based on what image was clicked
 corin.onclick = function() {
     charName.style = 'font-size: 30px; margin: 10px; border-bottom: 3px solid white;';
     charName.textContent = 'Corin Wickes';
@@ -77,6 +77,8 @@ let buttonE3 = document.getElementById('outerBox3')
     3. Prepareskill timer
     4. Weakness
     5. Resistance
+    6. Image
+    7. Max Health
 */
 let alpeca = {'Health': 10 , 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/alpeca.JPG', 'MaxHP' : 10};
 let alraune = {'Health': 16, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'none', 'url': 'battleImages/alraune.JPG', 'MaxHP' : 13};
@@ -95,14 +97,16 @@ let thanatosNotorius = {'Health': 27, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ic
     2. Dmg
     3. Passives
     4. Attribute
+    5. Image
+    6. Max Health
 */
 let corinBattle = {'Name': 'Corin', 'Health': 12, 'Skill': 3, 'Attribute': 'Physical', 'url': 'battleImages/characterBattle/corinBattle.JPG', 'MaxHP' : 12};
 let lycaonBattle = {'Name': 'Lycaon', 'Health': 18, 'Skill': 2, 'Attribute': 'Ice', 'url': 'battleImages/characterBattle/lycaonBattle.JPG', 'MaxHP' : 18};
 let rinaBattle = {'Name': 'Rina', 'Health': 14, 'Skill': 1, 'Passive': 2, 'Attribute': 'Electric', 'url': 'battleImages/characterBattle/rinaBattle.JPG', 'MaxHP' : 14};
 
 /* Create Button Variables for all buttons used in Battles
-    1. Select Character Buttons
-    2. Switch Character Buttons
+    1. Select Character Buttons: Appears before the battle begins
+    2. Switch Character Buttons: Appears during the battle
     3. Attack Button
 */
 let corinButton = document.getElementById('charSelect1');
@@ -116,10 +120,10 @@ let rinaSwitch = document.getElementById('switch3');
 let attackButton = document.getElementById('battleAttack');
 
 /* Create Variables for items that will change during battle
-    1. HP Number Char/Enemy
+    1. HP value of Character/Enemy
     2. Attribute
-    3. Enemy Res
-    4. Enemy Weak
+    3. Enemy Resistance
+    4. Enemy Weakness
     5. BattleRecord
     6. Character Img
     7. Enemy Img
@@ -128,7 +132,7 @@ let attackButton = document.getElementById('battleAttack');
     10. CharacterSelection: Appears before battles begin
     11. Battle: Appears during battle
     12. BattleChoice: Appears during battle
-    13. Move Counter
+    13. Move Counter: Tracks the amount of moves per battle
 */
 let characterHealth = document.getElementById('health1');
 let enemyHealth = document.getElementById('health2');
@@ -169,7 +173,7 @@ button1.onclick = function (){
     //change text 1
     textOne.innerText = ''; 
     textOne.innerHTML += '*Door Bell Rings*<br>Wise: Welcome to the Random Play! Oh! Its you Lycaon how may I help?<br>Lycaon: Ellen is lost in a Hollow I need your help.<br>Wise: Oh is that so? I\'ll alert Belle. Here\'s Eous. Take him and we can help.<br>Lycaon: Thank you for your help. I promise to compensate you.<br>Wise: It\'s fine, no need to pay me. I\'m doing this as a friend. Now go and get to the Hollow.';
-    textOne.innerHTML += '<br><br>Eous: A Bangboo which the Proxy can communicate others in the Hollow. The Proxy can also do some handy things like locate people using Data Piles.'
+    textOne.innerHTML += '<br><br>Eous: A Bangboo which the Proxy can communicate others in the Hollow. The Proxy can also do some handy things like locate people using Data Piles.';
     //change text 2
     textTwo.innerHTML = 'Victoria Housekeeping and little Eous entered the Hollow. Eous begins to locate Data Piles to which they can find Ellen in the Hollow. As they continue throuhgout the Hollow, they suddenly encounter Ethereals!';
     textTwo.innerHTML += '<br><br>Ethereals: Ethereals are monsters formed from high ether activity. When exploring the Hollow make sure to stay far from high ether activity, or else you\'ll meet many foes.'
@@ -177,8 +181,8 @@ button1.onclick = function (){
     nodeImage.src = 'nodeImages/Node2.jpg';
 
     //Remove the button and button description
-    button1.remove()
-    buttonDesc.remove()
+    button1.remove();
+    buttonDesc.remove();
     // Add the new button and button description for next node
     document.getElementById('outerBox1').appendChild(button2);
     document.getElementById('outerBox1').appendChild(buttonDesc2);
@@ -186,6 +190,7 @@ button1.onclick = function (){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//1. Create button Node 2 and Description of Button
 let button2 = document.createElement('button');
 button2.id = 'button';
 button2.innerHTML = 'TIME TO BATTLE';
@@ -204,23 +209,25 @@ button2.onclick = function (){
     textOne.innerHTML = 'Alpeca:<br>A quite humanoid Ethereal figure which deals 2 dmg every swing of its sharp arm-like blade.<br>';
     textOne.innerHTML += 'Blastcrawler:<br>An Ethereal that acts just like a bomb. Stun it before it can explode and deal 3 dmg.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/alpeca.JPG\' id=\'etherImage\'> <img src=\'battleImages/blastcrawler.JPG\' id=\'etherImage\'>';
+    
+    selectCharacter(alpeca, blastCrawler); // Call selection Function
 
-    selectCharacter(alpeca, blastCrawler);
-
-    button2.remove()
-    buttonDesc2.remove()
-
+    //Remove the button and button description
+    button2.remove();
+    buttonDesc2.remove();
+    // Add the new button and button description for next node
     document.getElementById('outerBox1').appendChild(button3);
     document.getElementById('outerBox1').appendChild(buttonDesc3);
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Create button Node 3 and Description of Button
 let button3 = document.createElement('button');
 button3.id = 'button';
 button3.innerHTML = 'Continue in the hollow';
 
-let buttonDesc3 = document.createElement('p')
+let buttonDesc3 = document.createElement('p');
 buttonDesc3.id = 'butDesc';
 buttonDesc3.innerHTML = 'Continue with the Proxy and head to the first Data Pile.';
 
@@ -238,12 +245,12 @@ button3.onclick = function (){
     //change text 1
     textOne.innerText = ''; 
     textOne.innerHTML += 'Data Piles are beacons located inside the Hollow, scattered across the area. Data piles can collect data in its surrondings. This data includes biothermal signatures. If you collect enough data piles, you can locate people or ethereals. You can locate Ellen!<br>';
-    textOne.innerHTML += '<br><img src=\'nodeImages/Node3.png\' id=\'nodeImage\'>'
+    textOne.innerHTML += '<br><img src=\'nodeImages/Node3.png\' id=\'nodeImage\'>';
     //change text 2
     textTwo.innerHTML = 'Lycaon\'s company and the Proxy arrived to the first data pile of 3. While the proxy collects the data, Lycaon checked the surrondings for ethereals while Corin and Rina look for clues of Ellen.<br>';
-    textTwo.innerHTML += '<br>Proxy: Okay guys! I\'ve collected the data and there are three paths we could go from here.<br>'
-    textTwo.innerHTML += '<br>Left -> High Ether Activity<br>Straight -> Low Ether Activity<br>Right -> No activity, however a very dangerous terrain of debris<br>'
-    textTwo.innerHTML += '<br>Meanwhile...<br>Ellen: Gahhh! I don\'t think I can handle the Ethereals any longer. I have to hurry!'
+    textTwo.innerHTML += '<br>Proxy: Okay guys! I\'ve collected the data and there are three paths we could go from here.<br>';
+    textTwo.innerHTML += '<br>Left -> High Ether Activity<br>Straight -> Low Ether Activity<br>Right -> No activity, however a very dangerous terrain of debris<br>';
+    textTwo.innerHTML += '<br>Meanwhile...<br>Ellen: Gahhh! I don\'t think I can handle the Ethereals any longer. I have to hurry!';
     //change Image
     nodeImage.src = 'nodeImages/zzz_combat.jpg';
 
@@ -265,11 +272,12 @@ button3.onclick = function (){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//1. Create button Node 4a,4b,4c and Description of Button
 let button4a = document.createElement('button');
 button4a.id = 'button';
 button4a.innerHTML = 'Move Left';
 
-let buttonDesc4a = document.createElement('p')
+let buttonDesc4a = document.createElement('p');
 buttonDesc4a.id = 'butDesc';
 buttonDesc4a.innerHTML = 'High Ether Activity. Dangerous ethereals but great rewards.';
 
@@ -277,7 +285,7 @@ let button4b = document.createElement('button');
 button4b.id = 'button';
 button4b.innerHTML = 'Move Straight';
 
-let buttonDesc4b = document.createElement('p')
+let buttonDesc4b = document.createElement('p');
 buttonDesc4b.id = 'butDesc';
 buttonDesc4b.innerHTML = 'Low Ether Activity. Not much ethereals and little reward.';
 
@@ -285,7 +293,7 @@ let button4c = document.createElement('button');
 button4c.id = 'button';
 button4c.innerHTML = 'Move Right';
 
-let buttonDesc4c = document.createElement('p')
+let buttonDesc4c = document.createElement('p');
 buttonDesc4c.id = 'butDesc';
 buttonDesc4c.innerHTML = 'Dangerous terrain. An accident waiting to happen.';
 
@@ -305,7 +313,7 @@ button4c.onclick = function (){
     //change text 2
     textTwo.innerHTML = 'Lycaon: Let\'s go right. We don\'t want to risk ourselves in fighting ethereals when we could pass them.<br>';
     textTwo.innerHTML += 'Corin: Sir, wouldn\'t it be quicker to go through the ether activity than go around? We need to save Ellen quick!<br>';
-    textTwo.innerHTML += 'Lycaon: We can only save her if we are alive. We are here to find her, but we must stay safe as well. Now let\'s get a move on!'
+    textTwo.innerHTML += 'Lycaon: We can only save her if we are alive. We are here to find her, but we must stay safe as well. Now let\'s get a move on!';
     //change Image
     nodeImage.src = 'nodeImages/Node4c.jpg';
 
@@ -376,8 +384,8 @@ button4a.onclick = function (){
     //change text 2
     textTwo.innerHTML = 'Lycaon: Let\'s go left. Ellen is kind of an Ether magnet. Maybe this high ether activity was caused by many ethereals following Ellen.<br>';
     textTwo.innerHTML += 'Corin: I hope the Ethereals won\t go for us instead. *Gulp*<br>';
-    textTwo.innerHTML += 'Rina: Don\t worry sweetie, I\'m sure they won\'t come for- Oh and there they are. Oops I jinxed it.<br>'
-    textTwo.innerHTML += 'Lycaon: Everyone, get ready for battle!'
+    textTwo.innerHTML += 'Rina: Don\t worry sweetie, I\'m sure they won\'t come for- Oh and there they are. Oops I jinxed it.<br>';
+    textTwo.innerHTML += 'Lycaon: Everyone, get ready for battle!';
     //change Image
     nodeImage.src = 'nodeImages/Node4ab.jpg';
 
@@ -398,11 +406,12 @@ button4a.onclick = function (){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//1. Create button Node 5a,5b and Description of Button
 let button5a = document.createElement('button');
 button5a.id = 'button';
 button5a.innerHTML = 'TIME TO BATTLE';
 
-let buttonDesc5a = document.createElement('p')
+let buttonDesc5a = document.createElement('p');
 buttonDesc5a.id = 'butDesc';
 buttonDesc5a.innerHTML = 'This isn\'t your first rodeo. Just fight like you usually do. Remember. These Ethereals are dangerous.';
 
@@ -410,7 +419,7 @@ let button5b = document.createElement('button');
 button5b.id = 'button';
 button5b.innerHTML = 'TIME TO BATTLE';
 
-let buttonDesc5b = document.createElement('p')
+let buttonDesc5b = document.createElement('p');
 buttonDesc5b.id = 'butDesc';
 buttonDesc5b.innerHTML = 'This isn\'t your first rodeo. Just fight like you usually do. Remember. These Ethereals are dangerous.';
 
@@ -418,11 +427,9 @@ let button5c = document.createElement('button');
 button5c.id = 'button';
 button5c.innerHTML = 'Continue to the Debris';
 
-let buttonDesc5c = document.createElement('p')
+let buttonDesc5c = document.createElement('p');
 buttonDesc5c.id = 'butDesc';
 buttonDesc5c.innerHTML = 'It may be risky, but Lycaon believes this path will be safer for everyone.';
-
-
 
 //Node 5a Function
 button5a.onclick = function (){
@@ -435,16 +442,17 @@ button5a.onclick = function (){
     textOne.innerHTML += 'Armored Hati:<br>A very tough-exteriored Ethereal and a heavy hitter. It deals 3 dmg.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/alraune.JPG\' id=\'etherImage\'> <img src=\'battleImages/armoredHati.JPG\' id=\'etherImage\'>';
 
-    selectCharacter(alraune, armoredHati);
+    selectCharacter(alraune, armoredHati); // Call Selection Function
 
-    button5a.remove()
-    buttonDesc5a.remove()
-
+    //Remove the button and button description
+    button5a.remove();
+    buttonDesc5a.remove();
+    // Add the new button and button description for next node
     document.getElementById('outerBox1').appendChild(button6aA);
     document.getElementById('outerBox1').appendChild(buttonDesc6aA);
     document.getElementById('outerBox2').appendChild(button6aB);
     document.getElementById('outerBox2').appendChild(buttonDesc6aB);
-
+    //Display new buttons for this node
     buttonE2.style = 'display: flex;';
 }
 
@@ -459,28 +467,31 @@ button5b.onclick = function (){
     textOne.innerHTML += 'Fawn Energized:<br>An ethereal with the form just like a fawn but its ether make up is quite different, having different effects of attributes from the character. It deals 3 dmg as well.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/fawn.JPG\' id=\'etherImage\'> <img src=\'battleImages/fawnEnergized.JPG\' id=\'etherImage\'>';
 
-    selectCharacter(fawn, fawnEnergized);
+    selectCharacter(fawn, fawnEnergized); // Call Selection Function
 
-    button5b.remove()
-    buttonDesc5b.remove()
-
+    //Remove the button and button description
+    button5b.remove();
+    buttonDesc5b.remove();
+    // Add the new button and button description for next node
     document.getElementById('outerBox1').appendChild(button6b);
     document.getElementById('outerBox1').appendChild(buttonDesc6b);
-
+    //Display new buttons for this node
     buttonE2.style = 'display: none;';
 }
 
+//Node 5c Function
 button5c.onclick = function() {
-    fallenEnding()
+    fallenEnding(); 
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//1. Create button Node 6aA,6aB,6b and Description of Button
 let button6aA = document.createElement('button');
 button6aA.id = 'button';
 button6aA.innerHTML = 'DMG Increase';
 
-let buttonDesc6aA = document.createElement('p')
+let buttonDesc6aA = document.createElement('p');
 buttonDesc6aA.id = 'butDesc';
 buttonDesc6aA.innerHTML = 'Resonium: DMG increased by 1';
 
@@ -488,7 +499,7 @@ let button6aB = document.createElement('button');
 button6aB.id = 'button';
 button6aB.innerHTML = 'Healing Increase';
 
-let buttonDesc6aB = document.createElement('p')
+let buttonDesc6aB = document.createElement('p');
 buttonDesc6aB.id = 'butDesc';
 buttonDesc6aB.innerHTML = 'Resonium: Healing increased by 1';
 
@@ -496,7 +507,7 @@ let button6b = document.createElement('button');
 button6b.id = 'button';
 button6b.innerHTML = 'HP Increase';
 
-let buttonDesc6b = document.createElement('p')
+let buttonDesc6b = document.createElement('p');
 buttonDesc6b.id = 'butDesc';
 buttonDesc6b.innerHTML = 'Resonium: Increase Max HP by 2';
 
@@ -509,7 +520,7 @@ button6aA.onclick = function() {
 }
 
 button6aB.onclick = function() {
-    rinaBattle['Passive'] += 1
+    rinaBattle['Passive'] += 1;
 
     node6();
 }
@@ -565,7 +576,7 @@ let button7 = document.createElement('button');
 button7.id = 'button';
 button7.innerHTML = 'Continue in the hollow ';
 
-let buttonDesc7 = document.createElement('p')
+let buttonDesc7 = document.createElement('p');
 buttonDesc7.id = 'butDesc';
 buttonDesc7.innerHTML = 'Continue with the Proxy and head to the next Data Pile.';
 
@@ -610,7 +621,7 @@ let button8a = document.createElement('button');
 button8a.id = 'button';
 button8a.innerHTML = 'Don\'t Help';
 
-let buttonDesc8a = document.createElement('p')
+let buttonDesc8a = document.createElement('p');
 buttonDesc8a.id = 'butDesc';
 buttonDesc8a.innerHTML = 'Focus on the Mission and find the last data pile.';
 
@@ -618,7 +629,7 @@ let button8b = document.createElement('button');
 button8b.id = 'button';
 button8b.innerHTML = 'Help';
 
-let buttonDesc8b = document.createElement('p')
+let buttonDesc8b = document.createElement('p');
 buttonDesc8b.id = 'butDesc';
 buttonDesc8b.innerHTML = 'Helping will result in a battle against the ethereals.';
 
@@ -634,10 +645,10 @@ button8b.onclick = function (){
 
     selectCharacter(mandrake, shatterBug);
 
-    button8a.remove()
-    buttonDesc8a.remove()
-    button8b.remove()
-    buttonDesc8b.remove()
+    button8a.remove();
+    buttonDesc8a.remove();
+    button8b.remove();
+    buttonDesc8b.remove();
 
     document.getElementById('outerBox1').appendChild(button9a);
     document.getElementById('outerBox1').appendChild(buttonDesc9a);
@@ -657,20 +668,20 @@ button8a.onclick = function (){
     
     //change text 1
     textOne.innerText = 'Lycaon: We are not helping them. End of discussion. What\'s important is Ellen. That\'s it. Our mission is to save her, not strangers who most likely brought this issue onto themselves.<br>';
-    textOne.innerHTML += 'Corin: Ugh, you\'re so mean Mr. Lycaon! Hmph. Let\'s just go!' 
+    textOne.innerHTML += 'Corin: Ugh, you\'re so mean Mr. Lycaon! Hmph. Let\'s just go!';
     //change text 2
     textTwo.innerHTML = 'Lycaon sighs in defeat and could understood why Corin is so upset. She wants to help, but we have a goal and that\'s helping Ellen. Rina looks at Lycaon and shakes her head in dissaproval. It upsetted Lycaon and his ears drooped down. For the next 10 mins, no one spoke at all, only the occasional directional instructions by the Proxy.<br><br>';
     textTwo.innerHTML += 'Lycaon: Hey Corin, Rina. I apologize. I should\'ve listen to both of you and tried to help those strangers. I just got very upset that we would want to rescue them before Ellen. It didn\'t feel right to me. Ellen is family. However, you both are right. Anyone needing help in a Hollow deserves help.<br>';
     textTwo.innerHTML += 'Rina; Lycaon, it\'s okay. We all too want to save Ellen. You are right. Everyone in a hollow deserves help. We can\'t change what we have already done. So let\'s continue onto the thrid data pile. Maybe when leaving the hollow, we wull see them.<br><br>';
-    textTwo.innerHTML += 'Lycaon nods his head and they all continue on the path. They walk for another 10 mins before they reached a for in the road.'
+    textTwo.innerHTML += 'Lycaon nods his head and they all continue on the path. They walk for another 10 mins before they reached a for in the road.';
     //change Image
     nodeImage.src = 'nodeImages/Node7.JPG';
 
     //Remove the button and button description
-    button8a.remove()
-    buttonDesc8a.remove()
-    button8b.remove()
-    buttonDesc8b.remove()
+    button8a.remove();
+    buttonDesc8a.remove();
+    button8b.remove();
+    buttonDesc8b.remove();
     // Add the new button and button description for next node
     document.getElementById('outerBox1').appendChild(button9ba);
     document.getElementById('outerBox1').appendChild(buttonDesc9ba);
@@ -687,7 +698,7 @@ let button9ba = document.createElement('button');
 button9ba.id = 'button';
 button9ba.innerHTML = 'Open Area';
 
-let buttonDesc9ba = document.createElement('p')
+let buttonDesc9ba = document.createElement('p');
 buttonDesc9ba.id = 'butDesc';
 buttonDesc9ba.innerHTML = 'Open areas mean less debris to get caught on and easier to see your surrondings.';
 
@@ -695,7 +706,7 @@ let button9bc = document.createElement('button');
 button9bc.id = 'button';
 button9bc.innerHTML = 'Alleyway';
 
-let buttonDesc9bc = document.createElement('p')
+let buttonDesc9bc = document.createElement('p');
 buttonDesc9bc.id = 'butDesc';
 buttonDesc9bc.innerHTML = 'What\'s at the end of this alleyway? Ethereals? Ellen? Who knows, be ready for anything!';
 
@@ -720,16 +731,16 @@ button9bc.onclick = function (){
     let etherealList = [alpeca,alraune,armoredHati,blastCrawler,fawn,fawnEnergized,mandrake,shatterBug];
     let change;
     for (let i = 0; i < etherealList.length; i++){
-        change = etherealList[i].MaxHP
+        change = etherealList[i].MaxHP;
         etherealList[i].Health = change;
     }
 
     selectCharacter(etherealList[Math.floor(Math.random() * (etherealList.length - 1))],dullahan);
 
-    button9ba.remove()
-    buttonDesc9ba.remove()
-    button9bc.remove()
-    buttonDesc9bc.remove()
+    button9ba.remove();
+    buttonDesc9ba.remove();
+    button9bc.remove();
+    buttonDesc9bc.remove();
 
     document.getElementById('outerBox1').appendChild(button10);
     document.getElementById('outerBox1').appendChild(buttonDesc10);
@@ -743,7 +754,7 @@ let button9a = document.createElement('button');
 button9a.id = 'button';
 button9a.innerHTML = 'Talk to the people in need';
 
-let buttonDesc9a = document.createElement('p')
+let buttonDesc9a = document.createElement('p');
 buttonDesc9a.id = 'butDesc';
 buttonDesc9a.innerHTML = 'You defeated the ethereals and now have to talk to the people in need.';
 
@@ -789,7 +800,7 @@ let button10 = document.createElement('button');
 button10.id = 'button';
 button10.innerHTML = 'Continue to the Final Data Pile';
 
-let buttonDesc10 = document.createElement('p')
+let buttonDesc10 = document.createElement('p');
 buttonDesc10.id = 'butDesc';
 buttonDesc10.innerHTML = 'Your Journey is almost to its end. Find Ellen.';
 
@@ -808,7 +819,7 @@ button10.onclick = function() {
     textOne.innerHTML += 'Corin is so excited to see Ellen back, but is scared that she will fail to rescue and leave the Hollow. Lycaon is worried the most. He is responsible for protecting his companions and he failed this time. He wouldn\'t want this to happen again ever. Rina, well she worries just like a mother worries about her kids. Which is a lot.<br>';
     textOne.innerHTML += '<br>Eous: Mhphh. Guys!!! I finished. Her biothermal signature is just 2 blocks East! We are so close!!!<br>';
     textOne.innerHTML += 'Lycaon: Everyone! Get ready! We are leaving now!<br>';
-    textOne.innerHTML += 'Rina & Corin: Yes Sir!'
+    textOne.innerHTML += 'Rina & Corin: Yes Sir!';
     //change text 2
     textTwo.innerHTML = '';
     //change Image
@@ -831,7 +842,7 @@ let buttonEllen = document.createElement('button');
 buttonEllen.id = 'button';
 buttonEllen.innerHTML = 'Find Ellen';
 
-let buttonDescEllen = document.createElement('p')
+let buttonDescEllen = document.createElement('p');
 buttonDescEllen.id = 'butDesc';
 buttonDescEllen.innerHTML = 'what are you waiting for? Save Ellen!!!';
 
@@ -882,7 +893,7 @@ let buttonFinalBattle = document.createElement('button');
 buttonFinalBattle.id = 'button';
 buttonFinalBattle.innerHTML = 'Battle the Ethereals';
 
-let buttonDescFinalBattle = document.createElement('p')
+let buttonDescFinalBattle = document.createElement('p');
 buttonDescFinalBattle.id = 'butDesc';
 buttonDescFinalBattle.innerHTML = 'It\'s time to battle, now with Ellen. Cmon, the mission is almost done!';
 
@@ -898,8 +909,8 @@ buttonFinalBattle.onclick = function (){
 
     selectCharacter(thanatos, thanatosNotorius);
 
-    buttonFinalBattle.remove()
-    buttonDescFinalBattle.remove()
+    buttonFinalBattle.remove();
+    buttonDescFinalBattle.remove();
 
 
     document.getElementById('outerBox1').appendChild(buttonLeave);
@@ -914,7 +925,7 @@ let buttonLeave = document.createElement('button');
 buttonLeave.id = 'button';
 buttonLeave.innerHTML = 'Leave the Hollow';
 
-let buttonDescLeave = document.createElement('p')
+let buttonDescLeave = document.createElement('p');
 buttonDescLeave.id = 'butDesc';
 buttonDescLeave.innerHTML = 'You defeated the last of the ethereals! Go quick, leave the Hollow before more arrive!';
 
@@ -940,7 +951,7 @@ buttonLeave.onclick = function() {
     textOne.innerHTML += 'Corin: Haha, sorry I\'m just happy your here Ellen.<br>';
     textOne.innerHTML += 'Ellen: Im happy too Corin. Sir, so were to next?<br>';
     textOne.innerHTML += 'Lycaon: Well, if need be, let\'s go to the Hospital and get some treatment. Other than that, let\'s eat out with the Proxies tonight!<br>';
-    textOne.innerHTML += 'Corin & Ellen & Rina: Yay!!!!!'
+    textOne.innerHTML += 'Corin & Ellen & Rina: Yay!!!!!';
     //change text 2
     textTwo.innerHTML = '';
     //change Image
@@ -963,7 +974,7 @@ let buttonFinish = document.createElement('button');
 buttonFinish.id = 'button';
 buttonFinish.innerHTML = 'Mission Shark: Completed';
 
-let buttonDescFinish = document.createElement('p')
+let buttonDescFinish = document.createElement('p');
 buttonDescFinish.id = 'butDesc';
 buttonDescFinish.innerHTML = 'Leave the premises of the Hollow';
 
@@ -974,10 +985,10 @@ buttonFinish.onclick = function() {
     let endingDecider = fallenCharacter('give');
     
     if (endingDecider){
-        hospitalEnding()
+        hospitalEnding();
     }
     else {
-        dinnerEnding()
+        dinnerEnding();
     }
 
     buttonFinish.remove();
@@ -1001,47 +1012,47 @@ function selectCharacter(enemy1,enemy2){
     nodeImage.style = 'display: none;';
 
     //Description Box Changes: Titles and Adds battle rules
-    titleOne.innerHTML = 'Battle Info'
+    titleOne.innerHTML = 'Battle Info';
     titleTwo.innerHTML = 'Battle Rules';
     textTwo.innerText = '';
     textTwo.innerHTML += '1. You and the enemy take turns each to deal dmg.<br>';
     textTwo.innerHTML += '2. Changing characters are considered a turn. Selecting a character at the start of the game does not count as your turn.<br>';
     textTwo.innerHTML += '3. When a character\'s health reaches 0 or lower, they have fallen and can\'t be used for the whole story. The player must choose another active character to continue the battle.<br>';
     textTwo.innerHTML += '4. When an enemy\'s health reachs 0 or lower, they perish and the next wave of enemies comes. Each battle has two waves.<br>';
-    textTwo.innerHTML += '5. Enemies have attribute weakness and resistance. Character\'s with the same attribute, the enemy is weak to, has damage dealt increased by 1. If the character has the same attribute as the enemy\'s resistance, damage dealt decreased by 1.<br>'
-    textTwo.innerHTML += '6. A battle will always start with your turn.<br>'
+    textTwo.innerHTML += '5. Enemies have attribute weakness and resistance. Character\'s with the same attribute, the enemy is weak to, has damage dealt increased by 1. If the character has the same attribute as the enemy\'s resistance, damage dealt decreased by 1.<br>';
+    textTwo.innerHTML += '6. A battle will always start with your turn.<br>';
 
 
     if (corinBattle['Health'] <= 0)  {
-        corinButton.remove()
-        corinSwitch.remove()
+        corinButton.remove();
+        corinSwitch.remove();
     }
     if (lycaonBattle['Health'] <= 0)  {
-        lycaonButton.remove()
-        lycaonSwitch.remove()
+        lycaonButton.remove();
+        lycaonSwitch.remove();
     }
     if (rinaBattle['Health'] <= 0)  {
-        rinaButton.remove()
-        rinaSwitch.remove()
+        rinaButton.remove();
+        rinaSwitch.remove();
     }
 
     corinButton.onclick = function (){
         choice = corinBattle;
         console.log('Selected active character: Corin');
-        battleRecordFunc(`> Selected Character: Corin<br>`)
+        battleRecordFunc(`> Selected Character: Corin<br>`);
         battleInfo(enemy1, enemy2, choice);
     }
     lycaonButton.onclick = function (){
         choice = lycaonBattle;
         console.log('Selected active character: Lycaon');
-        battleRecordFunc(`> Selected Character: Lycaon<br>`)
+        battleRecordFunc(`> Selected Character: Lycaon<br>`);
         battleInfo(enemy1, enemy2, choice);
     }
     rinaButton.onclick = function (){
         choice = rinaBattle;
         console.log('Selected active character: Rina');
-        battleRecordFunc(`> Selected Character: Rina<br>`)
-        battleInfo(enemy1, enemy2, choice)
+        battleRecordFunc(`> Selected Character: Rina<br>`);
+        battleInfo(enemy1, enemy2, choice);
     }
 }
 
@@ -1069,7 +1080,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         let characterDmg = activeCharacter['Skill'];
 
         if (activeCharacter['Health'] <= 0){
-            battleRecordFunc('- Error: Fallen character cannot attack. Change active character. <br>')
+            battleRecordFunc('- Error: Fallen character cannot attack. Change active character. <br>');
             return;
         }
 
@@ -1097,7 +1108,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
 
             if (deadEnemy.length === 2){
                 battleRecord.innerText = '';
-                console.log('Battle Ended')
+                console.log('Battle Ended');
                 endBattle(activeCharacter);
             } else{
                 activeEnemy = enemy2;
@@ -1121,7 +1132,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
 
     corinSwitch.onclick = function() {
         if (activeCharacter['Name'] === 'Corin'){
-            battleRecordFunc('- Active Character is already Corin.<br>')
+            battleRecordFunc('- Active Character is already Corin.<br>');
         } else {
             console.log('Switched to Corin');
             activeCharacter = corinBattle;
@@ -1173,7 +1184,7 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
 
         if(stunCounter > 0){
             stunCounter -= 1
-            console.log(stunCounter)
+            console.log(stunCounter);
         }
 
         if (activeCharacter['Name'] === 'Lycaon' && stunCounter === 0 && stunBefore === false){
@@ -1265,29 +1276,29 @@ let fallen = [];
 function fallenCharacter(character){
     if (character === 'give'){
         if (fallen.length > 0){
-            return true
+            return true;
         }
         else {
-            return false
+            return false;
         }
     }
 
     fallen.push(character);
     console.log(fallen);
     if (fallen.length === 3){
-        battleEnding()
+        battleEnding();
     } else {
         if (character['Name'] === 'Corin'){
-            corinSwitch.remove()
-            corinButton.remove()
+            corinSwitch.remove();
+            corinButton.remove();
         }
         else if (character['Name'] === 'Lycaon'){
-            lycaonSwitch.remove()
-            lycaonButton.remove()
+            lycaonSwitch.remove();
+            lycaonButton.remove();
         }
         else if (character['Name'] === 'Rina'){
-            rinaSwitch.remove()
-            rinaButton.remove()
+            rinaSwitch.remove();
+            rinaButton.remove();
         }
     }
 }
@@ -1323,7 +1334,7 @@ function battleEnding() {
     textTwo.innerHTML += 'Wise: Okay...<br>';
     textTwo.innerHTML += 'Belle: We may have lost them, but we still have them in our memories Wise. Cmon, look at your collage picture board. Do you remember? Our first mission with them?<br>';
     textTwo.innerHTML += 'Wise: Yeah I remember. Sniffle...<br>';
-    textTwo.innerHTML += 'Belle: Okay bro, let\'s go down and open the store. For lunch we can get some noodles to go.'
+    textTwo.innerHTML += 'Belle: Okay bro, let\'s go down and open the store. For lunch we can get some noodles to go.';
     //change Image
     nodeImage.style = 'display: flex;';
     nodeImage.src = 'nodeImages/BattleEnding.png';
@@ -1370,7 +1381,7 @@ function ambushedEnding(){
     
     //change text 1
     textOne.innerText = 'Lycaon and everyone decided to go through the open area. This way, everyone can see their surrondings and possibily Ellen. As they continued closer to the center of the area, the surrondings began to change from trashed and broken buildings to rumble then finally a clear plain.';
-    textOne.innerHTML += 'Everyone was puzzled on the drastic change of environment. They then formed a defense formation to make sure no danerous figure can attack them. However, their attempt to protect them was futile and a huge ethereal flew down to them. The party was frozen in shock. '
+    textOne.innerHTML += 'Everyone was puzzled on the drastic change of environment. They then formed a defense formation to make sure no danerous figure can attack them. However, their attempt to protect them was futile and a huge ethereal flew down to them. The party was frozen in shock. ';
     //change text 2
     textTwo.innerHTML = 'The party failed to escape and they all perished by the hands of the ethereal. Eous was destroyed in the process and the Proxy never saw them again. Ellen was never found.<br><br>Mission Shark: Save Ellen - Failed';
     //change Image
@@ -1394,7 +1405,7 @@ function dinnerEnding(){
     
     //change text 1
     textOne.innerText = 'Victoria Housekeeping return to the Random Play Store to pick up the Proxies. They entered the company vehicle and go to Lumina Square for dinner. It was an amazing dinner with friends. A nice way to end the day.<br><br>Mission Shark: Save Ellen - Completed'; 
-    textOne.innerHTML += '<br><br><img src=\'nodeImages/DinnerEnding.jpg\' id=\'endingPhoto\'>'
+    textOne.innerHTML += '<br><br><img src=\'nodeImages/DinnerEnding.jpg\' id=\'endingPhoto\'>';
     //change text 2
     textTwo.innerHTML = 'Corin: Oh! Ellen! Remember when you went into the Brant Street Hollow by yourself? And then we had to save you? Hahaha that was so fun!<br>';
     textTwo.innerHTML += 'Ellen: Oh shut it Corin! I was in danger!<br>';
@@ -1427,16 +1438,16 @@ function hospitalEnding(){
     textOne.innerHTML += 'Ellen: So how is it that I stayed in the Hollow longer than all of you and still had less injuries than yall?<br>';
     textOne.innerHTML += 'Lycaon: It\'s because you aren\'t a playable character, you can die!<br>';
     textOne.innerHTML += 'Ellen: Huh? Uh well anyway, lets get a snack when you all are done. Cmon, I\'ll be waiting outside. Toodeloo!';
-    textOne.innerHTML += '<br><br><img src=\'nodeImages/HospitalEnding2.png\' id=\'endingPhoto\'>'
+    textOne.innerHTML += '<br><br><img src=\'nodeImages/HospitalEnding2.png\' id=\'endingPhoto\'>';
     //change text 2
     textTwo.innerHTML = 'Though they planned to eat dinner with the proxies, their treatment in the hospital forced them to delay the dinner tommorrow. However, they got a little laugh in their situation in the hospital. It was a hard and grueling mission for them and its kind for Ellen to at like its a normal day, or else anyone of them will burst in tears.';
     textTwo.innerHTML += 'After they were released from the hospital, they went out to eat some sandwiches.<br><br>';
     textTwo.innerHTML += 'Ellen: Hey guys, can we watch Astra Yao\'s concert tommorow instead dinner with the proxies? I heard they are Astra Yao fans as well so we can invite them.<br>';
-    textTwo.innerHTML += 'Lycaon: How considerate of you Ellen. Sure, we can do that instead of dinner.'
+    textTwo.innerHTML += 'Lycaon: How considerate of you Ellen. Sure, we can do that instead of dinner.';
     //change Image
     nodeImage.src = 'nodeImages/hospitalEnding.jpg';
     
-    document.getElementById('image').appendChild(newImage)
+    document.getElementById('image').appendChild(newImage);
 
     //Hide everything
     buttonBox.style = 'display: none;';
@@ -1444,6 +1455,6 @@ function hospitalEnding(){
     charDescClass.style = 'display: none;';
 }
 
-let newImage = document.createElement('img')
-newImage.id = 'nodeImage'
+let newImage = document.createElement('img');
+newImage.id = 'nodeImage';
 newImage.src = 'nodeImages/HospitalEnding3.png';
