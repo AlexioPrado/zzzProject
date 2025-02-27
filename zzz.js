@@ -78,19 +78,17 @@ let buttonE3 = document.getElementById('outerBox3')
     4. Weakness
     5. Resistance
 */
-let alpeca = {'Health': 8 , 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/alpeca.JPG'};
-let alraune = {'Health': 12, 'Skill': 2, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'none', 'url': 'battleImages/alraune.JPG'};
-let armoredHati = {'Health': 15, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'Ice', 'url': 'battleImages/armoredHati.JPG'};
-let assualter = {'Health': 10, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'none', 'url': 'battleImages/assualter.JPG'};
-let blastCrawler = {'Health': 4, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'none', 'url': 'battleImages/blastcrawler.JPG'};
-let bulkyEnforcer = {'Health': 15, 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/bulkyEnforcer.JPG'};
-let dullahan = {'Health': 20, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/dullahan.JPG'};
-let fawn = {'Health': 12, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/fawn.JPG'};
-let fawnEnergized = {'Health': 12, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'Physical', 'url': 'battleImages/fawnEnergized.JPG'};
-let mandrake = {'Health': 15, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/mandrake.JPG'};
-let shatterBug = {'Health': 10, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'Physical', 'url': 'battleImages/shatterbug.JPG'};
-let thanatos = {'Health': 25, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/thanatos.JPG'};
-let thanatosNotorius = {'Health': 25, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Physical', 'url': 'battleImages/thanatosNotorious.JPG'};
+let alpeca = {'Health': 10 , 'Skill': 2, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/alpeca.JPG', 'MaxHP' : 10};
+let alraune = {'Health': 16, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'none', 'url': 'battleImages/alraune.JPG', 'MaxHP' : 13};
+let armoredHati = {'Health': 20, 'Skill': 4, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'Ice', 'url': 'battleImages/armoredHati.JPG', 'MaxHP' : 18};
+let blastCrawler = {'Health': 8, 'Skill': 3, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'none', 'url': 'battleImages/blastcrawler.JPG', 'MaxHP' : 8};
+let dullahan = {'Health': 22, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/dullahan.JPG', 'MaxHP' : 22};
+let fawn = {'Health': 14, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Physical', 'Res': 'none', 'url': 'battleImages/fawn.JPG', 'MaxHP' : 14};
+let fawnEnergized = {'Health': 14, 'Skill': 3, 'PrepareSkill': 0, 'Weak': 'Electric', 'Res': 'Physical', 'url': 'battleImages/fawnEnergized.JPG', 'MaxHP' : 14};
+let mandrake = {'Health': 16, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Electric', 'url': 'battleImages/mandrake.JPG', 'MaxHP' : 16};
+let shatterBug = {'Health': 12, 'Skill': 4, 'PrepareSkill': 1, 'Weak': 'none', 'Res': 'Physical', 'url': 'battleImages/shatterbug.JPG', 'MaxHP' : 12};
+let thanatos = {'Health': 27, 'Skill': 6, 'PrepareSkill': 1, 'Weak': 'Electric', 'Res': 'Ice', 'url': 'battleImages/thanatos.JPG', 'MaxHP' : 27};
+let thanatosNotorius = {'Health': 27, 'Skill': 7, 'PrepareSkill': 1, 'Weak': 'Ice', 'Res': 'Physical', 'url': 'battleImages/thanatosNotorious.JPG', 'MaxHP' : 27};
 
 /*Create Character Variables for Battles
     1. Health
@@ -484,7 +482,7 @@ button6aA.innerHTML = 'DMG Increase';
 
 let buttonDesc6aA = document.createElement('p')
 buttonDesc6aA.id = 'butDesc';
-buttonDesc6aA.innerHTML = 'Resonium: DMG increased by 2';
+buttonDesc6aA.innerHTML = 'Resonium: DMG increased by 1';
 
 let button6aB = document.createElement('button');
 button6aB.id = 'button';
@@ -492,7 +490,7 @@ button6aB.innerHTML = 'Healing Increase';
 
 let buttonDesc6aB = document.createElement('p')
 buttonDesc6aB.id = 'butDesc';
-buttonDesc6aB.innerHTML = 'Resonium: Healing increased by 2';
+buttonDesc6aB.innerHTML = 'Resonium: Healing increased by 1';
 
 let button6b = document.createElement('button');
 button6b.id = 'button';
@@ -503,15 +501,15 @@ buttonDesc6b.id = 'butDesc';
 buttonDesc6b.innerHTML = 'Resonium: Increase Max HP by 2';
 
 button6aA.onclick = function() {
-    corinBattle['Skill'] += 2;
-    lycaonBattle['Skill'] += 2;
-    rinaBattle['Skill'] += 2;
+    corinBattle['Skill'] += 1;
+    lycaonBattle['Skill'] += 1;
+    rinaBattle['Skill'] += 1;
 
     node6();
 }
 
 button6aB.onclick = function() {
-    rinaBattle['Passive'] += 2
+    rinaBattle['Passive'] += 1
 
     node6();
 }
@@ -654,13 +652,17 @@ button8a.onclick = function (){
     nodeIndicator.innerHTML = 'Node: 8a'; //Change node number
     
     //change title
-    titleOne.innerHTML = '';
+    titleOne.innerHTML = 'Stick to the Mission';
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = ''; 
+    textOne.innerText = 'Lycaon: We are not helping them. End of discussion. What\'s important is Ellen. That\'s it. Our mission is to save her, not strangers who most likely brought this issue onto themselves.<br>';
+    textOne.innerHTML += 'Corin: Ugh, you\'re so mean Mr. Lycaon! Hmph. Let\'s just go!' 
     //change text 2
-    textTwo.innerHTML = '';
+    textTwo.innerHTML = 'Lycaon sighs in defeat and could understood why Corin is so upset. She wants to help, but we have a goal and that\'s helping Ellen. Rina looks at Lycaon and shakes her head in dissaproval. It upsetted Lycaon and his ears drooped down. For the next 10 mins, no one spoke at all, only the occasional directional instructions by the Proxy.<br><br>';
+    textTwo.innerHTML += 'Lycaon: Hey Corin, Rina. I apologize. I should\'ve listen to both of you and tried to help those strangers. I just got very upset that we would want to rescue them before Ellen. It didn\'t feel right to me. Ellen is family. However, you both are right. Anyone needing help in a Hollow deserves help.<br>';
+    textTwo.innerHTML += 'Rina; Lycaon, it\'s okay. We all too want to save Ellen. You are right. Everyone in a hollow deserves help. We can\'t change what we have already done. So let\'s continue onto the thrid data pile. Maybe when leaving the hollow, we wull see them.<br><br>';
+    textTwo.innerHTML += 'Lycaon nods his head and they all continue on the path. They walk for another 10 mins before they reached a for in the road.'
     //change Image
     nodeImage.src = 'nodeImages/Node7.JPG';
 
@@ -672,13 +674,11 @@ button8a.onclick = function (){
     // Add the new button and button description for next node
     document.getElementById('outerBox1').appendChild(button9ba);
     document.getElementById('outerBox1').appendChild(buttonDesc9ba);
-    document.getElementById('outerBox2').appendChild(button9bb);
-    document.getElementById('outerBox2').appendChild(buttonDesc9bb);
-    document.getElementById('outerBox3').appendChild(buttonb9bc);
-    document.getElementById('outerBox3').appendChild(buttonDesc9bc);
+    document.getElementById('outerBox2').appendChild(button9bc);
+    document.getElementById('outerBox2').appendChild(buttonDesc9bc);
     //Display new buttons for this node
     buttonE2.style = 'display: flex;';
-    buttonE3.style = 'display: flex;';
+    buttonE3.style = 'display: none;';
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -691,14 +691,6 @@ let buttonDesc9ba = document.createElement('p')
 buttonDesc9ba.id = 'butDesc';
 buttonDesc9ba.innerHTML = 'Open areas mean less debris to get caught on and easier to see your surrondings.';
 
-let button9bb = document.createElement('button');
-button9bb.id = 'button';
-button9bb.innerHTML = 'Broken Down Building';
-
-let buttonDesc9bb = document.createElement('p')
-buttonDesc9bb.id = 'butDesc';
-buttonDesc9bb.innerHTML = 'A bit risky to go onto this building. However it can show the surronding area much better';
-
 let button9bc = document.createElement('button');
 button9bc.id = 'button';
 button9bc.innerHTML = 'Alleyway';
@@ -707,6 +699,44 @@ let buttonDesc9bc = document.createElement('p')
 buttonDesc9bc.id = 'butDesc';
 buttonDesc9bc.innerHTML = 'What\'s at the end of this alleyway? Ethereals? Ellen? Who knows, be ready for anything!';
 
+button9ba.onclick = function (){
+    scroll(0,0) //Scrolls to top of page
+    console.log('Node 9ba Done!'); //Personal Check if function is called
+
+    ambushedEnding();
+}
+
+button9bc.onclick = function (){
+    scroll(0,0);//Scrolls to top of page
+    console.log('Node 9bc Done!'); //Personal Check if function is called
+
+    nodeIndicator.innerHTML = 'Node: 9bc'; //Change node number
+
+    textOne.innerText = '';
+    textOne.innerHTML += 'Mystery Ethereal:<br>This battle will introduce a mystery ethereal. Start the battle to unravel the mystery.<br>';
+    textOne.innerHTML += 'Dullahan:<br>A humanoid Ethereal which can compare to the strongest Ethereal recorded in this game. Beware, Dullahan deals 6 dmg per strike.<br><br>';
+    textOne.innerHTML += '<img src=\'battleImages/question.gif\' id=\'etherImage\' style=\'background-color: #283e52;\'> <img src=\'battleImages/dullahan.JPG\' id=\'etherImage\'>';
+
+    let etherealList = [alpeca,alraune,armoredHati,blastCrawler,fawn,fawnEnergized,mandrake,shatterBug];
+    let change;
+    for (let i = 0; i < etherealList.length; i++){
+        change = etherealList[i].MaxHP
+        etherealList[i].Health = change;
+    }
+
+    selectCharacter(etherealList[Math.floor(Math.random() * (etherealList.length - 1))],dullahan);
+
+    button9ba.remove()
+    buttonDesc9ba.remove()
+    button9bc.remove()
+    buttonDesc9bc.remove()
+
+    document.getElementById('outerBox1').appendChild(button10);
+    document.getElementById('outerBox1').appendChild(buttonDesc10);
+
+    buttonE2.style = 'display: none;';
+    buttonE3.style = 'display: none;';
+}
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 let button9a = document.createElement('button');
@@ -770,12 +800,12 @@ button10.onclick = function() {
     nodeIndicator.innerHTML = 'Node: 10'; //Change node number
     
     //change title
-    titleOne.innerHTML = 'Data Pile 2: Data Collection Complete';
+    titleOne.innerHTML = 'Data Pile 3: Data Collection Complete';
     titleTwo.innerHTML = '';
     
     //change text 1
     textOne.innerText = 'The 3rd and final data pile to use. Eous stands beside the beacon and begins collecting data. Victoria\'s Housekeeping stay close by, checking for dangerous ethereals. ';
-    textOne.innerHTML += 'Corin is so excited to see Ellen back, but is scared that she will fail to rescue and leave the Hollow. Lycaon is worried the most. He is responsible for protecting his companions and he failed this time. He wouldn\'t want this to happen again ever. Rina, sure she is worried but she doesn\'t seem intrested in this mission. However, Rina does care for her as much as Corin and Lycaon. It\'s just not easy for her to express her emotions well.<br>';
+    textOne.innerHTML += 'Corin is so excited to see Ellen back, but is scared that she will fail to rescue and leave the Hollow. Lycaon is worried the most. He is responsible for protecting his companions and he failed this time. He wouldn\'t want this to happen again ever. Rina, well she worries just like a mother worries about her kids. Which is a lot.<br>';
     textOne.innerHTML += '<br>Eous: Mhphh. Guys!!! I finished. Her biothermal signature is just 2 blocks East! We are so close!!!<br>';
     textOne.innerHTML += 'Lycaon: Everyone! Get ready! We are leaving now!<br>';
     textOne.innerHTML += 'Rina & Corin: Yes Sir!'
@@ -816,7 +846,8 @@ buttonEllen.onclick = function() {
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = 'The party run towards Ellen\'s location as quickly as they can. The location of Ellen is found in a clear field, prone to many ethereals. They climb up to a building that is right at the outskirt of this clear field. They stopped at the top of the building at gaze down to teh field. All stand quietly as they scan the field for their friend.<br><br>She\'s not here.<br>';
+    textOne.innerText = '';
+    textOne.innerHTML += 'The party run towards Ellen\'s location as quickly as they can. The location of Ellen is found in a clear field, prone to many ethereals. They climb up to a building that is right at the outskirt of this clear field. They stopped at the top of the building at gaze down to teh field. All stand quietly as they scan the field for their friend.<br><br>She\'s not here.<br>';
     textOne.innerHTML += 'The party falls silent. They look over the area again and again, but no Ellen in sight. What\'s only present is the slowly forming rifts that is continuing to produce several ethereals.<br><br>';
     textOne.innerHTML += 'Lycaon: You said she was here. Proxy<br>';
     textOne.innerHTML += 'Eous: Uh I don\'t understand! Her biothermal signature is right infront of us!<br>';
@@ -981,15 +1012,15 @@ function selectCharacter(enemy1,enemy2){
     textTwo.innerHTML += '6. A battle will always start with your turn.<br>'
 
 
-    if (corinBattle['Health'] === 0)  {
+    if (corinBattle['Health'] <= 0)  {
         corinButton.remove()
         corinSwitch.remove()
     }
-    if (lycaonBattle['Health'] === 0)  {
+    if (lycaonBattle['Health'] <= 0)  {
         lycaonButton.remove()
         lycaonSwitch.remove()
     }
-    if (rinaBattle['Health'] === 0)  {
+    if (rinaBattle['Health'] <= 0)  {
         rinaButton.remove()
         rinaSwitch.remove()
     }
@@ -1252,7 +1283,7 @@ function fallenCharacter(character){
         }
         else if (character['Name'] === 'Lycaon'){
             lycaonSwitch.remove()
-            lycaonBattle.remove()
+            lycaonButton.remove()
         }
         else if (character['Name'] === 'Rina'){
             rinaSwitch.remove()
@@ -1273,7 +1304,35 @@ function battleRecordFunc(addText) {
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function battleEnding() {
-    console.log('dead ending.')
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node Fallen in Battle Done!');
+
+    nodeIndicator.innerHTML = 'Node: Fallen in Battle Ending'; //Change node number
+    
+    //change title
+    titleOne.innerHTML = 'Mission Shark: Save Ellen - Failed';
+    titleTwo.innerHTML = 'Epilogue';
+    
+    //change text 1
+    textOne.innerText = 'No matter how hard they tried, they couldn\'t defeat the existing ethereals and perished. Eous watched in horror as his companions, no. His best friends died at the hands of ethereals. Their bodies fall to the ground, limp. He couldn\'t do anything and neither could everyone else. The proxies cut their connection to Eous and never saw them again.'; 
+    //change text 2
+    textTwo.innerHTML = 'Wise: Belle, do you remember Victoria Housekeeping?<br>';
+    textTwo.innerHTML += 'Belle: How could I not. It was the only mission that we... failed.... I miss them.<br>';
+    textTwo.innerHTML += 'Wise: I... I shoud\'ve-<br>';
+    textTwo.innerHTML += 'Belle: It is not your fault Wise. It was nothing that we could control.<br>';
+    textTwo.innerHTML += 'Wise: Okay...<br>';
+    textTwo.innerHTML += 'Belle: We may have lost them, but we still have them in our memories Wise. Cmon, look at your collage picture board. Do you remember? Our first mission with them?<br>';
+    textTwo.innerHTML += 'Wise: Yeah I remember. Sniffle...<br>';
+    textTwo.innerHTML += 'Belle: Okay bro, let\'s go down and open the store. For lunch we can get some noodles to go.'
+    //change Image
+    nodeImage.style = 'display: flex;';
+    nodeImage.src = 'nodeImages/BattleEnding.png';
+
+    //Hide everything
+    buttonBox.style = 'display: none;';
+    char.style = 'display: none;';
+    charDescClass.style = 'display: none;';
+    battleUI.style = 'display: none;';
 }
 
 function fallenEnding(){
@@ -1287,11 +1346,35 @@ function fallenEnding(){
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = 'Everyone went into the broken infrastructure and went right on unstable ground. They tried to leave the premises but failed to escape. They fell from the 5th floor and they all perished. Ellen was nowhere to be found. By now, she became an ethereal. The Proxy, the only surviving member of the mission felt guilt for the rest of his life and he mourns their loss every year.'; 
+    textOne.innerText = 'Everyone went into the broken infrastructure and went right on unstable ground. They tried to leave the premises but failed to escape. They fell from the 5th floor and they all perished. Ellen was nowhere to be found. By now, she became an ethereal. The Proxy, the only surviving member of the mission felt guilt for the rest of his life and he mourns their loss every year.<br><br>Mission Shark: Save Ellen - Failed'; 
     //change text 2
     textTwo.innerHTML = '';
     //change Image
     nodeImage.src = 'nodeImages/fallEnd.jpg';
+
+    //Hide everything
+    buttonBox.style = 'display: none;';
+    char.style = 'display: none;';
+    charDescClass.style = 'display: none;';
+}
+
+function ambushedEnding(){
+    scroll(0,0); //Scrolls to top of page
+    console.log('Node Ambushed Ending Done!');
+
+    nodeIndicator.innerHTML = 'Node: Ambushed Ending'; //Change node number
+
+    //change title
+    titleOne.innerHTML = 'Like A Moth To A Flame';
+    titleTwo.innerHTML = '';
+    
+    //change text 1
+    textOne.innerText = 'Lycaon and everyone decided to go through the open area. This way, everyone can see their surrondings and possibily Ellen. As they continued closer to the center of the area, the surrondings began to change from trashed and broken buildings to rumble then finally a clear plain.';
+    textOne.innerHTML += 'Everyone was puzzled on the drastic change of environment. They then formed a defense formation to make sure no danerous figure can attack them. However, their attempt to protect them was futile and a huge ethereal flew down to them. The party was frozen in shock. '
+    //change text 2
+    textTwo.innerHTML = 'The party failed to escape and they all perished by the hands of the ethereal. Eous was destroyed in the process and the Proxy never saw them again. Ellen was never found.<br><br>Mission Shark: Save Ellen - Failed';
+    //change Image
+    nodeImage.src = 'nodeImages/AmbushedEnding.png';
 
     //Hide everything
     buttonBox.style = 'display: none;';
@@ -1340,7 +1423,8 @@ function hospitalEnding(){
     titleTwo.innerHTML = '';
     
     //change text 1
-    textOne.innerText = 'Ellen: So how is it that I stayed in the Hollow longer than all of yall and still had less injuries than yall?<br>';
+    textOne.innerText = '';
+    textOne.innerHTML += 'Ellen: So how is it that I stayed in the Hollow longer than all of you and still had less injuries than yall?<br>';
     textOne.innerHTML += 'Lycaon: It\'s because you aren\'t a playable character, you can die!<br>';
     textOne.innerHTML += 'Ellen: Huh? Uh well anyway, lets get a snack when you all are done. Cmon, I\'ll be waiting outside. Toodeloo!';
     textOne.innerHTML += '<br><br><img src=\'nodeImages/HospitalEnding2.png\' id=\'endingPhoto\'>'
@@ -1351,9 +1435,15 @@ function hospitalEnding(){
     textTwo.innerHTML += 'Lycaon: How considerate of you Ellen. Sure, we can do that instead of dinner.'
     //change Image
     nodeImage.src = 'nodeImages/hospitalEnding.jpg';
+    
+    document.getElementById('image').appendChild(newImage)
 
     //Hide everything
     buttonBox.style = 'display: none;';
     char.style = 'display: none;';
     charDescClass.style = 'display: none;';
 }
+
+let newImage = document.createElement('img')
+newImage.id = 'nodeImage'
+newImage.src = 'nodeImages/HospitalEnding3.png';
