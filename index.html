@@ -14,19 +14,18 @@
         <p id="nodeCode">Node: 1</p>
     </div>
 
-    <!--Show events/end/image of the node-->
+    <!--Show events/endinds/images of the node-->
     <div class="mid">
         <section class="descBox">
-            <!--Transition text towards next node-->
+            <!--1. Description Title and Text-->
             <section class="description 1">
                 <p id="descTitle1">Ellen Joe</p>
                 <p id="descText1">
                     Victoria Housekeeping has finally found the whereabouts of Ellen Joe, the Brant Street Construction Hollow.
                     As they drive towards the Hollow, they forgot to bring an essential partner. The Proxy!<br>
-                    
                 </p>
             </section>
-            <!--Events/Ending of the node-->
+            <!--2. Description Title and Text-->
             <section class="description 2">
                 <p id="descTitle2">Inside their company vehicle:</p>
                 <p id="descText2">
@@ -45,9 +44,11 @@
     </div>
     
     <br>
-
+    <!--Battle UI-->
     <div class="battleUI" id="battleUI">
+        <!--Encompasses every battle related tags-->
         <section class="battleBox">
+            <!--Appear at start of battle, makes player choose a character-->
             <section class="characterSelection" id="characterSelection">
                 <p id="selectionTitle">Select Active Charcter before moving forward</p>
                 <section class="charButton">
@@ -56,12 +57,16 @@
                     <button class='characterButton' id="charSelect3">Rina</button>
                 </section>
             </section>
+            <!--Actual Battle Interface-->
             <section class="battle" id="battle">
+                <!--Shows Image of character and enemy-->
                 <section class="battleImage">
                     <img id="battleCharacter" src="battleImages/characterBattle/corinBattle.JPG">
                     <p id="versus">VS</p>
                     <img id="battleEnemy" src="battleImages/alpeca.JPG">
                 </section>
+                <!--Info of the character and enemy-->
+                <!--Health, Attribute, Weakness, Resistance-->
                 <section class="infoBox">
                     <div class="characterInfo">
                         <div id="infoText">Health:</div>
@@ -78,17 +83,22 @@
                         <div id="weakness">Blank</div>
                     </div>
                 </section>
+                <!--Battle History, appends what happens. Stuff like that-->
                 <section class="battleHistory">
                     <p id="battleHisBox"></p>
                 </section>
             </section>
+            <!--Where all decision making in battle happens-->
             <section class="battleChoice" id="battleChoice">
                 <section class="choiceBox">
+                    <!--Attack Button-->
                     <button class ='battleButton' id="battleAttack">ATTACK</button>
                     <p id="switchTitle">Switch Character</p>
+                    <!--Switch between characters-->
                     <button class ='battleButton' id="switch1">CORIN</button>
                     <button class ='battleButton' id="switch2">LYCAON</button>
                     <button class ='battleButton' id="switch3">RINA</button>
+                    <!--Move Counter-->
                     <p id="moveCounter">Move Counter: </p>
                 </section>
             </section>
@@ -100,10 +110,13 @@
     <!--Options-->
     <div class="bot" id="buttonBox">
         <section class="botBox">
+            <!--Just the title-->
             <section class="descision">
                 <h2 id="question" style="border-bottom: 3px solid rgb(223, 223, 223);">What's Our Next Step?</h2>
             </section>
+            <!--Buttons-->
             <section class="buttons">
+                <!--Button 1: Button and Description-->
                 <div class ="but1" id="outerBox1">
                     <button id="button">Ask the Proxy for help!</button>
                     <p id="butDesc">
@@ -112,11 +125,12 @@
                         finding Ellen this way!
                     </p>                         
                 </div>
+                <!--Button 2: Changes in JS-->
                 <div class ="but2" id="outerBox2">                        
                 </div>
+                <!--Button 3: Changes in JS-->
                 <div class ="but3" id="outerBox3">                         
                 </div>
-                <!--CREATE TWO MORE BUT1 AREAS. VISIBILITY HIDDEN AND APPEAR WHEN NEEDED-->
             </section>
         </section>
     </div>
@@ -125,12 +139,14 @@
 
     <!--Character descriptions-->
     <div class="character">
+        <!--Images of the characters-->
         <section class="char" id="char">
             <img id='charImage1' src="characterImages/CorinCS.PNG">
             <img id='charImage2' src="characterImages/LycaonCS.PNG">
             <img id='charImage3' src="characterImages/RinaCS.PNG">
         </section>
         <br>
+        <!--Wehre information is placed of these characters-->
         <section class="charDesc" id="charDesc">
             <p id="placeholder">Select a character for description</p>
             <p id="charText"></p>

@@ -511,30 +511,37 @@ let buttonDesc6b = document.createElement('p');
 buttonDesc6b.id = 'butDesc';
 buttonDesc6b.innerHTML = 'Resonium: Increase Max HP by 2';
 
+//Node 6aA Function
 button6aA.onclick = function() {
+    //Increases Dmg by 1
     corinBattle['Skill'] += 1;
     lycaonBattle['Skill'] += 1;
     rinaBattle['Skill'] += 1;
 
-    node6();
+    node6(); //Goes to next node, 6
 }
 
+//Node 6aB Function
 button6aB.onclick = function() {
+    //Increase Healing by 1
     rinaBattle['Passive'] += 1;
 
-    node6();
+    node6(); //Goes to next node, 6
 }
 
+//Node 6b Function
 button6b.onclick = function() {
+    //Increase Max HP by 2
     corinBattle['MaxHP'] += 2;
     lycaonBattle['MaxHP'] += 2;
     rinaBattle['MaxHP'] += 2;
 
-    node6();
+    node6(); //Goes to next node, 6
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Node 6 Function
 function node6() {
     scroll(0,0); //Scrolls to top of page
     console.log('Node 6 Done!');//Personal Check if function is called
@@ -572,6 +579,7 @@ function node6() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Create Button 7 and Description of button
 let button7 = document.createElement('button');
 button7.id = 'button';
 button7.innerHTML = 'Continue in the hollow ';
@@ -580,6 +588,7 @@ let buttonDesc7 = document.createElement('p');
 buttonDesc7.id = 'butDesc';
 buttonDesc7.innerHTML = 'Continue with the Proxy and head to the next Data Pile.';
 
+//Node 7 Function 
 button7.onclick = function (){
     scroll(0,0); //Scrolls to top of page
     console.log('Node 7 Done!');//Personal Check if function is called
@@ -617,6 +626,7 @@ button7.onclick = function (){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Create Button 8a,8b and Description of button
 let button8a = document.createElement('button');
 button8a.id = 'button';
 button8a.innerHTML = 'Don\'t Help';
@@ -633,6 +643,7 @@ let buttonDesc8b = document.createElement('p');
 buttonDesc8b.id = 'butDesc';
 buttonDesc8b.innerHTML = 'Helping will result in a battle against the ethereals.';
 
+//Node 8b Function
 button8b.onclick = function (){
     scroll(0,0);//Scrolls to top of page
     console.log('Node 8 Done!'); //Personal Check if function is called
@@ -643,19 +654,21 @@ button8b.onclick = function (){
     textOne.innerHTML += 'Shatterbug:<br>The stronger cousin of the blastcrawler. Be careful, it deals 4 dmg as well.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/mandrake.JPG\' id=\'etherImage\'> <img src=\'battleImages/shatterbug.JPG\' id=\'etherImage\'>';
 
-    selectCharacter(mandrake, shatterBug);
+    selectCharacter(mandrake, shatterBug); // Call Selection Function
 
+    //Remove buttons
     button8a.remove();
     buttonDesc8a.remove();
     button8b.remove();
     buttonDesc8b.remove();
-
+    //Add new button and description
     document.getElementById('outerBox1').appendChild(button9a);
     document.getElementById('outerBox1').appendChild(buttonDesc9a);
-
+    //Display button change
     buttonE2.style = 'display: none;';
 }
 
+//Node 8a Function
 button8a.onclick = function (){
     scroll(0,0); //Scrolls to top of page
     console.log('Node 8a Done!');//Personal Check if function is called
@@ -694,6 +707,7 @@ button8a.onclick = function (){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Create Button 9ba,9bc and description of buttons
 let button9ba = document.createElement('button');
 button9ba.id = 'button';
 button9ba.innerHTML = 'Open Area';
@@ -710,13 +724,15 @@ let buttonDesc9bc = document.createElement('p');
 buttonDesc9bc.id = 'butDesc';
 buttonDesc9bc.innerHTML = 'What\'s at the end of this alleyway? Ethereals? Ellen? Who knows, be ready for anything!';
 
+//Node 9ba Function
 button9ba.onclick = function (){
     scroll(0,0) //Scrolls to top of page
     console.log('Node 9ba Done!'); //Personal Check if function is called
 
-    ambushedEnding();
+    ambushedEnding(); // Call ambushed ending
 }
 
+//Node 9bc Function
 button9bc.onclick = function (){
     scroll(0,0);//Scrolls to top of page
     console.log('Node 9bc Done!'); //Personal Check if function is called
@@ -737,19 +753,21 @@ button9bc.onclick = function (){
 
     selectCharacter(etherealList[Math.floor(Math.random() * (etherealList.length - 1))],dullahan);
 
+    //Remove buttons and descriptions
     button9ba.remove();
     buttonDesc9ba.remove();
     button9bc.remove();
     buttonDesc9bc.remove();
-
+    //Add new buttons and description
     document.getElementById('outerBox1').appendChild(button10);
     document.getElementById('outerBox1').appendChild(buttonDesc10);
-
+    //Displaying new buttons
     buttonE2.style = 'display: none;';
     buttonE3.style = 'display: none;';
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Creating button 9a and description of buttons
 let button9a = document.createElement('button');
 button9a.id = 'button';
 button9a.innerHTML = 'Talk to the people in need';
@@ -796,6 +814,7 @@ button9a.onclick = function() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Create button 10 and description of button
 let button10 = document.createElement('button');
 button10.id = 'button';
 button10.innerHTML = 'Continue to the Final Data Pile';
@@ -838,6 +857,7 @@ button10.onclick = function() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//create button Ellen and description of button
 let buttonEllen = document.createElement('button');
 buttonEllen.id = 'button';
 buttonEllen.innerHTML = 'Find Ellen';
@@ -889,6 +909,7 @@ buttonEllen.onclick = function() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// Create button Final Battle and its description
 let buttonFinalBattle = document.createElement('button');
 buttonFinalBattle.id = 'button';
 buttonFinalBattle.innerHTML = 'Battle the Ethereals';
@@ -907,20 +928,21 @@ buttonFinalBattle.onclick = function (){
     textOne.innerHTML += 'Thanatos Notorious:<br>It\'s Thanatos but notorious. It deals 7 dmg.<br><br>';
     textOne.innerHTML += '<img src=\'battleImages/thanatos.JPG\' id=\'etherImage\'> <img src=\'battleImages/thanatosNotorious.JPG\' id=\'etherImage\'>';
 
-    selectCharacter(thanatos, thanatosNotorius);
+    selectCharacter(thanatos, thanatosNotorius); //Call selection function
 
+    //removes button and description
     buttonFinalBattle.remove();
     buttonDescFinalBattle.remove();
-
-
+    //Adds new button and description
     document.getElementById('outerBox1').appendChild(buttonLeave);
     document.getElementById('outerBox1').appendChild(buttonDescLeave);
-
+    //Display of other buttons
     buttonE2.style = 'display: none;';
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Create Button Leave and its description
 let buttonLeave = document.createElement('button');
 buttonLeave.id = 'button';
 buttonLeave.innerHTML = 'Leave the Hollow';
@@ -970,6 +992,7 @@ buttonLeave.onclick = function() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//create button finish and description
 let buttonFinish = document.createElement('button');
 buttonFinish.id = 'button';
 buttonFinish.innerHTML = 'Mission Shark: Completed';
@@ -982,18 +1005,21 @@ buttonFinish.onclick = function() {
     scroll(0,0); //Scrolls to top of page
     console.log('Node Mission Shark: Completed Done!');//Personal Check if function is called
     
+    //This returns a true/false if a character has fallen in the story
     let endingDecider = fallenCharacter('give');
     
     if (endingDecider){
+        //If a character has fallen, go here
         hospitalEnding();
     }
     else {
+        //If not, go here
         dinnerEnding();
     }
 
+    //Remove buttons
     buttonFinish.remove();
     buttonDescFinish.remove();
-
     //Displaying new buttons for this node
     buttonE2.style = 'display: none;';
     buttonE3.style = 'display: none;';
@@ -1001,6 +1027,18 @@ buttonFinish.onclick = function() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//Select Character Function
+/*
+    1. Remove display of Button choices
+    2. Show battleUI box
+    3. Show character selection box: Allows user to choose active character before battle
+    4. Remove display of node image
+    5. DIsplay battle rules
+    6. if any of the character's health is lower than 0, button does not appear
+    7. Onclick of the character's button:
+        a. Change battle record
+        b. Call BattleInfo function
+*/
 function selectCharacter(enemy1,enemy2){
     let choice;
 
@@ -1058,6 +1096,29 @@ function selectCharacter(enemy1,enemy2){
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//battleInfo Function
+/*
+    1. Places enemy 1 as the active enemy
+    2. creates deadEnemy list
+    3. Create DeadEnemy, Stun Counter, Stun Before, Prepare Skill, Move Counter
+    4. Update counter
+    5. Display BattleBox and Battle Choice. Hide character selection
+    6. Call Switch Character
+        a. Update Character Image
+        b. Update Character Health
+        c. Update Character Attribute
+    7. Call Switch Enemy
+        a. Update Enemy Image
+        b. Update Enemy Health
+        c. Update Enemy Res and Weakness
+    8. attackButton Event
+    9. CorinSwitch Event
+    10. LycaonSwitch Event
+    11. RinaSwitch Event
+    12. Doublemove variable: Checks Corin's passive
+    13. Function EnemyAttack
+    14. Function Healing
+*/
 function battleInfo(enemy1,enemy2,activeCharacter) {
     let activeEnemy = enemy1;
     let deadEnemy = [];
@@ -1075,7 +1136,26 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
 
     switchCharacter(activeCharacter);
     switchEnemy(activeEnemy);    
-        
+    // Attack Button
+    /*
+        1. Character DMG based on active character skill
+        2. When active character fallen, cant attack
+        3. If rina not active and alive, dmg +1
+        4. If attribute == enemy res, dmg -1
+        5. If attribute == enemy weak, dmg +1
+        6. If enemyHealth-dmg < 0:
+            a. enemy health decrease
+            b. update html
+            c. update battle records
+            d. stunBefore = false
+            e. add enemy to dead list
+            Else:
+            a. enemy health decrease
+            b. update battle records
+            c. move counter + 1
+            d. update html
+            e. Call Enemy Attack
+     */
     attackButton.onclick = function () {
         let characterDmg = activeCharacter['Skill'];
 
@@ -1104,8 +1184,16 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             stunBefore = false;
 
             deadEnemy.push(activeEnemy);
-            console.log(deadEnemy);
 
+            /*
+                If dead Enemy list === 2:
+                    1. battle record clear
+                    2. console
+                    3. Call End Battle function
+                else:
+                    1. switch active enemy to enemy 2
+                    2. Call switch Enemy Function
+            */
             if (deadEnemy.length === 2){
                 battleRecord.innerText = '';
                 console.log('Battle Ended');
@@ -1130,6 +1218,16 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         }
     }
 
+    //  Corin Switch event
+    /*
+        If active character is corin:
+            1. update battle record
+        else:
+            1. console
+            2. switch active character
+            3. Update battle record
+            4. Call Enemy Attack
+    */
     corinSwitch.onclick = function() {
         if (activeCharacter['Name'] === 'Corin'){
             battleRecordFunc('- Active Character is already Corin.<br>');
@@ -1141,6 +1239,17 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             enemyAttack();
         }
     }
+
+    // Lycaon Switch event
+    /*
+        If active character is lycaon:
+            1. update battle record
+        else:
+            1. console
+            2. switch active character
+            3. Update battle record
+            4. Call Enemy Attack
+    */
     lycaonSwitch.onclick = function() {
         if (activeCharacter['Name'] === 'Lycaon'){
             battleRecordFunc('- Active Character is already Lycaon.<br>');
@@ -1153,6 +1262,17 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             enemyAttack();  
         }
     }
+
+    // Rina Switch event
+    /*
+        If active character is rina:
+            1. update battle record
+        else:
+            1. console
+            2. switch active character
+            3. update battle record
+            4. Call Enemy Attack
+    */
     rinaSwitch.onclick = function() {
         if (activeCharacter['Name'] === 'Rina'){
             battleRecordFunc('- Active Character is already Rina.<br>');
@@ -1166,8 +1286,27 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         }
     }
 
+    //This variable checks corins passive, inorder for it to not be acctivate every single time
     let doubleMoveDone = false;
 
+    //Enemy Attack Function
+    /*
+        1. Create Double Move variable
+        2. If active char == corin & doubleMoveDone = false
+            a. double move = true
+            b. double move done = true
+            else
+            a. double move = false
+            b. double move done = false
+        3. If stun > 0: Stun-1 and console
+        4. active character == lycaon && stunCounter == 0 && stubbefore == false
+            a. stun = 2
+            b. console
+            c. update battle record
+            d. stunbefore = true
+        5. Battle Record Updating If Statement
+        6. 
+    */
     function enemyAttack() {
         let doubleMove;
         
@@ -1194,6 +1333,12 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             stunBefore = true;
         } 
 
+        /*
+            If Double Move == true: Update battle record, doubleMove = false
+            Else If Stun Counter > 0: update battle record
+            Else If activeenemy['PrepareSkill'] === 1 & prepareskill === false: update record, prepareskill = false
+            else:....
+        */
         if (doubleMove === true){
             battleRecordFunc('> Corin activate her passive. She has one more turn.<br>');
             doubleMove = false;
@@ -1206,6 +1351,18 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
             prepareSkill = true;
         }
         else {
+            /*
+                If active character health - dmg <= 0:
+                    a. update active character health
+                    b. update html
+                    c. update battle record
+                    d. console
+                    e. call fallen Character
+                else:
+                    a. update active character health
+                    b. update html
+                    c. update battle record
+            */
             if (activeCharacter['Health']-enemyDmg <= 0){
                 activeCharacter['Health'] -= enemyDmg;
                 characterHealth.innerHTML = activeCharacter['Health'];
@@ -1225,6 +1382,13 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         }
     }
 
+    //Heal Function
+    /*
+        1. Increase party health by rina's passive
+        2. If characters health is over max hp, change health to max hp
+        3. update battle record
+        4. console
+    */
     function heal() {
         corinBattle['Health'] += rinaBattle['Passive'];
         lycaonBattle['Health'] += rinaBattle['Passive'];
@@ -1243,10 +1407,14 @@ function battleInfo(enemy1,enemy2,activeCharacter) {
         battleRecordFunc('> Rina healed the party by '+rinaBattle['Passive']+'HP<br>');
         console.log('Party was healed.');
     }
-
-    
 }
 
+// endBattle Function
+/*
+    1. Make battle ui dissapear 
+    2. alert
+    3. change node image based on active character
+*/
 function endBattle(character) {
     battleUI.style = 'display: none;';
     battleChoice.style = 'display: none;';
@@ -1257,23 +1425,30 @@ function endBattle(character) {
     window.alert('Wipeout! You finished the battle.');
     nodeImage.src = 'battleImages/extraImages/WP'+character['Name']+'.png';
 }
-
+// Switch Enemy Function
+//1. update img and html
 function switchEnemy(newEnemy){
     enemyImg.src = newEnemy['url'];
     enemyHealth.innerHTML = newEnemy['Health'];
     enemyRes.innerHTML = newEnemy['Res'];
     enemyWeak.innerHTML = newEnemy['Weak'];
 }
-
+// Switch Character Function
+//1. update img and html
 function switchCharacter(newCharacter) {
     characterImg.src = newCharacter['url'];
     characterHealth.innerHTML = newCharacter['Health'];
     characterAttribute.innerHTML = newCharacter['Attribute'];
 }
 
+// fallen character Function
 let fallen = [];
-
 function fallenCharacter(character){
+    /*
+        1. if character === give:
+            a. if length of fallen greater than 0: True
+            else: False
+    */
     if (character === 'give'){
         if (fallen.length > 0){
             return true;
@@ -1283,6 +1458,17 @@ function fallenCharacter(character){
         }
     }
 
+    /*
+        1. add character to fallen list
+        2. console
+        3. if fallen lenght == 3
+            a. Call battleEnding function
+            else:
+            a. if character is corin: remove button
+            b. if character is lycaon: remove button
+            c. if character is rina: remove button
+
+    */
     fallen.push(character);
     console.log(fallen);
     if (fallen.length === 3){
@@ -1303,6 +1489,8 @@ function fallenCharacter(character){
     }
 }
 
+// Battle Record Function
+// Adjusts it so latest text appears at the top
 function battleRecordFunc(addText) {
     let placeholder = battleRecord.innerHTML;
     battleRecord.innerText = '';
