@@ -1567,7 +1567,7 @@ function fallenEnding(){
     //change text 2
     textTwo.innerHTML = '';
     //change Image
-    nodeImage.src = 'nodeImages/fallEnd.jpg';
+    nodeImage.src = 'nodeImages/FallEnd.jpg';
 
     //Hide everything
     buttonBox.style = 'display: none;';
