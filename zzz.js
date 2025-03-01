@@ -1667,6 +1667,7 @@ newImage.id = 'nodeImage';
 newImage.src = 'nodeImages/HospitalEnding3.png';
 
 //Shortcuts to endings
+/*
 document.addEventListener('keyup', event => {
     if (event.code === 'ArrowUp') {
         document.getElementById('mid').style = 'display: flex;';
@@ -1712,3 +1713,4 @@ document.addEventListener('keyup', event => {
         fallenEnding()
     }
 })
+*/
