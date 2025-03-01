@@ -166,7 +166,7 @@ document.addEventListener('keyup', event => {
         buttonBox.style = 'display: flex;';
         document.getElementById('character').style = 'display: flex;';
     }
-  })
+})
 
 
 /*
@@ -1665,3 +1665,50 @@ function hospitalEnding(){
 let newImage = document.createElement('img');
 newImage.id = 'nodeImage';
 newImage.src = 'nodeImages/HospitalEnding3.png';
+
+//Shortcuts to endings
+document.addEventListener('keyup', event => {
+    if (event.code === 'ArrowUp') {
+        document.getElementById('mid').style = 'display: flex;';
+        document.getElementById('nodeCode').innerHTML = 'Node: 1';
+        buttonBox.style = 'display: flex;';
+        document.getElementById('character').style = 'display: flex;';
+        battleEnding()
+    }
+})
+document.addEventListener('keyup', event => {
+    if (event.code === 'ArrowDown') {
+        document.getElementById('mid').style = 'display: flex;';
+        document.getElementById('nodeCode').innerHTML = 'Node: 1';
+        buttonBox.style = 'display: flex;';
+        document.getElementById('character').style = 'display: flex;';
+        hospitalEnding()
+    }
+})
+document.addEventListener('keyup', event => {
+    if (event.code === 'ArrowLeft') {
+        document.getElementById('mid').style = 'display: flex;';
+        document.getElementById('nodeCode').innerHTML = 'Node: 1';
+        buttonBox.style = 'display: flex;';
+        document.getElementById('character').style = 'display: flex;';
+        dinnerEnding()
+    }
+})
+document.addEventListener('keyup', event => {
+    if (event.code === 'ArrowRight') {
+        document.getElementById('mid').style = 'display: flex;';
+        document.getElementById('nodeCode').innerHTML = 'Node: 1';
+        buttonBox.style = 'display: flex;';
+        document.getElementById('character').style = 'display: flex;';
+        ambushedEnding()
+    }
+})
+document.addEventListener('keyup', event => {
+    if (event.code === 'Enter') {
+        document.getElementById('mid').style = 'display: flex;';
+        document.getElementById('nodeCode').innerHTML = 'Node: 1';
+        buttonBox.style = 'display: flex;';
+        document.getElementById('character').style = 'display: flex;';
+        fallenEnding()
+    }
+})
